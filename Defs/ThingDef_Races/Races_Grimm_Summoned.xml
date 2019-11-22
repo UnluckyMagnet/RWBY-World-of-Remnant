@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="GrimmThingBaseSummoned">
+		<defName>Grimm_Boarbatusk_Summoned</defName>
+		<label>boarbatusk</label>
+		<description>The Boarbatusk is a boar with cloven-feet, a line of hair sprouting from its spine, snub snout, and tusks. \n\nThe Boarbatusk has four eyes and a bone-like mask that seems to be strapped to its face by a black vein-like organic tether. It has a series of plates along its back and on its thighs, and two extra sets of tusks, including two large curving tusks. However, their underside is comparatively under-protected and vulnerable, with little to no body armor or shielding.</description>
+		<statBases>
+			<Mass>100</Mass>
+			<MoveSpeed>4.2</MoveSpeed>
+			<ArmorRating_Blunt>0.30</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.20</ArmorRating_Sharp>
+		</statBases>
+		<tools>
+			<li>
+				<label>big tusks</label>
+				<capacities>
+					<li>Stab</li>
+				</capacities>
+				<power>24.0</power>
+				<cooldownTime>2.3</cooldownTime>
+				<linkedBodyPartsGroup>TuskAttackTool</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<label>small tusks</label>
+				<capacities>
+					<li>Poke</li>
+				</capacities>
+				<power>12.0</power>
+				<cooldownTime>1.6</cooldownTime>
+				<linkedBodyPartsGroup>TuskAttackTool</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>18.0</power>
+				<cooldownTime>1.8</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+			</li>
+		</tools>
+		<race>
+			<body>Grimm_Boarbatusk</body>
+			<baseBodySize>2.0</baseBodySize>
+			<baseHealthScale>2.0</baseHealthScale>
+			<lifeExpectancy>5000</lifeExpectancy>
+			<lifeStageAges>
+				<li>
+					<def>Grimm_FullGrown</def>
+					<minAge>0</minAge>
+					<soundWounded>Pawn_Wildboar_Wounded</soundWounded>
+					<soundDeath>Pawn_Wildboar_Death</soundDeath>
+					<soundCall>Pawn_Wildboar_Call</soundCall>
+					<soundAngry>Pawn_Wildboar_Angry</soundAngry>
+				</li>
+			</lifeStageAges>
+			<soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+		</race>
+	</ThingDef>
+
+	<PawnKindDef>
+		<defName>Grimm_Boarbatusk_Summoned</defName>
+		<label>boarbatusk</label>
+		<race>Grimm_Boarbatusk_Summoned</race>
+		<ecoSystemWeight>0</ecoSystemWeight>
+		<canArriveManhunter>false</canArriveManhunter>
+		<combatPower>300</combatPower>
+		<!--defaultFactionType>Creatures_of_Grimm</defaultFactionType-->
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Grimm/Boarbatusk/Boarbatusk_Summon</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2.0</drawSize>
+					<shadowData>
+						<volume>(0.5, 0.5, 0.4)</volume>
+						<offset>(0,0,-0.05)</offset>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+	</PawnKindDef>
+
+	<ThingDef ParentName="GrimmThingBaseSummoned">
+		<defName>Grimm_ArmaGigas_Summoned</defName>
+		<label>Arma Gigas</label>
+		<description>Arma Gigas is a subtype of Geist, which is a possession-type Grimm. This Arma Gigas takes on the appearance of a medieval suit of armor and appears to have a high degree of swordsmanship.</description>
+		<statBases>
+			<Mass>130</Mass>
+			<MoveSpeed>5</MoveSpeed>
+			<ArmorRating_Blunt>0.40</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.30</ArmorRating_Sharp>
+		</statBases>
+		<tools>
+			<li>
+				<label>right fist</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>22.0</power>
+				<cooldownTime>1.8</cooldownTime>
+				<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+				<surpriseAttack>
+					<extraMeleeDamages>
+						<li>
+							<def>Stun</def>
+							<amount>14</amount>
+						</li>
+					</extraMeleeDamages>
+				</surpriseAttack>
+			</li>
+			<li>
+				<label>left fist</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>22.0</power>
+				<cooldownTime>1.8</cooldownTime>
+				<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<surpriseAttack>
+					<extraMeleeDamages>
+						<li>
+							<def>Stun</def>
+							<amount>14</amount>
+						</li>
+					</extraMeleeDamages>
+				</surpriseAttack>
+			</li>
+		</tools>
+		<race>
+			<body>Grimm_ArmaGigas</body>
+			<baseBodySize>2.0</baseBodySize>
+			<baseHealthScale>3.0</baseHealthScale>
+			<lifeExpectancy>5000</lifeExpectancy>
+			<lifeStageAges>
+				<li>
+					<def>Grimm_FullGrown</def>
+					<minAge>0</minAge>
+					<soundWounded>Pawn_Grimm_ArmaGigas_Wounded</soundWounded>
+					<soundDeath>Pawn_Grimm_ArmaGigas_Death</soundDeath>
+					<soundCall>Pawn_Grimm_ArmaGigas_Call</soundCall>
+				</li>
+			</lifeStageAges>
+			<soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
+		</race>
+	</ThingDef>
+
+	<PawnKindDef>
+		<defName>Grimm_ArmaGigas_Summoned</defName>
+		<label>Arma Gigas</label>
+		<race>Grimm_ArmaGigas_Summoned</race>
+		<ecoSystemWeight>0</ecoSystemWeight>
+		<canArriveManhunter>false</canArriveManhunter>
+		<combatPower>400</combatPower>
+		<!--defaultFactionType>Creatures_of_Grimm</defaultFactionType-->
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Grimm/ArmaGigas/ArmaGigas</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2.5</drawSize>
+					<shadowData>
+						<volume>(0.3, 0.8, 0.4)</volume>
+						<offset>(0,0,-0.3)</offset>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+	</PawnKindDef>
+
+	<ThingDef ParentName="GrimmThingBaseSummoned">
+		<defName>Grimm_ArmaGigasSword_Summoned</defName>
+		<label>Arma Gigas</label>
+		<description>Arma Gigas is a subtype of Geist, which is a possession-type Grimm. This Arma Gigas takes on the appearance of a medieval suit of armor and appears to have a high degree of swordsmanship.</description>
+		<statBases>
+			<Mass>130</Mass>
+			<MoveSpeed>5</MoveSpeed>
+			<ArmorRating_Blunt>0.40</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.30</ArmorRating_Sharp>
+		</statBases>
+		<tools>
+			<li>
+				<label>sword</label>
+				<capacities>
+					<li>Cut</li>
+				</capacities>
+				<power>28.0</power>
+				<cooldownTime>1.5</cooldownTime>
+				<linkedBodyPartsGroup>Grimm_SwordAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+			</li>
+			<li>
+				<label>right fist</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>22.0</power>
+				<cooldownTime>1.8</cooldownTime>
+				<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+				<surpriseAttack>
+					<extraMeleeDamages>
+						<li>
+							<def>Stun</def>
+							<amount>14</amount>
+						</li>
+					</extraMeleeDamages>
+				</surpriseAttack>
+				<chanceFactor>0.2</chanceFactor>
+			</li>
+			<li>
+				<label>left fist</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>22.0</power>
+				<cooldownTime>1.8</cooldownTime>
+				<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<surpriseAttack>
+					<extraMeleeDamages>
+						<li>
+							<def>Stun</def>
+							<amount>14</amount>
+						</li>
+					</extraMeleeDamages>
+				</surpriseAttack>
+				<chanceFactor>0.2</chanceFactor>
+			</li>
+		</tools>
+		<race>
+			<body>Grimm_ArmaGigasSword</body>
+			<baseBodySize>2.0</baseBodySize>
+			<baseHealthScale>3.0</baseHealthScale>
+			<lifeExpectancy>5000</lifeExpectancy>
+			<lifeStageAges>
+				<li>
+					<def>Grimm_FullGrown</def>
+					<minAge>0</minAge>
+					<soundWounded>Pawn_Grimm_ArmaGigas_Wounded</soundWounded>
+					<soundDeath>Pawn_Grimm_ArmaGigas_Death</soundDeath>
+					<soundCall>Pawn_Grimm_ArmaGigas_Call</soundCall>
+				</li>
+			</lifeStageAges>
+			<soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
+		</race>
+	</ThingDef>
+
+	<PawnKindDef>
+		<defName>Grimm_ArmaGigasSword_Summoned</defName>
+		<label>Arma Gigas</label>
+		<race>Grimm_ArmaGigasSword_Summoned</race>
+		<ecoSystemWeight>0</ecoSystemWeight>
+		<canArriveManhunter>false</canArriveManhunter>
+		<combatPower>450</combatPower>
+		<!--defaultFactionType>Creatures_of_Grimm</defaultFactionType-->
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Grimm/ArmaGigas/ArmaGigasSword</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2.5</drawSize>
+					<shadowData>
+						<volume>(0.3, 0.8, 0.4)</volume>
+						<offset>(0,0,-0.3)</offset>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+	</PawnKindDef>
+
+	<ThingDef ParentName="GrimmThingBaseSummoned">
+		<defName>Grimm_Lancer_Summoned</defName>
+		<label>lancer</label>
+		<description>Lancers have a three-segmented black body with three sets of legs. They have a white armored mask and armor along their back. On the back of their abdomen, the armor is in four overlapping plates. They have jagged pincers, antenna, four red transparent wings and a stinger.</description>
+		<statBases>
+			<Mass>100</Mass>
+			<MoveSpeed>4.4</MoveSpeed>
+			<ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.20</ArmorRating_Sharp>
+		</statBases>
+		<tools>
+			<li>
+				<label>sting</label>
+				<capacities>
+					<li>RWBY_Toxic_Stab</li>
+				</capacities>
+				<power>23</power>
+				<cooldownTime>2.1</cooldownTime>
+				<linkedBodyPartsGroup>Grimm_StingAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+			</li>
+			<li>
+				<label>mouth</label>
+				<capacities>
+					<li>Bite</li>
+				</capacities>
+				<power>12</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+				<chanceFactor>0.2</chanceFactor>
+			</li>
+		</tools>
+		<race>
+			<body>Grimm_Lancer</body>
+			<baseBodySize>2.0</baseBodySize>
+			<baseHealthScale>2.0</baseHealthScale>
+			<lifeExpectancy>500</lifeExpectancy>
+			<lifeStageAges>
+				<li>
+					<def>Grimm_FullGrown</def>
+					<minAge>0</minAge>
+					<soundWounded>Pawn_Spelopede_Pain</soundWounded>
+					<soundDeath>Pawn_Spelopede_Death</soundDeath>
+					<soundCall>Pawn_Spelopede_Call</soundCall>
+					<soundAngry>Pawn_Spelopede_Angry</soundAngry>
+				</li>
+			</lifeStageAges>
+			<soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+		</race>
+	</ThingDef>
+
+	<PawnKindDef>
+		<defName>Grimm_Lancer_Summoned</defName>
+		<label>lancer</label>
+		<race>Grimm_Lancer_Summoned</race>
+		<ecoSystemWeight>0</ecoSystemWeight>
+		<canArriveManhunter>false</canArriveManhunter>
+		<combatPower>150</combatPower>
+		<!--defaultFactionType>Creatures_of_Grimm</defaultFactionType-->
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Grimm/Lancer/Lancer_Summon</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.5</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.4, 0.4)</volume>
+						<offset>(0,0,-0.2)</offset>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+	</PawnKindDef>
+
+</Defs>

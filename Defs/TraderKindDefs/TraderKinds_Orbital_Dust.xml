@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<TraderKindDef>
+		<defName>Orbital_Dust</defName>
+		<label>Dust trader</label>
+		<commonality>2</commonality>
+		<orbital>true</orbital>
+		<stockGenerators>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>Silver</thingDef>
+				<countRange>
+					<min>2000</min>
+					<max>4000</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>RWBY_PumpkinPetes</thingDef>
+				<countRange>
+					<min>200</min>
+					<max>300</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>FireDustPowder</thingDef>
+				<countRange>
+					<min>400</min>
+					<max>500</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>IceDustPowder</thingDef>
+				<countRange>
+					<min>400</min>
+					<max>500</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>LightningDustPowder</thingDef>
+				<countRange>
+					<min>400</min>
+					<max>500</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>GravityDustPowder</thingDef>
+				<countRange>
+					<min>400</min>
+					<max>500</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>HardLightDustPowder</thingDef>
+				<countRange>
+					<min>400</min>
+					<max>500</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>FireDustCrystal</thingDef>
+				<countRange>
+					<min>200</min>
+					<max>300</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>IceDustCrystal</thingDef>
+				<countRange>
+					<min>200</min>
+					<max>300</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>LightningDustCrystal</thingDef>
+				<countRange>
+					<min>200</min>
+					<max>300</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>GravityDustCrystal</thingDef>
+				<countRange>
+					<min>200</min>
+					<max>300</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>HardLightDustCrystal</thingDef>
+				<countRange>
+					<min>200</min>
+					<max>300</max>
+				</countRange>
+			</li>
+		</stockGenerators>
+	</TraderKindDef>
+
+</Defs>

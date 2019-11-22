@@ -1,0 +1,3 @@
+- reworked how Blake´s Shadow Clone is rendered to support Humanoid Alien Races
+- fixed Firefoam Popper doing damage to Aura and depleting it all
+- added Semblance Velvet

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<Manifest>
+
+	<identifier>RWBY World of Remnant</identifier>
+	<version>1.0.4.10</version>
+	<dependencies>
+		<li>JecsTools</li>
+	</dependencies>
+	<incompatibleWith>
+		<li>RWBYWeapons</li>
+	</incompatibleWith>
+	<loadAfter>
+		<li/>
+	</loadAfter>
+
+</Manifest>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Velvet's Camera custom bullet -->
+
+	<ThingDef Class="RWBYRemnant.ThingDef_CameraBullet" ParentName="BaseBullet">
+		<defName>Bullet_Velvet_Camera</defName>
+		<label>Velvet_Camera bullet</label>
+		<thingClass>RWBYRemnant.Projectile_CameraBullet</thingClass>
+		<graphicData>
+			<texPath>Things/Projectile/Empty_Projectile</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>0</damageAmountBase>
+			<stoppingPower>1</stoppingPower>
+			<speed>100</speed>
+		</projectile>
+	</ThingDef>
+
+	<!-- Velvet's Camera, it's for shooting... photos -->
+
+	<ThingDef ParentName="BaseMeleeWeapon_RWBY">
+		<defName>RWBY_Velvet_Camera</defName>
+		<label>Velvet's Camera</label>
+		<description>Velvet's Weapon, belonging to Velvet Scarlatina, consists of a camera and a box. The weapon is capable of creating solid "light copies" of any weapon Velvet has photographed, which she can then use in battle.</description>
+		<graphicData>
+			<texPath>Things/Item/Equipment/Weapons/Velvet_Camera</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>800</MarketValue>
+			<Mass>1</Mass>
+		</statBases>
+		<equippedAngleOffset>-90</equippedAngleOffset>
+		<costList>
+			<Steel>200</Steel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+			<HardLightDustCrystal>50</HardLightDustCrystal>
+		</costList>
+		<comps>
+			<li Class="RWBYRemnant.WeaponTransformComp">
+				<TransformLabel>Store camera</TransformLabel>
+				<TransformDesc>Put away your camera</TransformDesc>
+				<TransformIcon>Things/Item/Equipment/Weapons/Velvet_Camera_Box_north</TransformIcon>
+				<transformSound>Open_Camera_Box</transformSound>
+				<transformInto>RWBY_Velvet_Camera_Box</transformInto>
+			</li>
+			<li Class="RWBYRemnant.WeaponProjectileComp">
+				<AbilityLabel>Take Photo</AbilityLabel>
+				<AbilityDesc>Take a photo of a weapon. \n\nCan take photos of weapons from drafed pawns, weapons on the ground or stored in shelves.</AbilityDesc>
+				<AbilityIcon>Things/Item/Equipment/Weapons/Velvet_Camera</AbilityIcon>
+				<AbilitySound>Shot_Velvet_Camera</AbilitySound>				
+				<AbilityProjectile>Bullet_Velvet_Camera</AbilityProjectile>
+				<WarmupTime>2</WarmupTime>
+				<Range>10</Range>
+				<targetingParameters>
+					<canTargetPawns>true</canTargetPawns>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetSelf>false</canTargetSelf>
+					<canTargetItems>true</canTargetItems>
+					<canTargetLocations>true</canTargetLocations>
+					<mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>					
+				</targetingParameters>
+				<cannotMiss>true</cannotMiss>
+			</li>
+			<li Class="RWBYRemnant.TakePhotoComp">
+				<LightCopyColor>(92, 165, 255)</LightCopyColor>
+				<usesAmmunition>HardLightDustPowder</usesAmmunition>
+			</li>
+		</comps>
+		<tools>
+			<li>
+				<label>side</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>1</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>front</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>1</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<!-- Velvet's Camera Box, craftable -->
+
+	<ThingDef ParentName="BaseCraftableMeleeWeapon_RWBY">
+		<defName>RWBY_Velvet_Camera_Box</defName>
+		<label>Velvet's Camera Box</label>
+		<description>Velvet's Weapon, belonging to Velvet Scarlatina, consists of a camera and a box. The weapon is capable of creating solid "light copies" of any weapon Velvet has photographed, which she can then use in battle.</description>
+		<equipmentType>None</equipmentType>
+		<graphicData>
+			<texPath>Things/Item/Equipment/Weapons/Velvet_Camera_Box_north</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<WorkToMake>30000</WorkToMake>
+			<MarketValue>800</MarketValue>
+			<Mass>1</Mass>
+		</statBases>
+		<costList>
+			<Steel>200</Steel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+			<HardLightDustCrystal>50</HardLightDustCrystal>
+		</costList>
+		<comps>
+			<li Class="RWBYRemnant.WeaponTransformComp">
+				<TransformLabel>Get camera</TransformLabel>
+				<TransformDesc>Take out your camera</TransformDesc>
+				<TransformIcon>Things/Item/Equipment/Weapons/Velvet_Camera</TransformIcon>
+				<transformSound>Open_Camera_Box</transformSound>
+				<transformInto>RWBY_Velvet_Camera</transformInto>
+			</li>
+			<li Class="RWBYRemnant.TakePhotoComp">
+				<LightCopyColor>(92, 165, 255)</LightCopyColor>
+				<usesAmmunition>HardLightDustPowder</usesAmmunition>
+			</li>
+			<li Class="PawnShields.CompProperties_Shield">
+				<wieldedGraphic>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<texPath>Things/Item/Equipment/Weapons/Velvet_Camera_Box</texPath>
+					<drawSize>(0.7, 0.7)</drawSize>
+				</wieldedGraphic>
+				<renderProperties>
+					<northOffset>(0.3, 0.033, -0.25)</northOffset>
+					<southOffset>(-0.3, -0.033, -0.25)</southOffset>
+					<westOffset>(0.3, 0.033, -0.3)</westOffset>
+					<eastOffset>(-0.3, 0.033, -0.3)</eastOffset>
+					<flipRotation>true</flipRotation>
+					<renderWhenPeaceful>true</renderWhenPeaceful>
+				</renderProperties>
+				<canBlockRanged>false</canBlockRanged>
+				<canBlockMelee>false</canBlockMelee>
+				<meleeBlockChanceFactor>0</meleeBlockChanceFactor>
+				<rangedBlockChanceFactor>0</rangedBlockChanceFactor>
+				<shieldTakeDamage>false</shieldTakeDamage>
+				<shieldTakeDamageFactor>0</shieldTakeDamageFactor>
+				<canBeAutoDiscarded>false</canBeAutoDiscarded>
+				<healthAutoDiscardThreshold>0</healthAutoDiscardThreshold>
+				<useFatigue>false</useFatigue>
+				<damageToFatigueFactor>0</damageToFatigueFactor>
+			</li>
+		</comps>
+		<tools>
+			<li>
+				<label>side</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>1</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>front</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>1</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+
+</Defs>

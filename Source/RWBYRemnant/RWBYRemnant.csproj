@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3BE33742-70DD-4D57-843D-2F20455B3D84}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RWBYRemnant</RootNamespace>
+    <AssemblyName>RWBYRemnant</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>D:\Steam\steamapps\common\RimWorld\Mods\RWBY World of Remnant\Assemblies\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>C:\Users\Carsten\Documents\Projekte\Source\Libraries\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="AbilityUser">
+      <HintPath>D:\Steam\steamapps\workshop\content\294100\932008009\Assemblies\AbilityUser.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>D:\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CompOversizedWeapon">
+      <HintPath>D:\Steam\steamapps\workshop\content\294100\932008009\Assemblies\CompOversizedWeapon.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine">
+      <HintPath>D:\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aura_Blake.cs" />
+    <Compile Include="Aura_Nora.cs" />
+    <Compile Include="Aura_Raven.cs" />
+    <Compile Include="Aura_Ren.cs" />
+    <Compile Include="Aura_Pyrrha.cs" />
+    <Compile Include="Aura_Jaune.cs" />
+    <Compile Include="Aura_Qrow.cs" />
+    <Compile Include="Aura_Velvet.cs" />
+    <Compile Include="Aura_Weiss.cs" />
+    <Compile Include="Aura_Yang.cs" />
+    <Compile Include="Aura_Ruby.cs" />
+    <Compile Include="Aura_Cinder.cs" />
+    <Compile Include="CompExplosiveSilent.cs" />
+    <Compile Include="CompShadowClone.cs" />
+    <Compile Include="CompTimeDilationGlyph.cs" />
+    <Compile Include="CompGlyphSummon.cs" />
+    <Compile Include="GizmoYangAngerLevel.cs" />
+    <Compile Include="Grimm_DeathWorker.cs" />
+    <Compile Include="HediffComp_FrozenWorker.cs" />
+    <Compile Include="HediffComp_TimeDilation.cs" />
+    <Compile Include="IncidentWorker_GrimmWandersIn.cs" />
+    <Compile Include="IncidentWorker_Nuckelavee.cs" />
+    <Compile Include="IncidentWorker_UnlockSemblance.cs" />
+    <Compile Include="IncidentWorker_UnlockAura.cs" />
+    <Compile Include="JobDriverGoThroughPortal.cs" />
+    <Compile Include="JobDriverStealAura.cs" />
+    <Compile Include="JobDriverTakePhotos.cs" />
+    <Compile Include="JoyGiver_TakePhotos.cs" />
+    <Compile Include="Pawn_Grimm.cs" />
+    <Compile Include="Pawn_SummonedGrimm.cs" />
+    <Compile Include="Projectile_ExplosiveWithMote.cs" />
+    <Compile Include="Projectile_RubyCarry.cs" />
+    <Compile Include="Projectile_RubyDash.cs" />
+    <Compile Include="Projectile_WithMote.cs" />
+    <Compile Include="SemblanceDef.cs" />
+    <Compile Include="AbilitySemblance.cs" />
+    <Compile Include="Aura.cs" />
+    <Compile Include="CompAbilityUserAura.cs" />
+    <Compile Include="DamageWorker_Ice.cs" />
+    <Compile Include="DamageWorker_Lightning.cs" />
+    <Compile Include="DefOfs.cs" />
+    <Compile Include="GizmoAuraStatus.cs" />
+    <Compile Include="HarmonyPatch.cs" />
+    <Compile Include="IncidentWorker_Sneeze.cs" />
+    <Compile Include="JobDriverPickUp.cs" />
+    <Compile Include="ModChecker.cs" />
+    <Compile Include="Projectile_Explosive_FireBolt.cs" />
+    <Compile Include="Projectile_RideBullet.cs" />
+    <Compile Include="Projectile_HookBullet.cs" />
+    <Compile Include="Projectile_IceBolt.cs" />
+    <Compile Include="Projectile_ThrownCrystal.cs" />
+    <Compile Include="Projectile_WiltBullet.cs" />
+    <Compile Include="RemnantMod.cs" />
+    <Compile Include="RemnantModSettings.cs" />
+    <Compile Include="AmmunitionUtility.cs" />
+    <Compile Include="TargetingParametersRWBY.cs" />
+    <Compile Include="ThingWithComps_Portal.cs" />
+    <Compile Include="ThingWithComps_PickUpAble.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Projectile_CameraBullet.cs" />
+    <Compile Include="LightCopyComp.cs" />
+    <Compile Include="Command_TargetWithRadius.cs" />
+    <Compile Include="CompThrowAble.cs" />
+    <Compile Include="SemblanceUtility.cs" />
+    <Compile Include="Verb_AbilityFormBond.cs" />
+    <Compile Include="Verb_AbilityMaskEmotions.cs" />
+    <Compile Include="Verb_AbilityMagneticPulse.cs" />
+    <Compile Include="Verb_AbilityIgnorePain.cs" />
+    <Compile Include="Verb_AbilitySummonLancer.cs" />
+    <Compile Include="Verb_AbilityUseMagnetism.cs" />
+    <Compile Include="Verb_AbilityUnlockAura.cs" />
+    <Compile Include="Verb_AbilityFireClone.cs" />
+    <Compile Include="Verb_AbilityIceClone.cs" />
+    <Compile Include="Verb_AbilityStoneClone.cs" />
+    <Compile Include="Verb_AbilityAmplifyAura.cs" />
+    <Compile Include="Verb_AbilitySummonArmaGigasSword.cs" />
+    <Compile Include="Verb_AbilitySummonArmaGigas.cs" />
+    <Compile Include="Verb_AbilitySummonBoarbatusk.cs" />
+    <Compile Include="Verb_AbilityReturnDamage.cs" />
+    <Compile Include="Verb_AbilityCreateBow.cs" />
+    <Compile Include="Verb_AbilityCreateBlades.cs" />
+    <Compile Include="Verb_AbilityCreateScimitar.cs" />
+    <Compile Include="Verb_AbilityCreateSpear.cs" />
+    <Compile Include="Verb_AbilityTimeDilationGlyph.cs" />
+    <Compile Include="Verb_AbilitySummonExplosives.cs" />
+    <Compile Include="Verb_ShootWeaponAbility.cs" />
+    <Compile Include="Verb_UseAbilitySemblanceBase.cs" />
+    <Compile Include="CompInjectDustCrystal.cs" />
+    <Compile Include="Weapon_StealAuraAbility.cs" />
+    <Compile Include="Weapon_TransformAbility.cs" />
+    <Compile Include="Weapon_TakePhotoAbility.cs" />
+    <Compile Include="Weapon_ProjectileAbility.cs" />
+    <Compile Include="Weapon_CoffeeAbility.cs" />
+    <Compile Include="WorkGiver_GatherAmmunition.cs" />
+    <Compile Include="WorkGiver_StealAura.cs" />
+    <Compile Include="WorkGiver_PickUp.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
