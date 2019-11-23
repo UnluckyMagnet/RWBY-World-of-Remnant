@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TableDustWorkshop.label>塵晶工作台</TableDustWorkshop.label>
+  <TableDustWorkshop.description>用於研磨塵晶粉末、組裝塵晶武器與塵晶彈藥的工作臺.</TableDustWorkshop.description>
+  <TableDustWorkshop_Blueprint.label>塵晶工作台 (藍圖)</TableDustWorkshop_Blueprint.label>
+  <TableDustWorkshop_Blueprint_Install.label>塵晶工作台 (藍圖)</TableDustWorkshop_Blueprint_Install.label>
+  <TableDustWorkshop_Frame.label>塵晶工作台 (框架)</TableDustWorkshop_Frame.label>
+  <TableDustWorkshop_Frame.description>用於研磨塵晶粉末、組裝塵晶武器與塵晶彈藥的工作臺.</TableDustWorkshop_Frame.description>
+
+
+</LanguageData>
