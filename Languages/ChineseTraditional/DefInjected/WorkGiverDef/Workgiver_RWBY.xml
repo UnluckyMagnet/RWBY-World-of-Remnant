@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <DoBillsTableDustWorkshop.label>make things at Dust workshop</DoBillsTableDustWorkshop.label>
+  <DoBillsTableDustWorkshop.verb>work</DoBillsTableDustWorkshop.verb>
+  <DoBillsTableDustWorkshop.gerund>working at</DoBillsTableDustWorkshop.gerund>
+
+  <RWBY_GatherAmmunition.label>gather ammunition</RWBY_GatherAmmunition.label>
+  <RWBY_GatherAmmunition.verb>haul</RWBY_GatherAmmunition.verb>
+  <RWBY_GatherAmmunition.gerund>picking up</RWBY_GatherAmmunition.gerund>
+
+
+</LanguageData>
