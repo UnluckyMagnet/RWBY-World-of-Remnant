@@ -53,7 +53,7 @@ namespace RWBYRemnant
             if (!LoadedModManager.GetMod<RemnantMod>().GetSettings<RemnantModSettings>().semblanceUnlockable) return;
             if (___pawn.RaceProps.Humanlike && recipient.RaceProps.Humanlike && ___pawn.story != null && ___pawn.story.traits.HasTrait(RWBYDefOf.RWBY_Aura) && ___pawn.Faction == Faction.OfPlayer)
             {
-                if (Rand.Chance(0.003f))
+                if (Rand.Chance(0.001f))
                 {
                     SemblanceUtility.UnlockSemblance(___pawn, RWBYDefOf.Semblance_Velvet, "LetterTextUnlockSemblanceVelvet");
                 }

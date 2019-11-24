@@ -3,7 +3,7 @@
 <Manifest>
 
 	<identifier>RWBY World of Remnant</identifier>
-	<version>1.0.4.10</version>
+	<version>1.0.5.1</version>
 	<dependencies>
 		<li>JecsTools</li>
 	</dependencies>
