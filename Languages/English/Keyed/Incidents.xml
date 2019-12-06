@@ -16,7 +16,7 @@
 	<!-- Forgot Aura -->
 	<LetterLabelForgotAura>{PAWN_nameDef} forgot {PAWN_possessive} Aura</LetterLabelForgotAura>
 	<LetterTextForgotAura>{PAWN_nameDef} was hit while not in combat and forgot to activate {PAWN_possessive} Aura. This caused {PAWN_objective} to actually take damage.</LetterTextForgotAura>
-	<MessageTextForgotAura>{PAWN_nameDef} forgot to activate {PAWN_possessive} Aura</MessageTextForgotAura>
+	<MessageTextForgotAura>{PAWN_nameDef} forgot to activate {PAWN_possessive} Aura.</MessageTextForgotAura>
 
 	<!-- Unlocked Semblance -->
 	<LetterLabelUnlockSemblanceGeneral>Unlocked Semblance</LetterLabelUnlockSemblanceGeneral>
@@ -55,5 +55,8 @@
 	
 	<!-- Aura Steal -->
 	<MessageFactionStoleAura>{0} stole {1}'s Aura</MessageFactionStoleAura>
+	
+	<!-- Raven Portal -->
+	<MessageTextNoPortalMap>Could not create portal to {PAWN_nameDef}. Target is not on any map.</MessageTextNoPortalMap>
 
 </LanguageData>

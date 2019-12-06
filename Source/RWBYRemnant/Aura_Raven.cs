@@ -39,6 +39,11 @@ namespace RWBYRemnant
 
         public void CreatePortal(Pawn p)
         {
+            if (p.Map == null)
+            {
+                Messages.Message("MessageTextNoPortalMap".Translate().Formatted(p.Named("PAWN")).AdjustedFor(p, "PAWN").CapitalizeFirst(), pawn, MessageTypeDefOf.NegativeEvent);
+                return;
+            }
             Thing portalA = ThingMaker.MakeThing(RWBYDefOf.Raven_Portal);
             GenSpawn.Spawn(portalA, pawn.Position, pawn.Map);
             Thing portalB = ThingMaker.MakeThing(RWBYDefOf.Raven_Portal);
