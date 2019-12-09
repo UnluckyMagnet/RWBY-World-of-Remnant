@@ -39,6 +39,7 @@ namespace RWBYRemnant
 
         public void CreateLightCopy(string defname)
         {
+            Pawn tmpPawn = GetPawn;
             if (GetPawn.equipment.Primary != null) //if primary equipped
             {
                 if (GetPawn.equipment.Primary.TryGetComp<Weapon_TakePhotoAbility>() == null) // if primary not camera
@@ -89,9 +90,9 @@ namespace RWBYRemnant
             weaponToCreate.TryGetComp<CompColorable>().Color = Props.LightCopyColor;
 
             // remove certain special abilities from light copy
-            weaponToCreate.AllComps.RemoveAll(x => x.props.GetType().Equals(typeof(WeaponTransformComp)));
-            weaponToCreate.AllComps.RemoveAll(x => x.props.GetType().Equals(typeof(TakePhotoComp)));
-
+            weaponToCreate.AllComps.RemoveAll(x => x.GetType().Equals(typeof(Weapon_TransformAbility)));
+            weaponToCreate.AllComps.RemoveAll(x => x.GetType().Equals(typeof(Weapon_TakePhotoAbility)));
+            
             LightCopyDestroyAbility rWBYLightCopyDestroyAbility = new LightCopyDestroyAbility
             {
                 parent = weaponToCreate
@@ -105,7 +106,7 @@ namespace RWBYRemnant
 
             if (!ConsumeAmmunition()) return;
             ListOfDifferentPhotos.Remove(defname);
-            GetPawn.equipment.AddEquipment(weaponToCreate);
+            tmpPawn.equipment.AddEquipment(weaponToCreate);
         }
 
         private void MakeBox()
@@ -114,10 +115,11 @@ namespace RWBYRemnant
             cameraBox.TryGetComp<CompQuality>().SetQuality(parent.TryGetComp<CompQuality>().Quality, ArtGenerationContext.Colony);
             cameraBox.TryGetComp<Weapon_TakePhotoAbility>().ListOfDifferentPhotos = ListOfDifferentPhotos;
             cameraBox.HitPoints = parent.HitPoints;
-            parent.Destroy();
             cameraBox.ThingID = parent.ThingID;
             cameraBox.thingIDNumber = parent.thingIDNumber;
-            GetPawn.equipment.AddEquipment(cameraBox);
+            Pawn tmpPawn = GetPawn;
+            parent.Destroy();
+            tmpPawn.equipment.AddEquipment(cameraBox);
         }
 
         public void ClearPhotos()
