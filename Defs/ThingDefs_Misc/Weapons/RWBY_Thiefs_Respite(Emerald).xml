@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-	<!-- Emeralds's Weapon custom bullet -->
+	<!-- Thief's Respite custom bullet -->
 
 	<ThingDef ParentName="BaseBullet">
 		<defName>Bullet_Emerald_Gun</defName>
-		<label>Melodic Cudgel bullet</label>
+		<label>Thief's Respite bullet</label>
 		<graphicData>
 			<texPath>Things/Projectile/Bullet_Small</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -18,12 +18,12 @@
 		</projectile>
 	</ThingDef>
 
-	<!-- Emeralds's Weapon base weapon, craftable-->
+	<!-- Thief's Respite base weapon, craftable-->
 
 	<ThingDef ParentName="BaseMakeableGun_RWBY">
 		<defName>RWBY_Emerald_Gun</defName>
-		<label>Emeralds's Weapon</label>
-		<description>Emerald's Weapons are a pair of convertible revolver-sickles wielded by Emerald Sustrai.</description>
+		<label>Thief's Respite</label>
+		<description>Thief's Respite are a pair of convertible revolver-sickles wielded by Emerald Sustrai.</description>
 		<graphicData>
 			<texPath>Things/Item/Equipment/Weapons/Emerald_Gun</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -90,11 +90,11 @@
 		</tools>
 	</ThingDef>	
 
-	<!-- Emeralds's Weapon hook custom bullet -->
+	<!-- Thief's Respite hook custom bullet -->
 
 	<ThingDef Class="RWBYRemnant.ThingDef_HookBullet" ParentName="BaseBullet">
 		<defName>Bullet_Emerald_Sickle_Hook</defName>
-		<label>Melodic Cudgel hook</label>
+		<label>Thief's Respite hook</label>
 		<thingClass>RWBYRemnant.Projectile_HookBullet</thingClass>
 		<hookSound>Emerald_Weapon_Chain</hookSound>
 		<hookOnlyHostile>false</hookOnlyHostile>
@@ -114,7 +114,7 @@
 
 	<ThingDef Class="RWBYRemnant.ThingDef_RideBullet" ParentName="BaseBullet">
 		<defName>Bullet_Emerald_Sickle_Hook_Return</defName>
-		<label>Melodic Cudgel hook</label>
+		<label>Thief's Respite hook</label>
 		<thingClass>RWBYRemnant.Projectile_RideBullet</thingClass>
 		<graphicData>
 			<texPath>Things/Projectile/Emerald_Sickle_Projectile_Return</texPath>
@@ -128,12 +128,12 @@
 		</projectile>
 	</ThingDef>
 
-	<!-- Emeralds's Weapon melee with hook, not craftable-->
+	<!-- Thief's Respite melee with hook, not craftable-->
 
 	<ThingDef ParentName="BaseMeleeWeapon_RWBY">
 		<defName>RWBY_Emerald_Sickle</defName>
-		<label>Emeralds's Weapon</label>
-		<description>Emerald's Weapons are a pair of convertible revolver-sickles wielded by Emerald Sustrai.</description>
+		<label>Thief's Respite</label>
+		<description>Thief's Respite are a pair of convertible revolver-sickles wielded by Emerald Sustrai.</description>
 		<graphicData>
 			<texPath>Things/Item/Equipment/Weapons/Emerald_Sickle</texPath>
 			<graphicClass>Graphic_Single</graphicClass>

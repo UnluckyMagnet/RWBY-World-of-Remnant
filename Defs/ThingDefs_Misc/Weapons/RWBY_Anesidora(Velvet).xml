@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-	<!-- Velvet's Camera custom bullet -->
+	<!-- Anesidora custom bullet -->
 
 	<ThingDef Class="RWBYRemnant.ThingDef_CameraBullet" ParentName="BaseBullet">
 		<defName>Bullet_Velvet_Camera</defName>
@@ -19,12 +19,12 @@
 		</projectile>
 	</ThingDef>
 
-	<!-- Velvet's Camera, it's for shooting... photos -->
+	<!-- Anesidora, it's for shooting... photos -->
 
 	<ThingDef ParentName="BaseMeleeWeapon_RWBY">
 		<defName>RWBY_Velvet_Camera</defName>
-		<label>Velvet's Camera</label>
-		<description>Velvet's Weapon, belonging to Velvet Scarlatina, consists of a camera and a box. The weapon is capable of creating solid "light copies" of any weapon Velvet has photographed, which she can then use in battle.</description>
+		<label>Anesidora</label>
+		<description>Anesidora is a camera belonging to Velvet Scarlatina which acts as her primary weapon. It is capable of creating solid "light copies" of any weapon Velvet has photographed using Hard-Light Dust, which she can then use in battle.</description>
 		<graphicData>
 			<texPath>Things/Item/Equipment/Weapons/Velvet_Camera</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -90,12 +90,12 @@
 		</tools>
 	</ThingDef>
 
-	<!-- Velvet's Camera Box, craftable -->
+	<!-- Anesidora Box, craftable -->
 
 	<ThingDef ParentName="BaseCraftableMeleeWeapon_RWBY">
 		<defName>RWBY_Velvet_Camera_Box</defName>
-		<label>Velvet's Camera Box</label>
-		<description>Velvet's Weapon, belonging to Velvet Scarlatina, consists of a camera and a box. The weapon is capable of creating solid "light copies" of any weapon Velvet has photographed, which she can then use in battle.</description>
+		<label>Anesidora</label>
+		<description>Anesidora is a camera belonging to Velvet Scarlatina which acts as her primary weapon. It is capable of creating solid "light copies" of any weapon Velvet has photographed using Hard-Light Dust, which she can then use in battle.</description>
 		<equipmentType>None</equipmentType>
 		<graphicData>
 			<texPath>Things/Item/Equipment/Weapons/Velvet_Camera_Box_north</texPath>

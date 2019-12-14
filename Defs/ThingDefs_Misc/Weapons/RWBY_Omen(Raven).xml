@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-	<!-- Raven's Sword base form is craftable, needs Scabbard to transform -->
+	<!-- Omen base form is craftable, needs Scabbard to transform -->
 
 	<ThingDef ParentName="BaseCraftableMeleeWeapon_RWBY">
 		<defName>RWBY_Raven_Sword</defName>
-		<label>Raven's Sword</label>
-		<description>Raven's weapon is a long, single-edged, one-handed sword of Japanese design, with a trigger built into the hilt and cross-guard rather than the traditional tsuba.</description>
+		<label>Omen</label>
+		<description>Omen weapon is a long, single-edged, one-handed sword of Japanese design, with a trigger built into the hilt and cross-guard rather than the traditional tsuba.</description>
 		<graphicData>
 			<texPath>Things/Item/Equipment/Weapons/Raven_Sword</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -72,8 +72,8 @@
 
 	<ThingDef ParentName="BaseMeleeWeapon_RWBY">
 		<defName>RWBY_Raven_Sword_Fire</defName>
-		<label>Raven's Sword</label>
-		<description>Raven's weapon is a long, single-edged, one-handed sword of Japanese design, with a trigger built into the hilt and cross-guard rather than the traditional tsuba.</description>
+		<label>Omen</label>
+		<description>Omen weapon is a long, single-edged, one-handed sword of Japanese design, with a trigger built into the hilt and cross-guard rather than the traditional tsuba.</description>
 		<graphicData>
 			<texPath>Things/Item/Equipment/Weapons/Raven_Sword_Fire</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -137,8 +137,8 @@
 
 	<ThingDef ParentName="BaseMeleeWeapon_RWBY">
 		<defName>RWBY_Raven_Sword_Ice</defName>
-		<label>Raven's Sword</label>
-		<description>Raven's weapon is a long, single-edged, one-handed sword of Japanese design, with a trigger built into the hilt and cross-guard rather than the traditional tsuba.</description>
+		<label>Omen</label>
+		<description>Omen weapon is a long, single-edged, one-handed sword of Japanese design, with a trigger built into the hilt and cross-guard rather than the traditional tsuba.</description>
 		<graphicData>
 			<texPath>Things/Item/Equipment/Weapons/Raven_Sword_Ice</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -202,8 +202,8 @@
 
 	<ThingDef ParentName="BaseMeleeWeapon_RWBY">
 		<defName>RWBY_Raven_Sword_Lightning</defName>
-		<label>Raven's Sword</label>
-		<description>Raven's weapon is a long, single-edged, one-handed sword of Japanese design, with a trigger built into the hilt and cross-guard rather than the traditional tsuba.</description>
+		<label>Omen</label>
+		<description>Omen weapon is a long, single-edged, one-handed sword of Japanese design, with a trigger built into the hilt and cross-guard rather than the traditional tsuba.</description>
 		<graphicData>
 			<texPath>Things/Item/Equipment/Weapons/Raven_Sword_Lightning</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -265,12 +265,12 @@
 		</tools>
 	</ThingDef>
 
-	<!-- Raven's Scabbard, craftable -->
+	<!-- Omen Scabbard, craftable -->
 
 	<ThingDef ParentName="BaseCraftableMeleeWeapon_RWBY">
 		<defName>RWBY_Raven_Scabbard</defName>
-		<label>Raven's Scabbard</label>
-		<description>Raven's scabbard contains a rotary chamber filled with various types of Dust blades.</description>
+		<label>Omen's Scabbard</label>
+		<description>Omen's scabbard contains a rotary chamber filled with various types of Dust blades.</description>
 		<equipmentType>None</equipmentType>
 		<graphicData>
 			<texPath>Things/Item/Equipment/Weapons/Raven_Scabbard_east</texPath>

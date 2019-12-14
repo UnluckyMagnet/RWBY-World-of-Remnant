@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-	<!-- Blunderbuss custom bullet -->
+	<!-- Blowhard custom bullet -->
 
 	<ThingDef ParentName="BaseBullet">
 		<defName>Bullet_Blunderbuss</defName>
@@ -19,12 +19,12 @@
 		</projectile>
 	</ThingDef>
 
-	<!-- Blunderbuss base weapon, shotgun form, craftable-->
+	<!-- Blowhard base weapon, shotgun form, craftable-->
 
 	<ThingDef ParentName="BaseMakeableGun_RWBY">
 		<defName>RWBY_Blunderbuss_Shotgun</defName>
-		<label>Blunderbuss</label>
-		<description>Port's Blunderbuss is the weapon wielded by Professor Peter Port. It is a cross between a blunderbuss and a battle axe.</description>
+		<label>Blowhard</label>
+		<description>Blowhard is the weapon wielded by Professor Peter Port. It is a cross between a blunderbuss and a battle axe.</description>
 		<graphicData>
 			<texPath>Things/Item/Equipment/Weapons/Blunderbuss_Shotgun</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -92,12 +92,12 @@
 		</tools>
 	</ThingDef>
 
-	<!-- Magnhild melee mode, not craftable -->
+	<!-- Blowhard melee mode, not craftable -->
 
 	<ThingDef ParentName="BaseMeleeWeapon_RWBY">
 		<defName>RWBY_Blunderbuss_Axe</defName>
-		<label>Blunderbuss</label>
-		<description>Port's Blunderbuss is the weapon wielded by Professor Peter Port. It is a cross between a blunderbuss and a battle axe.</description>
+		<label>Blowhard</label>
+		<description>Blowhard is the weapon wielded by Professor Peter Port. It is a cross between a blunderbuss and a battle axe.</description>
 		<graphicData>
 			<texPath>Things/Item/Equipment/Weapons/Blunderbuss_Axe</texPath>
 			<graphicClass>Graphic_Single</graphicClass>

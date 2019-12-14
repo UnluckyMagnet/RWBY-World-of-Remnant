@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-	<!-- Coco Handbag, craftable -->
+	<!-- Gianduja Handbag, craftable -->
 
 	<ThingDef ParentName="BaseCraftableMeleeWeapon_RWBY">
 		<defName>RWBY_Coco_Handbag</defName>
-		<label>Coco's Handbag</label>
-		<description>Coco's Handbag is Coco Adel's weapon of choice. Because of the weight that is concealed in the handbag, it can be used as a powerful bludgeoning weapon.</description>
+		<label>Gianduja</label>
+		<description>Gianduja is Coco Adel's weapon of choice. Because of the weight that is concealed in the handbag, it can be used as a powerful bludgeoning weapon.</description>
 		<graphicData>
 			<texPath>Things/Item/Equipment/Weapons/Coco_Handbag</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -47,11 +47,11 @@
 		</tools>		
 	</ThingDef>
 
-	<!-- Coco Minigun custom bullet -->
+	<!-- Gianduja Minigun custom bullet -->
 
 	<ThingDef ParentName="BaseBullet">
 		<defName>Bullet_Coco_Gun</defName>
-		<label>Coco's Minigun bullet</label>
+		<label>Gianduja bullet</label>
 		<graphicData>
 			<texPath>Things/Projectile/Bullet_Small</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -63,12 +63,12 @@
 		</projectile>
 	</ThingDef>
 
-	<!-- Coco Minigun, not craftable -->
+	<!-- Gianduja Minigun, not craftable -->
 
 	<ThingDef ParentName="BaseGun_RWBY">
 		<defName>RWBY_Coco_Gun</defName>
-		<label>Coco's Minigun</label>
-		<description>Coco's Handbag is Coco Adel's weapon of choice. Because of the weight that is concealed in the handbag, it can be used as a powerful bludgeoning weapon.</description>
+		<label>Gianduja</label>
+		<description>Gianduja is Coco Adel's weapon of choice. Because of the weight that is concealed in the handbag, it can be used as a powerful bludgeoning weapon.</description>
 		<graphicData>
 			<texPath>Things/Item/Equipment/Weapons/Coco_Minigun</texPath>
 			<graphicClass>Graphic_Single</graphicClass>

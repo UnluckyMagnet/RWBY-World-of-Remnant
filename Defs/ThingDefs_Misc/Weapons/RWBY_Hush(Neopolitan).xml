@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-	<!-- Neopolitan's Umbrella, open, can act as shield -->
+	<!-- Hush, open, can act as shield -->
 
 	<ThingDef ParentName="BaseMeleeWeapon_RWBY">
 		<defName>RWBY_Neo_Umbrella_Open</defName>
-		<label>Neopolitan's Umbrella</label>
-		<description>Neopolitan's Umbrella can act as a shield or weapon. The umbrella itself is either very strong or very well-protected with Aura, as it has repeatedly been able to block explosive shells.</description>
+		<label>Hush</label>
+		<description>Hush is Neopolitan's weapon of choice and can act as a shield or weapon. The umbrella itself is either very strong or very well-protected with Aura, as it has repeatedly been able to block explosive shells.</description>
 		<graphicData>
 			<texPath>Things/Item/Equipment/Weapons/Neo_Umbrella_open</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -87,12 +87,12 @@
 		</tools>
 	</ThingDef>
 
-	<!-- Neopolitan's Umbrella closed, melee can do poke/blunt damage -->
+	<!-- Hush closed, melee can do poke/blunt damage -->
 
 	<ThingDef ParentName="BaseCraftableMeleeWeapon_RWBY">
 		<defName>RWBY_Neo_Umbrella_Closed</defName>
-		<label>Neopolitan's Umbrella</label>
-		<description>Neopolitan's Umbrella can act as a shield or weapon. The umbrella itself is either very strong or very well-protected with Aura, as it has repeatedly been able to block explosive shells.</description>
+		<label>Hush</label>
+		<description>Hush is Neopolitan's weapon of choice and can act as a shield or weapon. The umbrella itself is either very strong or very well-protected with Aura, as it has repeatedly been able to block explosive shells.</description>
 		<graphicData>
 			<texPath>Things/Item/Equipment/Weapons/Neo_Umbrella_closed</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -149,12 +149,12 @@
 		</tools>
 	</ThingDef>
 
-	<!-- Neopolitan's Umbrella blade version, melee can do stab/cut damage -->
+	<!-- Hush blade version, melee can do stab/cut damage -->
 
 	<ThingDef ParentName="BaseMeleeWeapon_RWBY">
 		<defName>RWBY_Neo_Umbrella_Blade</defName>
-		<label>Neopolitan's Umbrella</label>
-		<description>Neopolitan's Umbrella can act as a shield or weapon. The umbrella itself is either very strong or very well-protected with Aura, as it has repeatedly been able to block explosive shells.</description>
+		<label>Hush</label>
+		<description>Hush is Neopolitan's weapon of choice and can act as a shield or weapon. The umbrella itself is either very strong or very well-protected with Aura, as it has repeatedly been able to block explosive shells.</description>
 		<graphicData>
 			<texPath>Things/Item/Equipment/Weapons/Neo_Umbrella_blade</texPath>
 			<graphicClass>Graphic_Single</graphicClass>

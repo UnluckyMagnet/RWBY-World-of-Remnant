@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-	<!-- Blunderbuss custom bullet -->
+	<!-- Antiquity's Roast custom bullet -->
 
 	<ThingDef ParentName="BaseBullet">
 		<defName>Bullet_Oobleck</defName>
@@ -19,12 +19,12 @@
 		</projectile>
 	</ThingDef>
 
-	<!-- Thermos base weapon, base form, craftable -->
+	<!-- Antiquity's Roast base weapon, base form, craftable -->
 
 	<ThingDef ParentName="BaseCraftableMeleeWeapon_RWBY">
 		<defName>RWBY_Thermos</defName>
-		<label>Thermos</label>
-		<description>Oobleck's Thermos is Bartholomew Oobleck's weapon of choice. When called into action, Oobleck can deploy his thermos as a weapon, telescoping it into the shape of a torch when its flame is activated.</description>
+		<label>Antiquity's Roast</label>
+		<description>Antiquity's Roast is Bartholomew Oobleck's weapon of choice. When called into action, Oobleck can deploy his thermos as a weapon, telescoping it into the shape of a torch when its flame is activated.</description>
 		<graphicData>
 			<texPath>Things/Item/Equipment/Weapons/Thermos</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -71,12 +71,12 @@
 		</tools>
 	</ThingDef>
 
-	<!-- Thermos torch mode, not craftable -->
+	<!-- Antiquity's Roast torch mode, not craftable -->
 
 	<ThingDef ParentName="BaseGun_RWBY">
 		<defName>RWBY_Thermos_Torch</defName>
-		<label>Thermos</label>
-		<description>Oobleck's Thermos is Bartholomew Oobleck's weapon of choice. When called into action, Oobleck can deploy his thermos as a weapon, telescoping it into the shape of a torch when its flame is activated.</description>
+		<label>Antiquity's Roast</label>
+		<description>Antiquity's Roast is Bartholomew Oobleck's weapon of choice. When called into action, Oobleck can deploy his thermos as a weapon, telescoping it into the shape of a torch when its flame is activated.</description>
 		<graphicData>
 			<texPath>Things/Item/Equipment/Weapons/Thermos_Torch</texPath>
 			<graphicClass>Graphic_Single</graphicClass>

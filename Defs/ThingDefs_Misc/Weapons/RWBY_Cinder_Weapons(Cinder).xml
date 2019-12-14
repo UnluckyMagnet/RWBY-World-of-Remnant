@@ -53,12 +53,12 @@
 		</projectile>
 	</ThingDef>
 
-	<!-- Cinder base weapon, melee, dual blades, craftable -->
+	<!-- Midnight base weapon, melee, dual blades, craftable -->
 
 	<ThingDef ParentName="BaseCraftableMeleeWeapon_RWBY">
 		<defName>RWBY_Cinder_Metal_Blades</defName>
-		<label>Cinder's Metal Blades</label>
-		<description>Cinder's old weapon is a metal-based weapon with multiple forms created by Cinder Fall.</description>
+		<label>Midnight</label>
+		<description>Midnight is Cinder's old weapon and a metal-based weapon with multiple forms created by Cinder Fall.</description>
 		<graphicData>
 			<texPath>Things/Item/Equipment/Weapons/Cinder_Metal_Blades</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -110,12 +110,12 @@
 		</tools>
 	</ThingDef>
 
-	<!-- Cinder weapon, ranged, bow -->
+	<!-- Midnight weapon, ranged, bow -->
 
 	<ThingDef ParentName="BaseGun_RWBY">
 		<defName>RWBY_Cinder_Metal_Bow</defName>
-		<label>Cinder's Metal Bow</label>
-		<description>Cinder's old weapon is a metal-based weapon with multiple forms created by Cinder Fall.</description>
+		<label>Midnight</label>
+		<description>Midnight is Cinder's old weapon and a metal-based weapon with multiple forms created by Cinder Fall.</description>
 		<graphicData>
 			<texPath>Things/Item/Equipment/Weapons/Cinder_Metal_Bow</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
