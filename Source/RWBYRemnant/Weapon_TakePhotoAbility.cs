@@ -113,6 +113,11 @@ namespace RWBYRemnant
         {
             ThingWithComps cameraBox = (ThingWithComps)ThingMaker.MakeThing(RWBYDefOf.RWBY_Velvet_Camera_Box, null);
             cameraBox.TryGetComp<CompQuality>().SetQuality(parent.TryGetComp<CompQuality>().Quality, ArtGenerationContext.Colony);
+            if (parent.AllComps.Find(c => c.GetType().ToString() == "Infused.CompInfused") is ThingComp compInfused) // add Infused Mod compatibility
+            {
+                cameraBox.AllComps.RemoveAll(c => c.GetType().ToString() == "Infused.CompInfused");
+                cameraBox.AllComps.Add(compInfused);
+            }
             cameraBox.TryGetComp<Weapon_TakePhotoAbility>().ListOfDifferentPhotos = ListOfDifferentPhotos;
             cameraBox.HitPoints = parent.HitPoints;
             cameraBox.ThingID = parent.ThingID;

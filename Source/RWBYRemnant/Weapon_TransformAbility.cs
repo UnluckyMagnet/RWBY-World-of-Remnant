@@ -91,6 +91,11 @@ namespace RWBYRemnant
             if (compQualityOld != null)
             {
                 weaponToCreate.TryGetComp<CompQuality>().SetQuality(compQualityOld.Quality, ArtGenerationContext.Colony);
+                if (parent.AllComps.Find(c => c.GetType().ToString() == "Infused.CompInfused") is ThingComp compInfused) // add Infused Mod compatibility
+                {
+                    weaponToCreate.AllComps.RemoveAll(c => c.GetType().ToString() == "Infused.CompInfused");
+                    weaponToCreate.AllComps.Add(compInfused);
+                }
             }
             if (!ConsumeAmmunition()) return;
             weaponToCreate.ThingID = parent.ThingID;
