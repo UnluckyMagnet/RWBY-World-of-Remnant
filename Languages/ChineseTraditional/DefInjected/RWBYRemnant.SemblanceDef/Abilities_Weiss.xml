@@ -4,11 +4,11 @@
   <Weiss_SummonBoar.label>召喚獠牙野豬</Weiss_SummonBoar.label>
   <Weiss_SummonBoar.description>召喚我方獠牙野豬,持續時間很短.</Weiss_SummonBoar.description>
 
-  <Weiss_SummonArmaGigas.label>召喚Arma Gigas</Weiss_SummonArmaGigas.label>
-  <Weiss_SummonArmaGigas.description>召喚我方 Arma Gigas (without its sword),持續時間很短.</Weiss_SummonArmaGigas.description>
+  <Weiss_SummonArmaGigas.label>召喚武巨靈</Weiss_SummonArmaGigas.label>
+  <Weiss_SummonArmaGigas.description>召喚我方武巨靈(沒有武器),持續時間很短.</Weiss_SummonArmaGigas.description>
 
-  <Weiss_SummonArmaGigasSword.label>召喚Arma Gigas</Weiss_SummonArmaGigasSword.label>
-  <Weiss_SummonArmaGigasSword.description>召喚我方 Arma Gigas (with its sword),持續時間很短.</Weiss_SummonArmaGigasSword.description>
+  <Weiss_SummonArmaGigasSword.label>召喚武巨靈(劍)</Weiss_SummonArmaGigasSword.label>
+  <Weiss_SummonArmaGigasSword.description>召喚我方武巨靈(持有武器),持續時間很短.</Weiss_SummonArmaGigasSword.description>
 
   <Weiss_SummonLancer.label>召喚索矛蜂</Weiss_SummonLancer.label>
   <Weiss_SummonLancer.description>召喚我方索矛蜂,持續時間很短.</Weiss_SummonLancer.description>

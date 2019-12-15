@@ -16,7 +16,7 @@
   <!-- Forgot Aura -->
   <LetterLabelForgotAura>{PAWN_nameDef}忘記使用{PAWN_possessive}Aura</LetterLabelForgotAura>
   <LetterTextForgotAura>{PAWN_nameDef}在戰鬥中被擊中,因為忘記激活{PAWN_possessive}的Aura.這導致{PAWN_objective}實際受到傷害.</LetterTextForgotAura>
-  <MessageTextForgotAura>{PAWN_nameDef}忘記激活{PAWN_possessive} Aura</MessageTextForgotAura>
+  <MessageTextForgotAura>{PAWN_nameDef} forgot to activate {PAWN_possessive} Aura.</MessageTextForgotAura>
 
   <!-- Unlocked Semblance -->
   <LetterLabelUnlockSemblanceGeneral>解鎖外像力</LetterLabelUnlockSemblanceGeneral>
@@ -27,33 +27,36 @@
   <LetterTextUnlockSemblanceBlake>{PAWN_nameDef}習慣逃避{PAWN_possessive}問題,連{PAWN_possessive}外像力也跟逃跑有關.</LetterTextUnlockSemblanceBlake>
   <LetterTextUnlockSemblanceNora>{PAWN_nameDef}是怎麼活下來的？當然是靠{PAWN_possessive}隱藏的外像力.</LetterTextUnlockSemblanceNora>
   <LetterTextUnlockSemblanceJaune>{PAWN_nameDef}搞不懂怎麼辦到的,但是{PAWN_pronoun}能某種程度上加強別人的Aura,只需消耗{PAWN_possessive}Aura.這或許是{PAWN_possessive}外像力.</LetterTextUnlockSemblanceJaune>
-  <LetterTextUnlockSemblancePyrrha>這比想象中簡單多了,{PAWN_nameDef}發現了{PAWN_possessive}外像力. {PAWN_pronoun}不會刻意去展現,但實際上{PAWN_pronoun}並非打不倒的存在.</LetterTextUnlockSemblancePyrrha>
+  <LetterTextUnlockSemblancePyrrha>這比想像中簡單多了,{PAWN_nameDef}發現了{PAWN_possessive}外像力. {PAWN_pronoun}不會刻意去展現,但實際上{PAWN_pronoun}並非打不倒的存在.</LetterTextUnlockSemblancePyrrha>
   <LetterTextUnlockSemblanceRen>保持冷靜.什麼都不會發生. {PAWN_nameDef}開發出 {PAWN_possessive}外像力. {PAWN_pronoun}現在可以掩蓋人們的情緒.</LetterTextUnlockSemblanceRen>
   <LetterTextUnlockSemblanceQrow>{PAWN_nameDef}真的很倒楣……或者是說,{PAWN_objective}身邊的人都很倒楣,這大概是{PAWN_possessive}外像力的效果.</LetterTextUnlockSemblanceQrow>
   <LetterTextUnlockSemblanceCinder>{PAWN_nameDef}發現了{PAWN_possessive}外像力,{PAWN_pronoun}再也不怕火了,相反地,{PAWN_nameDef}現在喜歡玩火.</LetterTextUnlockSemblanceCinder>
   <LetterTextUnlockSemblanceHazel>{PAWN_nameDef}解鎖了{PAWN_possessive}外像力,利用這個外像力,{PAWN_objective}就再也不會被疼痛擊倒了.</LetterTextUnlockSemblanceHazel>
   <LetterTextUnlockSemblanceRaven>{PAWN_nameDef} senses that someone important to {PAWN_objective} is in trouble. {PAWN_pronoun} doesn't know how, but now {PAWN_nameDef} is able to rush in for help with {PAWN_possessive} Semblance. {PAWN_nameDef} can now form permanent bonds with people {PAWN_pronoun} really likes and can create portals to them.</LetterTextUnlockSemblanceRaven>
-  <LetterTextUnlockSemblanceVelvet>{PAWN_nameDef} really likes to socially interact with other people. {PAWN_nameDef} likes it so much, that {PAWN_pronoun} has developed a Semblance based on other people, making {PAWN_objective} able to mimic other people′s movement.</LetterTextUnlockSemblanceVelvet>
+  <LetterTextUnlockSemblanceVelvet>{PAWN_nameDef}真的很喜歡與人互動.因此{PAWN_pronoun} 發展出以他人為基底的外像力,讓{PAWN_objective}能夠模仿他人的動作.</LetterTextUnlockSemblanceVelvet>
 
   <!-- Pumkin Pete Hoodie Drop -->
   <LetterLabelPumpkinPetePodCrash>感謝您</LetterLabelPumpkinPetePodCrash>
   <LetterTextPumpkinPetePodCrash>感謝您購買50盒南瓜皮克的麥片.</LetterTextPumpkinPetePodCrash>
 
   <!-- Grimm events -->
-  <LetterLabelNuckelavee>Nuckelavee</LetterLabelNuckelavee>
-  <LetterTextNuckelavee>大量的負面情緒吸引了Nuckelavee。直到每個人都死了才會休息.</LetterTextNuckelavee>
+  <LetterLabelNuckelavee>半人馬</LetterLabelNuckelavee>
+  <LetterTextNuckelavee>大量的負面情緒吸引了半人馬,直到無人生還才會離去</LetterTextNuckelavee>
   <LetterLabelGrimmWandersIn>戮獸襲擊</LetterLabelGrimmWandersIn>
   <LetterTextGrimmWandersIn>一隻戮獸晃進你的視野中,在它吸引更多同伴前快點殺了它.</LetterTextGrimmWandersIn>
 
   <!-- Qrow semblance effects -->
-  <TextMote_Crow_WeaponSlipped>Weapon slipped</TextMote_Crow_WeaponSlipped>
+  <TextMote_Crow_WeaponSlipped>武器脫手</TextMote_Crow_WeaponSlipped>
   <TextMote_Crow_MissedRanged>Huh?</TextMote_Crow_MissedRanged>
-  <TextMote_Crow_MissedMelee>Slipped</TextMote_Crow_MissedMelee>
+  <TextMote_Crow_MissedMelee>滑倒</TextMote_Crow_MissedMelee>
   <TextMote_Crow_BitLip>Bit lip</TextMote_Crow_BitLip>
   <TextMote_Crow_StubbedToe>Stubbed toe</TextMote_Crow_StubbedToe>
   <MessageTextQrowRaid>This raid is stronger than usual, how come?</MessageTextQrowRaid>
 
   <!-- Aura Steal -->
   <MessageFactionStoleAura>{0} 掠奪了{1}的Aura</MessageFactionStoleAura>
+
+  <!-- Raven Portal -->
+  <MessageTextNoPortalMap>Could not create portal to {PAWN_nameDef}. Target is not on any map.</MessageTextNoPortalMap>
 
 </LanguageData>
