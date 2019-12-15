@@ -8,13 +8,13 @@
   <Semblance_Ruby.degreeDatas.0.description>{PAWN_nameDef}的外像力能讓{PAWN_objective}以消耗Aura為代價,往任何{PAWN_pronoun}所選擇的方向以超乎尋常的速度衝刺,由於速度實在是太快了,常會讓人誤以為 {PAWN_pronoun}在瞬間移動.</Semblance_Ruby.degreeDatas.0.description>
 
   <Semblance_Yang.degreeDatas.0.label>Semblance Yang</Semblance_Yang.degreeDatas.0.label>
-  <Semblance_Yang.degreeDatas.0.description>{PAWN_nameDef}的外像力能讓{PAWN_objective}吸收每次被攻擊的能量,使自己更強大,運作機制似乎是{PAWN_nameDef}吸收動能後,重新導正能量來對付{PAWN_possessive} 敵人.</Semblance_Yang.degreeDatas.0.description>
+  <Semblance_Yang.degreeDatas.0.description>{PAWN_nameDef}'s Semblance lets {PAWN_objective} take the energy from every blow {PAWN_pronoun} takes and use it to get more powerful. This seems to be a form of kinetic energy absorption, with {PAWN_nameDef} subsequently redirecting said energy against {PAWN_possessive} opponent.</Semblance_Yang.degreeDatas.0.description>
 
   <Semblance_Weiss.degreeDatas.0.label>Semblance Weiss</Semblance_Weiss.degreeDatas.0.label>
   <Semblance_Weiss.degreeDatas.0.description>{PAWN_nameDef}的外像力讓{PAWN_objective}能創造多功能的符文,{PAWN_nameDef}也能召喚出以{PAWN_pronoun}打敗過的對手為外型的僕從.</Semblance_Weiss.degreeDatas.0.description>
 
   <Semblance_Blake.degreeDatas.0.label>Semblance Blake</Semblance_Blake.degreeDatas.0.label>
-  <Semblance_Blake.degreeDatas.0.description>{PAWN_nameDef}的外像力讓{PAWN_objective}能夠創造出影子替身,{PAWN_nameDef}能運用這些替身份散敵人注意、替{PAWN_objective}自身擋刀或短暫地躲避敵方.</Semblance_Blake.degreeDatas.0.description>
+  <Semblance_Blake.degreeDatas.0.description>{PAWN_nameDef}的外像力讓{PAWN_objective}能夠創造出影子替身,{PAWN_nameDef}能運用這些替身分散敵人注意、替{PAWN_objective}自身擋刀或短暫地躲避敵方.</Semblance_Blake.degreeDatas.0.description>
 
   <Semblance_Nora.degreeDatas.0.label>Semblance Nora</Semblance_Nora.degreeDatas.0.label>
   <Semblance_Nora.degreeDatas.0.description>{PAWN_nameDef}的外像力是能夠製造和引導電能流入{PAWN_possessive} 肌肉,讓{PAWN_objective}強化肌力,電流耗損轉化為{PAWN_nameDef}的Aura.</Semblance_Nora.degreeDatas.0.description>

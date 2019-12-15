@@ -4,7 +4,7 @@
   <Cinder_ShootFireCrystal.label>Shoot fire crytals</Cinder_ShootFireCrystal.label>
   <Cinder_ShootFireCrystal.description>Use Dust to create multiple fire crystal projectiles and shoot them at your enemies.</Cinder_ShootFireCrystal.description>
 
-  <Cinder_SummonExplosives.label>召喚explosives</Cinder_SummonExplosives.label>
+  <Cinder_SummonExplosives.label>Summon explosives</Cinder_SummonExplosives.label>
   <Cinder_SummonExplosives.description>Summon explosives under all enemies.</Cinder_SummonExplosives.description>
 
   <Cinder_CreateScimitar.label>Create glass Scimitar</Cinder_CreateScimitar.label>

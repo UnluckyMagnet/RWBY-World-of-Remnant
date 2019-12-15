@@ -3,30 +3,30 @@
 
   <!-- Gambol Shroud melee cleaver form, craftable -->
 
-  <RWBY_Gambol_Shroud_Cleaver.label>Gambol Shroud</RWBY_Gambol_Shroud_Cleaver.label>
-  <RWBY_Gambol_Shroud_Cleaver.description>Gambol Shroud, classified as a "Variant Ballistic Chain Scythe" (VBCS), is the weapon of Blake Belladonna.</RWBY_Gambol_Shroud_Cleaver.description>
+  <RWBY_Gambol_Shroud_Cleaver.label>躍影飛綾</RWBY_Gambol_Shroud_Cleaver.label>
+  <RWBY_Gambol_Shroud_Cleaver.description>躍影飛綾,歸類為“變體彈道鏈鐮刀”(VBCS), 是Blake Belladonna的武器.</RWBY_Gambol_Shroud_Cleaver.description>
   <RWBY_Gambol_Shroud_Cleaver.tools.0.label>handle</RWBY_Gambol_Shroud_Cleaver.tools.0.label>
   <RWBY_Gambol_Shroud_Cleaver.tools.1.label>edge</RWBY_Gambol_Shroud_Cleaver.tools.1.label>
 
 
   <!-- Gambol Shroud melee Katana form, not craftable -->
 
-  <RWBY_Gambol_Shroud_Katana.label>Gambol Shroud</RWBY_Gambol_Shroud_Katana.label>
-  <RWBY_Gambol_Shroud_Katana.description>Gambol Shroud, classified as a "Variant Ballistic Chain Scythe" (VBCS), is the weapon of Blake Belladonna.</RWBY_Gambol_Shroud_Katana.description>
-  <RWBY_Gambol_Shroud_Katana.tools.0.label>point</RWBY_Gambol_Shroud_Katana.tools.0.label>
-  <RWBY_Gambol_Shroud_Katana.tools.1.label>edge</RWBY_Gambol_Shroud_Katana.tools.1.label>
+  <RWBY_Gambol_Shroud_Katana.label>躍影飛綾(武士刀)</RWBY_Gambol_Shroud_Katana.label>
+  <RWBY_Gambol_Shroud_Katana.description>躍影飛綾,歸類為“變體彈道鏈鐮刀”(VBCS), 是Blake Belladonna的武器.</RWBY_Gambol_Shroud_Katana.description>
+  <RWBY_Gambol_Shroud_Katana.tools.0.label>刀尖</RWBY_Gambol_Shroud_Katana.tools.0.label>
+  <RWBY_Gambol_Shroud_Katana.tools.1.label>刀刃</RWBY_Gambol_Shroud_Katana.tools.1.label>
 
 
   <!-- Gambol Shroud custom bullet -->
 
-  <Bullet_Gambol_Shroud.label>Gambol Shroud bullet</Bullet_Gambol_Shroud.label>
+  <Bullet_Gambol_Shroud.label>子彈(躍影飛綾)</Bullet_Gambol_Shroud.label>
 
 
   <!-- Gambol Shroud pistol form, not craftable -->
 
-  <RWBY_Gambol_Shroud_Gun.label>Gambol Shroud</RWBY_Gambol_Shroud_Gun.label>
-  <RWBY_Gambol_Shroud_Gun.description>Gambol Shroud, classified as a "Variant Ballistic Chain Scythe" (VBCS), is the weapon of Blake Belladonna.</RWBY_Gambol_Shroud_Gun.description>
-  <RWBY_Gambol_Shroud_Gun.tools.0.label>barrel</RWBY_Gambol_Shroud_Gun.tools.0.label>
+  <RWBY_Gambol_Shroud_Gun.label>躍影飛綾(手槍)</RWBY_Gambol_Shroud_Gun.label>
+  <RWBY_Gambol_Shroud_Gun.description>躍影飛綾,歸類為“變體彈道鏈鐮刀”(VBCS), 是Blake Belladonna的武器.</RWBY_Gambol_Shroud_Gun.description>
+  <RWBY_Gambol_Shroud_Gun.tools.0.label>槍管</RWBY_Gambol_Shroud_Gun.tools.0.label>
 
 
 </LanguageData>

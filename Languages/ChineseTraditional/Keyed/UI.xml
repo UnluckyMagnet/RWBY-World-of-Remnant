@@ -5,7 +5,7 @@
   <TransformLabel>切換</TransformLabel>
   <ThrowDustLabel>投擲 {0}</ThrowDustLabel>
   <ThrowDustDescription>投擲一個{0}</ThrowDustDescription>
-  <LightCopyLabel>Copy {0}</LightCopyLabel>
+  <LightCopyLabel>複製{0}</LightCopyLabel>
   <LightCopyDescription>Create a light copy from the photo of: {0}. The light copy will vanish once it is no longer used.</LightCopyDescription>
 
   <LightCopyPhotoClearLabel>刪除照片</LightCopyPhotoClearLabel>
@@ -16,7 +16,7 @@
 
   <!-- Gizmo disabled reasons -->
   <DisabledNotEquipped>{0}在地上</DisabledNotEquipped>
-  <DisabledNoDustPowderAmmunition>{0} needed to use this ability</DisabledNoDustPowderAmmunition>
+  <DisabledNoDustPowderAmmunition>這個能力需要有{0}. </DisabledNoDustPowderAmmunition>
   <DisabledStillShooting>{0}仍在拍攝</DisabledStillShooting>
   <DisabledRavenSword>沒有裝備劍鞘無法轉換屬性</DisabledRavenSword>
   <DisabledNotEnoughAura>{0}的Aura不足,無法使用能力</DisabledNotEnoughAura>
@@ -30,7 +30,7 @@
   <SemblanceTooltip>角色能通過事件或行動來發掘自己的外像力 （默認：啟用）</SemblanceTooltip>
   <AmmunitionLabel>角色自動收集彈藥</AmmunitionLabel>
   <AmmunitionTooltip>如果他們的武器或能力有需要,角色會試圖攜帶塵晶或塵晶粉.可能對性能產生輕微影響.（默認：啟用）</AmmunitionTooltip>
-  <EveryoneMakesPhotosForJoyLabel>每個角色都可以拍照娛樂</EveryoneMakesPhotosForJoyLabel>
+ <EveryoneMakesPhotosForJoyLabel>每個角色都可以拍照娛樂</EveryoneMakesPhotosForJoyLabel>
   <EveryoneMakesPhotosForJoyTooltip>即使沒有Semblance Velvet,每個帶有照相機的角色都可以拍照獲得娛樂（默認：禁用）</EveryoneMakesPhotosForJoyTooltip>
   <HideAuraWhenMultiselectLabel>選擇多個殖民者時隱藏Aura</HideAuraWhenMultiselectLabel>
   <HideAuraWhenMultiselectTooltip>如果選擇了多個殖民者,則不顯示Aura狀態和技能（默認：禁用）</HideAuraWhenMultiselectTooltip>
