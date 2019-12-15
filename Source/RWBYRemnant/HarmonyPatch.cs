@@ -188,7 +188,7 @@ namespace RWBYRemnant
             if (!LoadedModManager.GetMod<RemnantMod>().GetSettings<RemnantModSettings>().semblanceUnlockable) return;
             if (__instance is Pawn pawn && pawn.RaceProps.intelligence != Intelligence.Animal && dinfo.Instigator is Pawn instigatorPawn && instigatorPawn.story != null && instigatorPawn.story.traits.HasTrait(RWBYDefOf.RWBY_Aura) && instigatorPawn.Faction == Faction.OfPlayer)
             {
-                if (Rand.Chance(0.005f * Math.Min(1f, (dinfo.Amount / 40f)))) SemblanceUtility.UnlockSemblance(instigatorPawn, RWBYDefOf.Semblance_Ruby, "LetterTextUnlockSemblanceRuby");
+                if (Rand.Chance(0.005f * Math.Min(1f, (dinfo.Amount / 30f)))) SemblanceUtility.UnlockSemblance(instigatorPawn, RWBYDefOf.Semblance_Ruby, "LetterTextUnlockSemblanceRuby");
             }
         }
 

@@ -6,7 +6,7 @@
 	<ThingDef ParentName="BaseCraftableMeleeWeapon_RWBY">
 		<defName>RWBY_Raven_Sword</defName>
 		<label>Omen</label>
-		<description>Omen weapon is a long, single-edged, one-handed sword of Japanese design, with a trigger built into the hilt and cross-guard rather than the traditional tsuba.</description>
+		<description>Omen is a long, single-edged, one-handed sword of Japanese design, with a trigger built into the hilt and cross-guard rather than the traditional tsuba.</description>
 		<graphicData>
 			<texPath>Things/Item/Equipment/Weapons/Raven_Sword</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -73,7 +73,7 @@
 	<ThingDef ParentName="BaseMeleeWeapon_RWBY">
 		<defName>RWBY_Raven_Sword_Fire</defName>
 		<label>Omen</label>
-		<description>Omen weapon is a long, single-edged, one-handed sword of Japanese design, with a trigger built into the hilt and cross-guard rather than the traditional tsuba.</description>
+		<description>Omen is a long, single-edged, one-handed sword of Japanese design, with a trigger built into the hilt and cross-guard rather than the traditional tsuba.</description>
 		<graphicData>
 			<texPath>Things/Item/Equipment/Weapons/Raven_Sword_Fire</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -138,7 +138,7 @@
 	<ThingDef ParentName="BaseMeleeWeapon_RWBY">
 		<defName>RWBY_Raven_Sword_Ice</defName>
 		<label>Omen</label>
-		<description>Omen weapon is a long, single-edged, one-handed sword of Japanese design, with a trigger built into the hilt and cross-guard rather than the traditional tsuba.</description>
+		<description>Omen is a long, single-edged, one-handed sword of Japanese design, with a trigger built into the hilt and cross-guard rather than the traditional tsuba.</description>
 		<graphicData>
 			<texPath>Things/Item/Equipment/Weapons/Raven_Sword_Ice</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -203,7 +203,7 @@
 	<ThingDef ParentName="BaseMeleeWeapon_RWBY">
 		<defName>RWBY_Raven_Sword_Lightning</defName>
 		<label>Omen</label>
-		<description>Omen weapon is a long, single-edged, one-handed sword of Japanese design, with a trigger built into the hilt and cross-guard rather than the traditional tsuba.</description>
+		<description>Omen is a long, single-edged, one-handed sword of Japanese design, with a trigger built into the hilt and cross-guard rather than the traditional tsuba.</description>
 		<graphicData>
 			<texPath>Things/Item/Equipment/Weapons/Raven_Sword_Lightning</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
