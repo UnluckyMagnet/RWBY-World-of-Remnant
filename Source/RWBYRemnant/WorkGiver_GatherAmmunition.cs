@@ -25,6 +25,7 @@ namespace RWBYRemnant
         public override bool ShouldSkip(Pawn pawn, bool forced = false)
         {
             if (!LoadedModManager.GetMod<RemnantMod>().GetSettings<RemnantModSettings>().autoCollectAmmunition) return true;
+            if (pawn.NonHumanlikeOrWildMan()) return true;
             List<ThingDef> thingDefs = AmmunitionUtility.NeedsAmmunition(pawn).ToList();
             if (thingDefs.Count() == 0) return true;
             if (pawn.Map.GetDirectlyHeldThings().ToList().FindAll(t => !t.IsForbidden(pawn) && thingDefs.Contains(t.def)).Count() == 0) return true;
