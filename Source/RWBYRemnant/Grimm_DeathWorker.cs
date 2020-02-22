@@ -19,7 +19,7 @@ namespace RWBYRemnant
                 if (Rand.Chance(corpse.InnerPawn.RaceProps.AnyPawnKind.combatPower / 100000))
                 {
                     ThingWithComps createdWeapon = (ThingWithComps)ThingMaker.MakeThing(RWBYDefOf.RWBY_Grimm_Glove);
-                    createdWeapon.TryGetComp<CompQuality>().SetQuality((QualityCategory)Rand.Range(0, 6), ArtGenerationContext.Colony);
+                    createdWeapon.TryGetComp<CompQuality>().SetQuality((QualityCategory)Rand.RangeInclusive(0, 6), ArtGenerationContext.Colony);
                     GenSpawn.Spawn(createdWeapon, corpse.Position, corpse.Map);
                 }
             }

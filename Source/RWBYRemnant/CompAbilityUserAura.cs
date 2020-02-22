@@ -277,7 +277,7 @@ namespace RWBYRemnant
                 eatenPumkinPetesCounter = 0;
                 List<Thing> things = new List<Thing>();
                 ThingWithComps thingWithComps = (ThingWithComps)ThingMaker.MakeThing(RWBYDefOf.Apparel_PumpkinPetes, GenStuff.RandomStuffFor(RWBYDefOf.Apparel_PumpkinPetes));
-                thingWithComps.TryGetComp<CompQuality>().SetQuality((QualityCategory)Rand.Range(0, 6), ArtGenerationContext.Colony);
+                thingWithComps.TryGetComp<CompQuality>().SetQuality((QualityCategory)Rand.RangeInclusive(0, 6), ArtGenerationContext.Colony);
                 things.Add(thingWithComps);
                 IntVec3 intVec = DropCellFinder.RandomDropSpot(AbilityUser.Map);
                 DropPodUtility.DropThingsNear(intVec, AbilityUser.Map, things, 110, false, false, false);

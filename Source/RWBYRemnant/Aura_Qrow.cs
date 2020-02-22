@@ -76,7 +76,7 @@ namespace RWBYRemnant
             {
                 if (dinfo.Def.isRanged)
                 {
-                    switch (Rand.Range(1, 4))
+                    switch (Rand.RangeInclusive(1, 4))
                     {
                         case 1:
                             RWBYDefOf.Ricochet1.PlayOneShot(new TargetInfo(pawn.Position, pawn.Map, false));

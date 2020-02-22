@@ -50,7 +50,7 @@ namespace RWBYRemnant
 
         public void SetAttractGrimmTimer()
         {
-            attractGrimmTimer = GenTicks.SecondsToTicks(Rand.Range(60, 120));
+            attractGrimmTimer = GenTicks.SecondsToTicks(Rand.RangeInclusive(60, 120));
         }
 
         public override void ExposeData()

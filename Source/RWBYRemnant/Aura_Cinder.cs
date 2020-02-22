@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Verse;
+﻿using Verse;
 using RimWorld;
 using UnityEngine;
 using Verse.Sound;
@@ -13,7 +12,7 @@ namespace RWBYRemnant
             if (currentEnergy == 0f) return false;
             if ((pawn.Drafted || pawn.IsFighting()) && dinfo.Weapon != null && dinfo.Weapon.IsRangedWeapon && Rand.Chance(0.5f) && TryConsumeAura(0.02f))
             {
-                switch (Rand.Range(1, 4))
+                switch (Rand.RangeInclusive(1, 4))
                 {
                     case 1:
                         RWBYDefOf.Ricochet1.PlayOneShot(new TargetInfo(pawn.Position, pawn.Map, false));
