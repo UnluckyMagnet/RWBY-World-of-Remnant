@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Verse;
 using AbilityUser;
 using UnityEngine;
+using System.Linq;
 
 namespace RWBYRemnant
 {
@@ -14,6 +15,7 @@ namespace RWBYRemnant
         {
             base.CompTick();
             if (Pawn.health.hediffSet.HasHediff(RWBYDefOf.RWBY_AuraStolen)) return;
+            if (hiddenSemblance == null) GenerateHiddenSemblance();
             if (IsInitialized)
             {
                 aura.Tick();
@@ -47,10 +49,6 @@ namespace RWBYRemnant
                     aura = null;
                     AbilityData.AllPowers.Clear();
                 }
-                //if (AbilityUser.story.traits.HasTrait(RWBYDefOf.Semblance_Weiss))
-                //{
-                //    if (!AbilityData.AllPowers.Any(p => p.Def == RWBYDefOf.Weiss_SummonLancer)) AddPawnAbility(RWBYDefOf.Weiss_SummonLancer);
-                //}
             }
         }
 
@@ -248,6 +246,52 @@ namespace RWBYRemnant
             }
         }
 
+        public void GenerateHiddenSemblance()
+        {
+            List<TraitDef> traitDefs = new List<TraitDef>();
+            foreach (SkillRecord skillRecord in AbilityUser.skills.skills)
+            {
+                if (skillRecord.passion == Passion.Minor)
+                {
+                    traitDefs.AddRange(SemblanceUtility.GetSemblancesForPassion(skillRecord.def));
+                }
+                else if (skillRecord.passion == Passion.Major)
+                {
+                    traitDefs.AddRange(SemblanceUtility.GetSemblancesForPassion(skillRecord.def));
+                    traitDefs.AddRange(SemblanceUtility.GetSemblancesForPassion(skillRecord.def));
+                }
+            }
+            traitDefs.RemoveAll(t => AbilityUser.WorkTagIsDisabled(t.requiredWorkTags));
+            if (traitDefs.Count == 0)
+            {
+                hiddenSemblance = SemblanceUtility.semblanceList.FindAll(s => !AbilityUser.WorkTagIsDisabled(s.requiredWorkTags)).RandomElement(); // should never be empty, as there are Semblances without required workTags
+            }
+            else
+            {
+                List<TraitDef> allPossibleTraits = traitDefs.Distinct().ToList();
+                Dictionary<TraitDef, int> keyValuePairs = new Dictionary<TraitDef, int>();
+                foreach(TraitDef traitDef in traitDefs)
+                {
+                    if (keyValuePairs.ContainsKey(traitDef))
+                    {
+                        keyValuePairs[traitDef]++;
+                    }
+                    else
+                    {
+                        keyValuePairs.Add(traitDef, 1);
+                    }
+                }
+                int highestCount = keyValuePairs.Values.ToList().OrderByDescending(i => i).First();
+                List<TraitDef> mostMatchingTraits = new List<TraitDef>();
+                foreach (KeyValuePair<TraitDef, int> keyValuePair in keyValuePairs)
+                {
+                    if (keyValuePair.Value == highestCount) mostMatchingTraits.Add(keyValuePair.Key);
+                }
+                hiddenSemblance = mostMatchingTraits.RandomElement();
+                if (AbilityUser.IsColonistPlayerControlled) Log.Warning(hiddenSemblance.ToString());
+            }
+        }
+
         public override bool TryTransformPawn() // check if pawn can get an Aura
         {
             if (Pawn.health.hediffSet.HasHediff(RWBYDefOf.RWBY_AuraStolen)) return false;
@@ -293,10 +337,12 @@ namespace RWBYRemnant
                 Scribe_Deep.Look(ref aura, false, parent.ThingID.ToString() + "Aura");
             }
             Scribe_Values.Look<int>(ref eatenPumkinPetesCounter, "eatenPumkinPetesCounter", 0, false);
+            Scribe_Defs.Look<TraitDef>(ref hiddenSemblance, "hiddenSemblance");
             Scribe_Values.Look<int>(ref auraAutoUnlock, "auraAutoUnlock", Rand.Range(3600000, 7200000), false);
         }
 
         public int eatenPumkinPetesCounter = 0;
-        public int auraAutoUnlock = Rand.Range(3600000, 7200000); // between 1 and 2 ingame years
+        public TraitDef hiddenSemblance = null;
+        public int auraAutoUnlock = Rand.RangeInclusive(3600000, 7200000); // between 1 and 2 ingame years
     }
 }

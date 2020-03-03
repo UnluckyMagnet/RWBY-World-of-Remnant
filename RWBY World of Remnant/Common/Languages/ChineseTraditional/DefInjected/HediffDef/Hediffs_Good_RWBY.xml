@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <RWBY_Thermos_Caffeine.label>咖啡因</RWBY_Thermos_Caffeine.label>
+  <RWBY_Thermos_Caffeine.stages.0.label>initial</RWBY_Thermos_Caffeine.stages.0.label>
+  <RWBY_Thermos_Caffeine.stages.1.label>high</RWBY_Thermos_Caffeine.stages.1.label>
+  <RWBY_Thermos_Caffeine.stages.2.label>blackout</RWBY_Thermos_Caffeine.stages.2.label>
+
+  <RWBY_RubyDashForm.label>dash form</RWBY_RubyDashForm.label>
+  <RWBY_YangReturnDamage.label>return damage</RWBY_YangReturnDamage.label>
+  <RWBY_LightningBuff.label>electrically charged</RWBY_LightningBuff.label>
+  <RWBY_AmplifiedAura.label>擴增Aura</RWBY_AmplifiedAura.label>
+  <RWBY_MaskedEmotions.label>屏蔽情緒</RWBY_MaskedEmotions.label>
+  <RWBY_IgnorePain.label>屏蔽痛苦</RWBY_IgnorePain.label>
+
+  <RWBY_InjectedFireCrystal.label>注入火塵晶</RWBY_InjectedFireCrystal.label>
+  <RWBY_InjectedFireCrystal.stages.0.label>I</RWBY_InjectedFireCrystal.stages.0.label>
+  <RWBY_InjectedFireCrystal.stages.1.label>II</RWBY_InjectedFireCrystal.stages.1.label>
+  <RWBY_InjectedFireCrystal.stages.2.label>max</RWBY_InjectedFireCrystal.stages.2.label>
+
+  <RWBY_InjectedIceCrystal.label>注入冰塵晶</RWBY_InjectedIceCrystal.label>
+  <RWBY_InjectedIceCrystal.stages.0.label>I</RWBY_InjectedIceCrystal.stages.0.label>
+  <RWBY_InjectedIceCrystal.stages.1.label>II</RWBY_InjectedIceCrystal.stages.1.label>
+  <RWBY_InjectedIceCrystal.stages.2.label>max</RWBY_InjectedIceCrystal.stages.2.label>
+
+  <RWBY_InjectedLightningCrystal.label>注入雷電塵晶</RWBY_InjectedLightningCrystal.label>
+  <RWBY_InjectedLightningCrystal.stages.0.label>I</RWBY_InjectedLightningCrystal.stages.0.label>
+  <RWBY_InjectedLightningCrystal.stages.1.label>II</RWBY_InjectedLightningCrystal.stages.1.label>
+  <RWBY_InjectedLightningCrystal.stages.2.label>max</RWBY_InjectedLightningCrystal.stages.2.label>
+
+  <RWBY_InjectedGravityCrystal.label>注入重力塵晶</RWBY_InjectedGravityCrystal.label>
+  <RWBY_InjectedGravityCrystal.stages.0.label>I</RWBY_InjectedGravityCrystal.stages.0.label>
+  <RWBY_InjectedGravityCrystal.stages.1.label>II</RWBY_InjectedGravityCrystal.stages.1.label>
+  <RWBY_InjectedGravityCrystal.stages.2.label>max</RWBY_InjectedGravityCrystal.stages.2.label>
+
+  <RWBY_InjectedHardLightCrystal.label>注入光凝塵晶</RWBY_InjectedHardLightCrystal.label>
+  <RWBY_InjectedHardLightCrystal.stages.0.label>I</RWBY_InjectedHardLightCrystal.stages.0.label>
+  <RWBY_InjectedHardLightCrystal.stages.1.label>II</RWBY_InjectedHardLightCrystal.stages.1.label>
+  <RWBY_InjectedHardLightCrystal.stages.2.label>max</RWBY_InjectedHardLightCrystal.stages.2.label>
+
+  <RWBY_VelvetMimicMoves.label>模仿動作</RWBY_VelvetMimicMoves.label>
+
+
+</LanguageData>

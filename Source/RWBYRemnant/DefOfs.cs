@@ -20,6 +20,8 @@ namespace RWBYRemnant
 
         public static JobDef RWBY_PickUp;
         public static JobDef RWBY_StealAura;
+        public static JobDef RWBY_ShootProjectileAbility;
+        public static JobDef RWBY_TransformWeapon;
 
         public static SoundDef Shoot_Fireball;
 
@@ -160,11 +162,13 @@ namespace RWBYRemnant
 
         // Velvet
         public static TraitDef Semblance_Velvet;
-        public static ThingDef RWBY_Velvet_Camera;
-        public static ThingDef RWBY_Velvet_Camera_Box;
+        public static ThingDef RWBY_Anesidora_Camera;
+        public static ThingDef RWBY_Anesidora_Box;
         public static ThoughtDef RWBY_PictureTaken;
         public static JobDef RWBY_TakePhotos;
         public static HediffDef RWBY_VelvetMimicMoves;
+        public static ThingDef Bullet_Velvet_Camera;
+        public static SoundDef Shot_Velvet_Camera;
 
         #endregion
     }

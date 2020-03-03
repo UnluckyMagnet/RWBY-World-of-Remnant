@@ -1,5 +1,5 @@
 ﻿using Verse;
-using Harmony;
+using HarmonyLib;
 using RimWorld;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +8,7 @@ using System.Linq;
 using Verse.AI;
 using System;
 using System.Text;
+using Verse.Sound;
 
 namespace RWBYRemnant
 {
@@ -16,8 +17,8 @@ namespace RWBYRemnant
     {
         static HarmonyPatch()
         {
-            var harmony = HarmonyInstance.Create("rimworld.carnysenpai.rwbyremnant");
-            harmony.Patch(AccessTools.Method(typeof(Pawn_EquipmentTracker), "GetGizmos"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("GetGizmos_PostFix")), null); // adds weapon abilities to pawns
+            var harmony = new Harmony("rimworld.carnysenpai.rwbyremnant");
+            harmony.Patch(AccessTools.Method(typeof(Pawn_EquipmentTracker), "GetGizmos"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("GetGizmos_PostFix")), null); // adds abilities to pawns
             harmony.Patch(AccessTools.Method(typeof(GenDrop), "TryDropSpawn"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("TryDropSpawn_PostFix")), null); // lets light copies disappear on drop
             harmony.Patch(AccessTools.Method(typeof(Verb_MeleeAttackDamage), "DamageInfosToApply"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("DamageInfosToApply_PostFix")), null); // strenghtens certain pawns melee attacks
             harmony.Patch(AccessTools.Method(typeof(Pawn_HealthTracker), "PreApplyDamage"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("PreApplyDamage_PostFix")), null); // aura absorb
@@ -42,6 +43,7 @@ namespace RWBYRemnant
             harmony.Patch(AccessTools.Method(typeof(IncidentWorker_RaidEnemy), "TryExecuteWorker"), new HarmonyMethod(typeof(HarmonyPatch).GetMethod("TryExecuteWorker_PreFix")), null, null);  // may increases raid size if Semblance Qrow is present
             harmony.Patch(AccessTools.Method(typeof(AttackTargetFinder), "BestAttackTarget"), new HarmonyMethod(typeof(HarmonyPatch).GetMethod("BestAttackTarget_PreFix")), null, null); // makes Grimm not need line of sight
             harmony.Patch(AccessTools.Method(typeof(Pawn_InteractionsTracker), "TryInteractWith"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("TryInteractWith_PostFix")), null); // unlock Semblance Velvet
+            harmony.Patch(AccessTools.Method(typeof(Targeter), "ProcessInputEvents"), new HarmonyMethod(typeof(HarmonyPatch).GetMethod("ProcessInputEvents_Prefix")), null, null); // lets the weapon projectile ability aim properly
         }
 
         #region "unlock Semblances"
@@ -237,7 +239,7 @@ namespace RWBYRemnant
                     return false;
                 }
                 __instance.collideWithPawns = false;
-                bool flag = __instance.pawn.story == null || !__instance.pawn.story.WorkTagIsDisabled(WorkTags.Violent);
+                bool flag = __instance.pawn.story == null || !__instance.pawn.WorkTagIsDisabled(WorkTags.Violent);
                 if (flag)
                 {
                     for (int i = 0; i < 9; i++)
@@ -366,7 +368,7 @@ namespace RWBYRemnant
                 {
                     if (Rand.Chance(0.01f))
                     {
-                        SemblanceUtility.UnlockSemblance(___pawn, RWBYDefOf.Semblance_Nora, "LetterTextUnlockSemblanceNora");
+                        SemblanceUtility.UnlockSemblance(___pawn, RWBYDefOf.Semblance_Nora, "LetterTextUnlockSemblanceNora"); // Unlock Semblance Nora
                         absorbed = true;
                         return;
                     }
@@ -555,14 +557,14 @@ namespace RWBYRemnant
         [HarmonyPostfix]
         public static void TryDropSpawn_PostFix(Thing thing) // lets light copies disappear on drop
         {
-            if (thing != null && thing.GetType().Equals(typeof(ThingWithComps)) && ((ThingWithComps)thing).TryGetComp<LightCopyDestroyAbility>() != null)
+            if (thing != null && thing.GetType().Equals(typeof(ThingWithComps)) && ((ThingWithComps)thing).TryGetComp<CompLightCopy>() != null)
             {
                 thing.Destroy(DestroyMode.Vanish);
             }
         }
 
         [HarmonyPostfix]
-        public static void GetGizmos_PostFix(Pawn_EquipmentTracker __instance, ref IEnumerable<Gizmo> __result) // adds weapon abilities to pawns
+        public static void GetGizmos_PostFix(Pawn_EquipmentTracker __instance, ref IEnumerable<Gizmo> __result) // adds abilities to pawns
         {
             Pawn pawn = __instance.pawn;
             if (!pawn.IsColonist) return;
@@ -573,27 +575,17 @@ namespace RWBYRemnant
 
                 if (pawn.Drafted)
                 {
-                    IEnumerator<ThingWithComps> enumerator = __instance.AllEquipmentListForReading.GetEnumerator();
-                    while (enumerator.MoveNext())
+                    foreach (ThingWithComps thingWithComps in __instance.AllEquipmentListForReading)
                     {
-                        ThingWithComps current = enumerator.Current;
-                        if (current.def.defName.Contains("RWBY"))
+                        foreach (ThingComp thingComp in thingWithComps.AllComps.FindAll(c => c is CompWeaponTransform comp1 || c is CompWeaponProjectile comp2 || c is CompWeaponDrinkCoffee comp3 || c is CompTakePhoto comp4 || c is CompStealAura comp5))
                         {
-                            IEnumerator<Gizmo> compGizmosEnumerator = current.GetGizmos().GetEnumerator();
-                            while (compGizmosEnumerator.MoveNext())
-                            {
-                                Gizmo currentGizmo = compGizmosEnumerator.Current;
-                                if (((Command)currentGizmo) != null && !((Command)currentGizmo).Label.Equals("CommandForbid".Translate()) && !((Command)currentGizmo).Label.Equals("CommandAllow".Translate()))
-                                {
-                                    newOutput.Add(currentGizmo);
-                                }
-                            }
+                            newOutput.AddRange(thingComp.CompGetGizmosExtra());
                         }
                     }
                 }
                 else
                 {
-                    if (pawn.equipment.Primary != null && pawn.equipment.Primary.TryGetComp<LightCopyDestroyAbility>() != null)
+                    if (pawn.equipment.Primary != null && pawn.equipment.Primary.TryGetComp<CompLightCopy>() != null)
                     {
                         pawn.equipment.Primary.Destroy();
                     }
@@ -602,11 +594,11 @@ namespace RWBYRemnant
                 {
                     foreach (Thing thing in pawn.inventory.innerContainer)
                     {
-                        foreach (Gizmo gizmo in thing.GetGizmos())
+                        if (thing is ThingWithComps thingWithComps)
                         {
-                            if (((Command)gizmo) != null && !((Command)gizmo).Label.Equals("CommandForbid".Translate()) && !((Command)gizmo).Label.Equals("CommandAllow".Translate()))
+                            foreach (ThingComp thingComp in thingWithComps.AllComps.FindAll(c => c is CompWeaponProjectile comp1 || c is CompInjectDustCrystal comp2))
                             {
-                                newOutput.Add(gizmo);
+                                newOutput.AddRange(thingComp.CompGetGizmosExtra());
                             }
                         }
                     }
@@ -635,6 +627,30 @@ namespace RWBYRemnant
                 }
                 __result = __result + stringBuilder.ToString();
             }
+        }
+
+        [HarmonyPrefix]
+        public static bool ProcessInputEvents_Prefix(Targeter __instance) // lets the weapon projectile ability aim properly
+        {
+            if (__instance.targetingSource is Verb_ShootWeaponAbility verb_ShootWeaponAbility)
+            {
+                if (Event.current.type == EventType.MouseDown && Event.current.button == 0 && __instance.IsTargeting)
+                {
+                    var obj = (LocalTargetInfo)AccessTools.Method(typeof(Targeter), "CurrentTargetUnderMouse").Invoke(__instance, new object[] { false });
+                    if (obj.IsValid)
+                    {
+                        Pawn pawn = verb_ShootWeaponAbility.CasterPawn;
+                        Job job = JobMaker.MakeJob(RWBYDefOf.RWBY_ShootProjectileAbility, obj);
+                        job.verbToUse = verb_ShootWeaponAbility;
+                        pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+                        SoundDefOf.Tick_High.PlayOneShotOnCamera();
+                        __instance.StopTargeting();
+                        Event.current.Use();
+                        return false;
+                    }
+                }
+            }
+            return true;
         }
 
         #endregion

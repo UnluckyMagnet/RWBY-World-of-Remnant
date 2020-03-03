@@ -38,7 +38,7 @@ namespace RWBYRemnant
                     ThingWithComps currentWeapon = CasterPawn.equipment.AllEquipmentListForReading.Find(s => s.def.equipmentType.Equals(EquipmentType.Primary));
                     if (currentWeapon != null)
                     {
-                        if (currentWeapon.TryGetComp<LightCopyDestroyAbility>() != null)
+                        if (currentWeapon.TryGetComp<CompLightCopy>() != null)
                         {
                             currentWeapon.Destroy();
                         }

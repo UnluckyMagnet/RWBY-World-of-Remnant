@@ -6,9 +6,19 @@ using Verse;
 
 namespace RWBYRemnant
 {
-    class IncidentWorker_Nuckelavee : IncidentWorker
+    public class IncidentWorker_Nuckelavee : IncidentWorker
     {
-        public override float AdjustedChance => base.AdjustedChance * MoodChance() * QrowChance();
+        public override float BaseChanceThisGame
+        {
+            get
+            {
+                if (ModsConfig.RoyaltyActive && this.def.baseChanceWithRoyalty >= 0f)
+                {
+                    return this.def.baseChanceWithRoyalty * MoodChance() * QrowChance();
+                }
+                return this.def.baseChance * MoodChance() * QrowChance();
+            }
+        }
 
         public float MoodChance()
         {

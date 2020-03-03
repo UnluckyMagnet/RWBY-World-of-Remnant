@@ -7,7 +7,7 @@ namespace RWBYRemnant
         public override void TickRare()
         {
             if (pawn.Dead) return;
-            if (pawn.equipment.Primary != null && pawn.equipment.Primary.TryGetComp<LightCopyDestroyAbility>() != null)
+            if (pawn.equipment.Primary != null && pawn.equipment.Primary.TryGetComp<CompLightCopy>() != null)
             {
                 Hediff hediffMimicMoves = new Hediff();
                 hediffMimicMoves = HediffMaker.MakeHediff(RWBYDefOf.RWBY_VelvetMimicMoves, pawn);

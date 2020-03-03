@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<HediffDef ParentName="InjuryBase">
+		<defName>RWBY_Shock</defName>
+		<label>shock</label>
+		<description>An electric shock.</description>
+		<labelNoun>an electric shock</labelNoun>
+		<comps>
+			<li Class="HediffCompProperties_TendDuration">
+				<labelTendedWell>healed</labelTendedWell>
+				<labelTendedWellInner>healed</labelTendedWellInner>
+				<labelSolidTendedWell>set</labelSolidTendedWell>
+			</li>
+			<li Class="HediffCompProperties_Infecter">
+				<infectionChance>0.30</infectionChance>
+			</li>
+			<li Class="HediffCompProperties_GetsPermanent">
+				<permanentLabel>electric burn scar</permanentLabel>
+			</li>
+		</comps>
+		<injuryProps>
+			<painPerSeverity>0.025</painPerSeverity>
+			<averagePainPerSeverityPermanent>0.00425</averagePainPerSeverityPermanent>
+			<canMerge>true</canMerge>
+			<destroyedLabel>Shocked off</destroyedLabel>
+			<destroyedOutLabel>Shocked out</destroyedOutLabel>
+		</injuryProps>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>RWBY_Lightning_Damage</defName>
+		<label>Lightning damage</label>
+		<description>Damage from a source of elictricity.</description>
+		<initialSeverity>0.10</initialSeverity>
+		<defaultLabelColor>(179, 179, 0)</defaultLabelColor>
+		<hediffClass>HediffWithComps</hediffClass>
+		<isBad>true</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-3.0</severityPerDay>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>tingling</label>
+				<minSeverity>0.01</minSeverity>
+				<painOffset>0.2</painOffset>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.3</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.3</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>painful</label>
+				<minSeverity>0.15</minSeverity>
+				<painOffset>0.3</painOffset>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.5</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.4</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>shocked</label>
+				<minSeverity>0.25</minSeverity>
+				<painOffset>0.4</painOffset>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<setMax>0.1</setMax>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.5</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>RWBY_Ice_Damage</defName>
+		<label>Ice damage</label>
+		<description>Damage frome a very cold source, slowing the pawn.</description>
+		<initialSeverity>0.10</initialSeverity>
+		<defaultLabelColor>(51, 102, 255)</defaultLabelColor>
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>0.3</maxSeverity>
+		<isBad>true</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-4.0</severityPerDay>
+			</li>
+			<li Class="RWBYRemnant.HediffCompProperties_FrozenWorker"/>
+		</comps>
+		<stages>
+			<li>
+				<label>chilled</label>
+				<minSeverity>0.01</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.2</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>-0.2</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.2</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>cold</label>
+				<minSeverity>0.15</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.3</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>-0.3</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.3</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>frozen</label>
+				<minSeverity>0.25</minSeverity>
+				<capMods>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>-0.4</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>RWBY_TimeDilation</defName>
+		<label>Time dilation</label>
+		<description>Time dilation slows time in the area of the glyph and slows all movement.</description>
+		<initialSeverity>1.0</initialSeverity>
+		<defaultLabelColor>(0, 0, 0)</defaultLabelColor>
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>true</isBad>
+		<comps>
+			<li Class="RWBYRemnant.HediffCompProperties_TimeDilationGlyph"/>
+		</comps>
+		<stages>
+			<li>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<setMax>0.3</setMax>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>RWBY_AuraStolen</defName>
+		<label>aura stolen</label>
+		<description>A stolen Aura can never recover by itself.</description>
+		<initialSeverity>1.0</initialSeverity>
+		<defaultLabelColor>(1, 1, 1)</defaultLabelColor>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>true</isBad>
+	</HediffDef>
+
+</Defs>

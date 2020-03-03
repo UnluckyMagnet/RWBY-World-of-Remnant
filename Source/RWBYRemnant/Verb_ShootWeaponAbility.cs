@@ -120,7 +120,7 @@ namespace RWBYRemnant
                 projectile2.Launch(launcher, drawPos, shootLine.Dest, this.currentTarget, projectileHitFlags4, equipment, targetCoverDef);
                 this.ThrowDebugText("Hit\nDest", shootLine.Dest);
             }
-            
+
             if (base.CasterIsPawn)
             {
                 base.CasterPawn.records.Increment(RecordDefOf.ShotsFired);
@@ -155,7 +155,7 @@ namespace RWBYRemnant
             {
                 return true;
             }
-            if (CasterPawn.story.traits.HasTrait(RWBYDefOf.Semblance_Velvet) && CasterPawn.equipment.Primary != null && CasterPawn.equipment.Primary.TryGetComp<LightCopyDestroyAbility>() != null)
+            if (CasterPawn.story.traits.HasTrait(RWBYDefOf.Semblance_Velvet) && CasterPawn.equipment.Primary != null && CasterPawn.equipment.Primary.TryGetComp<CompLightCopy>() != null)
             {
                 return true;
             }
@@ -170,6 +170,13 @@ namespace RWBYRemnant
                 if (thing.stackCount == 0) thing.Destroy();
                 return true;
             }
+        }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look<ThingDef>(ref ammunition, "ammunition", null, false);
+            Scribe_Values.Look<bool>(ref cannotMiss, "cannotMiss", false, false);
         }
 
         public ThingDef ammunition = null;

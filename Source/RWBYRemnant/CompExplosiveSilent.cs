@@ -6,14 +6,6 @@ using Verse.Sound;
 
 namespace RWBYRemnant
 {
-    public class CompProperties_ExplosiveSilent : CompProperties_Explosive
-    {
-        public CompProperties_ExplosiveSilent()
-        {
-            compClass = typeof(CompExplosiveSilent);
-        }
-    }
-
     public class CompExplosiveSilent : CompExplosive
     {
         public override void PostDraw()

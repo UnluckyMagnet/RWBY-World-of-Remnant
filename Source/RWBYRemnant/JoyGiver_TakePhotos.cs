@@ -11,11 +11,11 @@ namespace RWBYRemnant
     {
         public override Job TryGiveJob(Pawn pawn)
         {
-            if ((!LoadedModManager.GetMod<RemnantMod>().GetSettings<RemnantModSettings>().everyoneMakesPhotosForJoy && !pawn.story.traits.HasTrait(RWBYDefOf.Semblance_Velvet)) || !pawn.equipment.AllEquipmentListForReading.Any(e => e.def == RWBYDefOf.RWBY_Velvet_Camera || e.def == RWBYDefOf.RWBY_Velvet_Camera_Box))
+            if ((!LoadedModManager.GetMod<RemnantMod>().GetSettings<RemnantModSettings>().everyoneMakesPhotosForJoy && !pawn.story.traits.HasTrait(RWBYDefOf.Semblance_Velvet)) || !pawn.equipment.AllEquipmentListForReading.Any(e => e.def == RWBYDefOf.RWBY_Anesidora_Camera || e.def == RWBYDefOf.RWBY_Anesidora_Box))
             {
                 return null;
             }
-            if (pawn.equipment.Primary != null && pawn.equipment.Primary.def != RWBYDefOf.RWBY_Velvet_Camera)
+            if (pawn.equipment.Primary != null && pawn.equipment.Primary.def != RWBYDefOf.RWBY_Anesidora_Camera)
             {
                 return null;
             }

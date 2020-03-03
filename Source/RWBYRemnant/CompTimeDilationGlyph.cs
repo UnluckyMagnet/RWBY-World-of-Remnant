@@ -1,17 +1,7 @@
-﻿using RimWorld;
-using System.Linq;
-using Verse;
+﻿using Verse;
 
 namespace RWBYRemnant
 {
-    public class CompProperties_TimeDilationGlyph : CompProperties
-    {
-        public CompProperties_TimeDilationGlyph()
-        {
-            compClass = typeof(CompTimeDilationGlyph);
-        }
-    }
-
     public class CompTimeDilationGlyph : ThingComp
     {
         public CompProperties_TimeDilationGlyph Props => (CompProperties_TimeDilationGlyph)props;

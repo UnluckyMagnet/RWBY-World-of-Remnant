@@ -50,11 +50,91 @@ namespace RWBYRemnant
             RWBYDefOf.RWBY_InjectedHardLightCrystal
         };
 
+        public static IEnumerable<TraitDef> GetSemblancesForPassion(SkillDef skill)
+        {
+            if (skill == SkillDefOf.Shooting)
+            {
+                yield return RWBYDefOf.Semblance_Ruby;
+                yield return RWBYDefOf.Semblance_Blake;
+                yield return RWBYDefOf.Semblance_Cinder;
+            }
+            if (skill == SkillDefOf.Melee)
+            {
+                yield return RWBYDefOf.Semblance_Yang;
+                yield return RWBYDefOf.Semblance_Hazel;
+                yield return RWBYDefOf.Semblance_Qrow;
+            }
+            if (skill == SkillDefOf.Construction)
+            {
+                yield return RWBYDefOf.Semblance_Raven;
+                yield return RWBYDefOf.Semblance_Velvet;
+                yield return RWBYDefOf.Semblance_Pyrrha;
+            }
+            if (skill == SkillDefOf.Mining)
+            {
+                yield return RWBYDefOf.Semblance_Hazel;
+                yield return RWBYDefOf.Semblance_Qrow;
+                yield return RWBYDefOf.Semblance_Jaune;
+            }
+            if (skill == SkillDefOf.Cooking)
+            {
+                yield return RWBYDefOf.Semblance_Ren;
+                yield return RWBYDefOf.Semblance_Qrow;
+                yield return RWBYDefOf.Semblance_Nora;
+            }
+            if (skill == SkillDefOf.Plants)
+            {
+                yield return RWBYDefOf.Semblance_Yang;
+                yield return RWBYDefOf.Semblance_Velvet;
+                yield return RWBYDefOf.Semblance_Raven;
+                yield return RWBYDefOf.Semblance_Jaune;
+            }
+            if (skill == SkillDefOf.Animals)
+            {
+                yield return RWBYDefOf.Semblance_Weiss;
+                yield return RWBYDefOf.Semblance_Blake;
+                yield return RWBYDefOf.Semblance_Yang;
+            }
+            if (skill == SkillDefOf.Crafting)
+            {
+                yield return RWBYDefOf.Semblance_Ren;
+                yield return RWBYDefOf.Semblance_Pyrrha;
+                yield return RWBYDefOf.Semblance_Cinder;
+            }
+            if (skill == SkillDefOf.Artistic)
+            {
+                yield return RWBYDefOf.Semblance_Ruby;
+                yield return RWBYDefOf.Semblance_Nora;
+                yield return RWBYDefOf.Semblance_Blake;
+            }
+            if (skill == SkillDefOf.Medicine)
+            {
+                yield return RWBYDefOf.Semblance_Raven;
+                yield return RWBYDefOf.Semblance_Jaune;
+                yield return RWBYDefOf.Semblance_Pyrrha;
+                yield return RWBYDefOf.Semblance_Hazel;
+            }
+            if (skill == SkillDefOf.Social)
+            {
+                yield return RWBYDefOf.Semblance_Ruby;
+                yield return RWBYDefOf.Semblance_Weiss;
+                yield return RWBYDefOf.Semblance_Velvet;
+                yield return RWBYDefOf.Semblance_Nora;
+            }
+            if (skill == SkillDefOf.Intellectual)
+            {
+                yield return RWBYDefOf.Semblance_Weiss;
+                yield return RWBYDefOf.Semblance_Ren;
+                yield return RWBYDefOf.Semblance_Cinder;
+            }
+            yield break;
+        }
+
         public static bool UnlockSemblance(Pawn pawn, TraitDef semblance, string textKey, string labelKey = "LetterLabelUnlockSemblanceGeneral")
         {
             if (pawn.health.hediffSet.HasHediff(RWBYDefOf.RWBY_AuraStolen)) return false;
             if (!pawn.story.traits.HasTrait(RWBYDefOf.RWBY_Aura)) return false;
-            if (pawn.story.WorkTagIsDisabled(semblance.requiredWorkTags)) return false;
+            if (pawn.WorkTagIsDisabled(semblance.requiredWorkTags)) return false;
             pawn.story.traits.allTraits.RemoveAll(t => t.def.Equals(RWBYDefOf.RWBY_Aura));
             pawn.story.traits.GainTrait(new Trait(semblance));
             pawn.TryGetComp<CompAbilityUserAura>().Initialize();

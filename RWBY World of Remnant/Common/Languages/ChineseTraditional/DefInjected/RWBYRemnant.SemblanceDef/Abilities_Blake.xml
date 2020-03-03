@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Blake_UseStoneClone.label>石分身</Blake_UseStoneClone.label>
+  <Blake_UseStoneClone.description>Load Gravity Dust to turn your next 3 shadow clones into stone clones. Stone clones provide more cover and last longer than normal shadow clones.</Blake_UseStoneClone.description>
+
+  <Blake_UseIceClone.label>冰分身</Blake_UseIceClone.label>
+  <Blake_UseIceClone.description>Load Ice Dust to turn your next 3 shadow clones into ice clones. Ice clones freeze melee attackers and last a little bit longer than normal shadow clones.</Blake_UseIceClone.description>
+
+  <Blake_UseFireClone.label>火分身</Blake_UseFireClone.label>
+  <Blake_UseFireClone.description>Load Fire Dust to turn your next 3 shadow clones into fire clones. Fire clones explode after a short time.</Blake_UseFireClone.description>
+
+
+</LanguageData>

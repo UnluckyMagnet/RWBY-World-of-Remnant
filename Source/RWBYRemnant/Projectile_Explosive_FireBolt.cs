@@ -25,7 +25,7 @@ namespace RWBYRemnant
         {
             if (currentTick > Def.fireDistanceInTicks && Find.TickManager.TicksGame % 2 == 0)
             {
-                FilthMaker.MakeFilth(Position, Map, Def.spawnWhileFlying);
+                FilthMaker.TryMakeFilth(Position, Map, Def.spawnWhileFlying);
                 Fire fire = (Fire)ThingMaker.MakeThing(ThingDefOf.Fire);
                 fire.fireSize = 1f;
                 GenSpawn.Spawn(fire, Position, Map);

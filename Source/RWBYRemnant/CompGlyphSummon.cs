@@ -3,14 +3,6 @@ using Verse;
 
 namespace RWBYRemnant
 {
-    public class CompProperties_GlyphSummon : CompProperties
-    {
-        public CompProperties_GlyphSummon()
-        {
-            compClass = typeof(CompGlyphSummon);
-        }
-    }
-
     public class CompGlyphSummon : ThingComp
     {
         public CompProperties_GlyphSummon Props => (CompProperties_GlyphSummon)props;

@@ -1,9 +1,0 @@
-- added the names of some weapons:
-Coco큦 Handbag is now called Gianduja
-Velvet큦 Camera is now called Anesidora
-Port큦 Blunderbuss is now called Blowhard
-Oobleck큦 Thermos is now called Antiquity's Roast
-Raven큦 Sword is now called Omen
-Cinder큦 old metal weapon is now called Midnight
-Emerald큦 Weapon is now called Thief큦 Respite
-Neo큦 Umbrella is now called Hush

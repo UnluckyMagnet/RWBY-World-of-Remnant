@@ -42,12 +42,38 @@ namespace RWBYRemnant
             Toil takePhoto = new Toil();
             takePhoto.initAction = delegate ()
             {
-                if (pawn.equipment.Primary == null && pawn.equipment.AllEquipmentListForReading.Find(e => e.def == RWBYDefOf.RWBY_Velvet_Camera_Box) is ThingWithComps thingWithComps)
+                if (pawn.equipment.Primary == null && pawn.equipment.AllEquipmentListForReading.Find(e => e.def == RWBYDefOf.RWBY_Anesidora_Box) is ThingWithComps thingWithComps)
                 {
-                    thingWithComps.TryGetComp<Weapon_TransformAbility>().Transform();
+                    thingWithComps.TryGetComp<CompWeaponTransform>().Transform();
                 }
-                pawn.equipment.Primary.TryGetComp<Weapon_ProjectileAbility>().DoEffectOn(TargetA.Thing);
                 pawn.needs.joy.GainJoy(0.07f, JoyKindDefOf.Social);
+
+                Verb_ShootWeaponAbility verb_ShootWeaponAbility = new Verb_ShootWeaponAbility
+                {
+                    verbTracker = new VerbTracker(pawn),
+                    caster = pawn,
+                    verbProps = new VerbProperties
+                    {
+                        accuracyTouch = 1f,
+                        accuracyShort = 1f,
+                        accuracyMedium = 1f,
+                        accuracyLong = 1f,
+                        verbClass = typeof(Verb_ShootWeaponAbility),
+                        hasStandardCommand = true,
+                        defaultProjectile = RWBYDefOf.Bullet_Velvet_Camera,
+                        warmupTime = 2f,
+                        range = 10f,
+                        soundCast = RWBYDefOf.Shot_Velvet_Camera,
+                        burstShotCount = 1,
+                        ticksBetweenBurstShots = 1,
+                        muzzleFlashScale = 0,
+                        forcedMissRadius = 0f,
+                    },
+                    cannotMiss = true,
+                    ammunition = null
+                };
+                verb_ShootWeaponAbility.verbProps.targetParams = TargetingParameters.ForAttackAny();
+                verb_ShootWeaponAbility.TryStartCastOn(TargetA.Thing);
             };
             yield return takePhoto;
             

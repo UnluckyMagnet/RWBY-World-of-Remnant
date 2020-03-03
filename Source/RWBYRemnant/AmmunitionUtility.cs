@@ -20,29 +20,29 @@ namespace RWBYRemnant
                 yield return RWBYDefOf.GravityDustCrystal;
                 yield return RWBYDefOf.HardLightDustCrystal;
             }
-            if (pawn.equipment.Primary != null && pawn.equipment.Primary.TryGetComp<Weapon_TransformAbility>() != null)
+            if (pawn.equipment.Primary != null && pawn.equipment.Primary.TryGetComp<CompWeaponTransform>() != null)
             {
-                foreach (Weapon_TransformAbility thingComp in pawn.equipment.Primary.AllComps.FindAll(c => c.GetType().Equals(typeof(Weapon_TransformAbility))))
+                foreach (CompWeaponTransform thingComp in pawn.equipment.Primary.AllComps.FindAll(c => c.GetType().Equals(typeof(CompWeaponTransform))))
                 {
                     if (thingComp.Props.usesAmmunition != null) yield return thingComp.Props.usesAmmunition;
                 }
             }
-            if (pawn.equipment.Primary != null && pawn.equipment.Primary.TryGetComp<Weapon_ProjectileAbility>() != null)
+            if (pawn.equipment.Primary != null && pawn.equipment.Primary.TryGetComp<CompWeaponProjectile>() != null)
             {
-                foreach (Weapon_ProjectileAbility thingComp in pawn.equipment.Primary.AllComps.FindAll(c => c.GetType().Equals(typeof(Weapon_ProjectileAbility))))
+                foreach (CompWeaponProjectile thingComp in pawn.equipment.Primary.AllComps.FindAll(c => c.GetType().Equals(typeof(CompWeaponProjectile))))
                 {
                     if (thingComp.Props.usesAmmunition != null) yield return thingComp.Props.usesAmmunition;
                 }
             }
-            ThingWithComps thingWithComps1 = pawn.equipment.AllEquipmentListForReading.Find(t => t.def == RWBYDefOf.RWBY_Velvet_Camera);
+            ThingWithComps thingWithComps1 = pawn.equipment.AllEquipmentListForReading.Find(t => t.def == RWBYDefOf.RWBY_Anesidora_Camera);
             if (thingWithComps1 != null)
             {
-                yield return thingWithComps1.TryGetComp<Weapon_TakePhotoAbility>().Props.usesAmmunition;
+                yield return thingWithComps1.TryGetComp<CompTakePhoto>().Props.usesAmmunition;
             }
-            ThingWithComps thingWithComps2 = pawn.equipment.AllEquipmentListForReading.Find(t => t.def == RWBYDefOf.RWBY_Velvet_Camera_Box);
+            ThingWithComps thingWithComps2 = pawn.equipment.AllEquipmentListForReading.Find(t => t.def == RWBYDefOf.RWBY_Anesidora_Box);
             if (thingWithComps2 != null)
             {
-                yield return thingWithComps2.TryGetComp<Weapon_TakePhotoAbility>().Props.usesAmmunition;
+                yield return thingWithComps2.TryGetComp<CompTakePhoto>().Props.usesAmmunition;
             }
             yield break;
         }

@@ -1,4 +1,7 @@
-﻿using Verse;
+﻿using RimWorld;
+using UnityEngine;
+using Verse;
+using Verse.Sound;
 
 namespace RWBYRemnant
 {
@@ -6,20 +9,24 @@ namespace RWBYRemnant
     {
         public override void GizmoUpdateOnMouseover()
         {
-            if (Find.CurrentMap == null)
-            {
-                return;
-            }
+            verb.verbProps.DrawRadiusRing(verb.caster.Position);
+        }
 
-            if (range < (float)(Find.CurrentMap.Size.x + Find.CurrentMap.Size.z) && range < GenRadial.MaxRadialPatternRadius)
+        public override void ProcessInput(Event ev)
+        {
+            if (CurActivateSound != null)
             {
-                GenDraw.DrawRadiusRing(center, range);
+                CurActivateSound.PlayOneShotOnCamera(null);
             }
-
+            SoundDefOf.Tick_Tiny.PlayOneShotOnCamera(null);
+            Targeter targeter = Find.Targeter;
+            Find.Targeter.BeginTargeting(verb, null);
         }
 
         public float range;
 
         public IntVec3 center;
+
+        public Verb_ShootWeaponAbility verb;
     }
 }

@@ -1,23 +1,13 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
 using Verse;
 using Verse.Sound;
 
 namespace RWBYRemnant
 {
-    public class CompPropertiesInjectDustCrystal : CompProperties
-    {
-        public CompPropertiesInjectDustCrystal()
-        {
-            compClass = typeof(CompInjectDustCrystal);
-        }
-    }
-
     public class CompInjectDustCrystal : CompUseEffect
     {
-        public CompPropertiesInjectDustCrystal Props => (CompPropertiesInjectDustCrystal)props;
+        public CompProperties_InjectDustCrystal Props => (CompProperties_InjectDustCrystal)props;
 
         public Pawn GetPawn()
         {

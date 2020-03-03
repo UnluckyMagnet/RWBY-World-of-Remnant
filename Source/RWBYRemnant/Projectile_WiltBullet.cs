@@ -24,7 +24,7 @@ namespace RWBYRemnant
             {
                 launcherPawn.Position = Position;
                 launcherPawn.Notify_Teleported(true, false);
-                launcherPawn.equipment.Primary.TryGetComp<Weapon_TransformAbility>().Transform();
+                launcherPawn.equipment.Primary.TryGetComp<CompWeaponTransform>().Transform();
             }
             base.Impact(hitThing);
         }

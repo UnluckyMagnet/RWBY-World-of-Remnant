@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Blunderbuss custom bullet -->
+
+  <Bullet_Oobleck.label>bullet</Bullet_Oobleck.label>
+
+
+  <!-- Thermos base weapon, base form, craftable -->
+
+  <RWBY_Thermos.label>Thermos</RWBY_Thermos.label>
+  <RWBY_Thermos.description>Oobleck's Thermos is Bartholomew Oobleck's weapon of choice. When called into action, Oobleck can deploy his thermos as a weapon, telescoping it into the shape of a torch when its flame is activated.</RWBY_Thermos.description>
+  <RWBY_Thermos.tools.0.label>cup</RWBY_Thermos.tools.0.label>
+
+
+  <!-- Thermos torch mode, not craftable -->
+
+  <RWBY_Thermos_Torch.label>Thermos</RWBY_Thermos_Torch.label>
+  <RWBY_Thermos_Torch.description>Oobleck's Thermos is Bartholomew Oobleck's weapon of choice. When called into action, Oobleck can deploy his thermos as a weapon, telescoping it into the shape of a torch when its flame is activated.</RWBY_Thermos_Torch.description>
+  <RWBY_Thermos_Torch.tools.0.label>stick</RWBY_Thermos_Torch.tools.0.label>
+
+
+</LanguageData>

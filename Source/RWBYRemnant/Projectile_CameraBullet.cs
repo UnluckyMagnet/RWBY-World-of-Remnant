@@ -23,7 +23,7 @@ namespace RWBYRemnant
         {
             Destroy(DestroyMode.Vanish);
             if (intendedTarget.Thing == null) return;
-            if (((Pawn)launcher).equipment.AllEquipmentListForReading.Find(x => x.def.Equals(RWBYDefOf.RWBY_Velvet_Camera)).TryGetComp<Weapon_TakePhotoAbility>() == null) return;
+            if (((Pawn)launcher).equipment.AllEquipmentListForReading.Find(x => x.def.Equals(RWBYDefOf.RWBY_Anesidora_Camera)).TryGetComp<CompTakePhoto>() == null) return;
             string photoOf = "";
 
             if (intendedTarget.Thing.GetType().Equals(typeof(Pawn))) // took photo of pawn
@@ -37,7 +37,7 @@ namespace RWBYRemnant
                 if (targetPawn != null && (targetPawn.Drafted || targetPawn.IsFighting() || targetPawn.RaceProps.IsMechanoid || ((Pawn)launcher).CurJobDef == RWBYDefOf.RWBY_TakePhotos) && targetPawn.equipment.Primary != null)
                 {
                     photoOf = targetPawn.equipment.Primary.def.defName;
-                    ((Pawn)launcher).equipment.AllEquipmentListForReading.Find(x => x.def.Equals(RWBYDefOf.RWBY_Velvet_Camera)).TryGetComp<Weapon_TakePhotoAbility>().ListOfDifferentPhotos.Add(photoOf);
+                    ((Pawn)launcher).equipment.AllEquipmentListForReading.Find(x => x.def.Equals(RWBYDefOf.RWBY_Anesidora_Camera)).TryGetComp<CompTakePhoto>().ListOfDifferentPhotos.Add(photoOf);
                 }
             }
 
@@ -47,7 +47,7 @@ namespace RWBYRemnant
                 if (targetThing.def.equipmentType.Equals(EquipmentType.Primary))
                 {
                     photoOf = targetThing.def.defName;
-                    ((Pawn)launcher).equipment.AllEquipmentListForReading.Find(x => x.def.Equals(RWBYDefOf.RWBY_Velvet_Camera)).TryGetComp<Weapon_TakePhotoAbility>().ListOfDifferentPhotos.Add(photoOf);
+                    ((Pawn)launcher).equipment.AllEquipmentListForReading.Find(x => x.def.Equals(RWBYDefOf.RWBY_Anesidora_Camera)).TryGetComp<CompTakePhoto>().ListOfDifferentPhotos.Add(photoOf);
                 }
             }
 

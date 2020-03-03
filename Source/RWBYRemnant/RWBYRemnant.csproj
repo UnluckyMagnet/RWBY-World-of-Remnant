@@ -9,18 +9,20 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RWBYRemnant</RootNamespace>
     <AssemblyName>RWBYRemnant</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>false</DebugSymbols>
     <DebugType>none</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>D:\Steam\steamapps\common\RimWorld\Mods\RWBY World of Remnant\Assemblies\</OutputPath>
+    <OutputPath>D:\Steam\steamapps\common\RimWorld\Mods\RWBY World of Remnant\1.1\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -29,10 +31,12 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="0Harmony">
-      <HintPath>C:\Users\Carsten\Documents\Projekte\Source\Libraries\0Harmony.dll</HintPath>
+    <Reference Include="0Harmony, Version=2.0.0.7, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Lib.Harmony.2.0.0.7\lib\net472\0Harmony.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="AbilityUser">
       <HintPath>D:\Steam\steamapps\workshop\content\294100\932008009\Assemblies\AbilityUser.dll</HintPath>
@@ -42,18 +46,27 @@
       <HintPath>D:\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="CompOversizedWeapon">
-      <HintPath>D:\Steam\steamapps\workshop\content\294100\932008009\Assemblies\CompOversizedWeapon.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="UnityEngine">
       <HintPath>D:\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>D:\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>D:\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>D:\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
@@ -71,6 +84,15 @@
     <Compile Include="Aura_Ruby.cs" />
     <Compile Include="Aura_Cinder.cs" />
     <Compile Include="CompExplosiveSilent.cs" />
+    <Compile Include="CompProperties_ExplosiveSilent.cs" />
+    <Compile Include="CompProperties_GlyphSummon.cs" />
+    <Compile Include="CompProperties_LightCopy.cs" />
+    <Compile Include="CompProperties_ShadowClone.cs" />
+    <Compile Include="CompProperties_StealAura.cs" />
+    <Compile Include="CompProperties_TakePhoto.cs" />
+    <Compile Include="CompProperties_TimeDilationGlyph.cs" />
+    <Compile Include="CompProperties_WeaponDrinkCoffee.cs" />
+    <Compile Include="CompProperties_WeaponTransform.cs" />
     <Compile Include="CompShadowClone.cs" />
     <Compile Include="CompTimeDilationGlyph.cs" />
     <Compile Include="CompGlyphSummon.cs" />
@@ -82,9 +104,12 @@
     <Compile Include="IncidentWorker_Nuckelavee.cs" />
     <Compile Include="IncidentWorker_UnlockSemblance.cs" />
     <Compile Include="IncidentWorker_UnlockAura.cs" />
+    <Compile Include="CompProperties_InjectDustCrystal.cs" />
     <Compile Include="JobDriverGoThroughPortal.cs" />
     <Compile Include="JobDriverStealAura.cs" />
     <Compile Include="JobDriverTakePhotos.cs" />
+    <Compile Include="JobDriverTransformWeapon.cs" />
+    <Compile Include="JobDriverWeaponShootProjectileAbility.cs" />
     <Compile Include="JoyGiver_TakePhotos.cs" />
     <Compile Include="Pawn_Grimm.cs" />
     <Compile Include="Pawn_SummonedGrimm.cs" />
@@ -103,7 +128,6 @@
     <Compile Include="HarmonyPatch.cs" />
     <Compile Include="IncidentWorker_Sneeze.cs" />
     <Compile Include="JobDriverPickUp.cs" />
-    <Compile Include="ModChecker.cs" />
     <Compile Include="Projectile_Explosive_FireBolt.cs" />
     <Compile Include="Projectile_RideBullet.cs" />
     <Compile Include="Projectile_HookBullet.cs" />
@@ -113,14 +137,12 @@
     <Compile Include="RemnantMod.cs" />
     <Compile Include="RemnantModSettings.cs" />
     <Compile Include="AmmunitionUtility.cs" />
-    <Compile Include="TargetingParametersRWBY.cs" />
     <Compile Include="ThingWithComps_Portal.cs" />
     <Compile Include="ThingWithComps_PickUpAble.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Projectile_CameraBullet.cs" />
-    <Compile Include="LightCopyComp.cs" />
+    <Compile Include="CompLightCopy.cs" />
     <Compile Include="Command_TargetWithRadius.cs" />
-    <Compile Include="CompThrowAble.cs" />
     <Compile Include="SemblanceUtility.cs" />
     <Compile Include="Verb_AbilityFormBond.cs" />
     <Compile Include="Verb_AbilityMaskEmotions.cs" />
@@ -146,14 +168,18 @@
     <Compile Include="Verb_ShootWeaponAbility.cs" />
     <Compile Include="Verb_UseAbilitySemblanceBase.cs" />
     <Compile Include="CompInjectDustCrystal.cs" />
-    <Compile Include="Weapon_StealAuraAbility.cs" />
-    <Compile Include="Weapon_TransformAbility.cs" />
-    <Compile Include="Weapon_TakePhotoAbility.cs" />
-    <Compile Include="Weapon_ProjectileAbility.cs" />
-    <Compile Include="Weapon_CoffeeAbility.cs" />
+    <Compile Include="CompProperties_WeaponProjectile.cs" />
+    <Compile Include="CompStealAura.cs" />
+    <Compile Include="CompWeaponTransform.cs" />
+    <Compile Include="CompTakePhoto.cs" />
+    <Compile Include="CompWeaponProjectile.cs" />
+    <Compile Include="CompWeaponDrinkCoffee.cs" />
     <Compile Include="WorkGiver_GatherAmmunition.cs" />
     <Compile Include="WorkGiver_StealAura.cs" />
     <Compile Include="WorkGiver_PickUp.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
