@@ -246,8 +246,29 @@ namespace RWBYRemnant
             }
         }
 
+        public bool TryUnlockSemblanceWith(SkillDef skillDef, bool forceUnlock = false)
+        {
+            if (!AbilityUser.story.traits.HasTrait(RWBYDefOf.RWBY_Aura)) return false;
+            if (forceUnlock)
+            {
+                SemblanceUtility.UnlockSemblance(AbilityUser, hiddenSemblance, "LetterTextUnlockSemblanceGeneral");
+                return true;
+            }                
+            if (SemblanceUtility.GetSemblancesForPassion(skillDef).Contains(hiddenSemblance))
+            {
+                SemblanceUtility.UnlockSemblance(AbilityUser, hiddenSemblance, "LetterTextUnlock" + hiddenSemblance.defName.Replace("_",""));
+                return true;
+            }
+            return false;
+        }
+
         public void GenerateHiddenSemblance()
         {
+            if (AbilityUser.relations.RelatedPawns.Any(p => p.relations.Children.Contains(AbilityUser) && p.story.traits.HasTrait(RWBYDefOf.Semblance_Weiss)) || AbilityUser.relations.Children.Any(c => c.story.traits.HasTrait(RWBYDefOf.Semblance_Weiss)))
+            {
+                hiddenSemblance = RWBYDefOf.Semblance_Weiss;
+                return;
+            }
             List<TraitDef> traitDefs = new List<TraitDef>();
             foreach (SkillRecord skillRecord in AbilityUser.skills.skills)
             {
@@ -288,7 +309,6 @@ namespace RWBYRemnant
                     if (keyValuePair.Value == highestCount) mostMatchingTraits.Add(keyValuePair.Key);
                 }
                 hiddenSemblance = mostMatchingTraits.RandomElement();
-                if (AbilityUser.IsColonistPlayerControlled) Log.Warning(hiddenSemblance.ToString());
             }
         }
 

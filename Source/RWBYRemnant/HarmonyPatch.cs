@@ -28,169 +28,106 @@ namespace RWBYRemnant
             harmony.Patch(AccessTools.Method(typeof(DamageWorker_Flame), "ExplosionAffectCell"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("ExplosionAffectCell_PostFix")), null); // makes fire Dust spawn fire on explosion
             harmony.Patch(AccessTools.Method(typeof(JobDriver_Wait), "CheckForAutoAttack"), new HarmonyMethod(typeof(HarmonyPatch).GetMethod("CheckForAutoAttack_PreFix")), null, null); // fixes summoned Grimm bug of nullpointer if wandering
             harmony.Patch(AccessTools.Method(typeof(WeatherEvent_LightningStrike), "FireEvent"), new HarmonyMethod(typeof(HarmonyPatch).GetMethod("FireEvent_PreFix")), null, null); // changes lightning stike location onto Nora pawns
-            harmony.Patch(AccessTools.Method(typeof(WeatherEvent_LightningStrike), "FireEvent"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("FireEvent_PostFix")), null); // unlocks Semblance Nora
             harmony.Patch(AccessTools.Method(typeof(Thing), "Ingested"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("Ingested_PostFix")), null); // checks for Pumpkin Pete´s eaten
-            harmony.Patch(AccessTools.Method(typeof(Pawn_RecordsTracker), "Increment"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("Increment_PostFix")), null); // unlocks Semblance Jaune Pyrrha Cinder
-            harmony.Patch(AccessTools.Method(typeof(Pawn_RecordsTracker), "AddTo"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("AddTo_PostFix")), null); // unlocks Semblance Yang
-            harmony.Patch(AccessTools.Method(typeof(Thing), "TakeDamage"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("TakeDamage_PostFix")), null); // unlocks Semblance Ruby
-            harmony.Patch(AccessTools.Method(typeof(Pawn_JobTracker), "StartJob"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("StartJob_PostFix")), null); // unlocks Semblance Blake
-            harmony.Patch(AccessTools.Method(typeof(IncidentWorker_Raid), "TryExecuteWorker"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("TryExecuteWorker_PostFix")), null); // unlocks Semblance Ren
-            harmony.Patch(AccessTools.Method(typeof(RecordsUtility), "Notify_PawnKilled"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("Notify_PawnKilled_PostFix")), null); // unlocks Semblance Weiss
-            harmony.Patch(AccessTools.Method(typeof(HealthUtility), "GiveRandomSurgeryInjuries"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("GiveRandomSurgeryInjuries_PostFix")), null); // unlocks Semblance Qrow
-            harmony.Patch(AccessTools.Method(typeof(Pawn_HealthTracker), "MakeDowned"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("MakeDowned_PostFix")), null); // unlock Semblance Hazel Raven
+            harmony.Patch(AccessTools.Method(typeof(Pawn_RecordsTracker), "Increment"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("Increment_PostFix")), null); // unlocks Semblance Shooting Melee Construction Mining Cooking Plants Animals Medicine
+            harmony.Patch(AccessTools.Method(typeof(Pawn_JobTracker), "StartJob"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("StartJob_PostFix")), null); // unlocks Semblance Intellectual
+            harmony.Patch(AccessTools.Method(typeof(RecordsUtility), "Notify_BillDone"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("Notify_BillDone_PostFix")), null); // unlocks Semblance Crafting Artistic
             harmony.Patch(AccessTools.Method(typeof(Trait), "TipString"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("TipString_PostFix")), null); // adds disabled working tags to Trait descriptions
             harmony.Patch(AccessTools.Method(typeof(GenHostility), "HostileTo", new[] { typeof(Thing), typeof(Thing) }), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("HostileTo_PostFix")), null); // makes Grimm unable to attack pawns affected by Ren or without negative emotions
             harmony.Patch(AccessTools.Method(typeof(IncidentWorker_RaidEnemy), "TryExecuteWorker"), new HarmonyMethod(typeof(HarmonyPatch).GetMethod("TryExecuteWorker_PreFix")), null, null);  // may increases raid size if Semblance Qrow is present
             harmony.Patch(AccessTools.Method(typeof(AttackTargetFinder), "BestAttackTarget"), new HarmonyMethod(typeof(HarmonyPatch).GetMethod("BestAttackTarget_PreFix")), null, null); // makes Grimm not need line of sight
-            harmony.Patch(AccessTools.Method(typeof(Pawn_InteractionsTracker), "TryInteractWith"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("TryInteractWith_PostFix")), null); // unlock Semblance Velvet
+            harmony.Patch(AccessTools.Method(typeof(Pawn_InteractionsTracker), "TryInteractWith"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("TryInteractWith_PostFix")), null); // unlock Semblance Social
             harmony.Patch(AccessTools.Method(typeof(Targeter), "ProcessInputEvents"), new HarmonyMethod(typeof(HarmonyPatch).GetMethod("ProcessInputEvents_Prefix")), null, null); // lets the weapon projectile ability aim properly
         }
 
         #region "unlock Semblances"
 
         [HarmonyPostfix]
-        public static void TryInteractWith_PostFix(Pawn ___pawn, Pawn recipient, bool __result) // unlock Semblance Velvet
-        {
-            if (!__result) return;
-            if (!LoadedModManager.GetMod<RemnantMod>().GetSettings<RemnantModSettings>().semblanceUnlockable) return;
-            if (___pawn.RaceProps.Humanlike && recipient.RaceProps.Humanlike && ___pawn.story != null && ___pawn.story.traits.HasTrait(RWBYDefOf.RWBY_Aura) && ___pawn.Faction == Faction.OfPlayer)
-            {
-                if (Rand.Chance(0.001f))
-                {
-                    SemblanceUtility.UnlockSemblance(___pawn, RWBYDefOf.Semblance_Velvet, "LetterTextUnlockSemblanceVelvet");
-                }
-            }
-        }
-
-        [HarmonyPostfix]
-        public static void MakeDowned_PostFix(Pawn ___pawn) // unlock Semblance Hazel Raven
+        public static void Notify_BillDone_PostFix(Pawn billDoer, List<Thing> products) // unlocks Semblance Crafting Artistic
         {
             if (!LoadedModManager.GetMod<RemnantMod>().GetSettings<RemnantModSettings>().semblanceUnlockable) return;
-            if (___pawn.health.InPainShock && ___pawn.story != null && ___pawn.story.traits.HasTrait(RWBYDefOf.RWBY_Aura) && ___pawn.Faction == Faction.OfPlayer)
+            if (billDoer.GetComp<CompAbilityUserAura>() is CompAbilityUserAura compAbilityUserAura && billDoer.story != null && billDoer.story.traits.HasTrait(RWBYDefOf.RWBY_Aura))
             {
-                if (Rand.Chance(0.03f))
+                for (int i = 0; i < products.Count; i++)
                 {
-                    SemblanceUtility.UnlockSemblance(___pawn, RWBYDefOf.Semblance_Hazel, "LetterTextUnlockSemblanceHazel");
-                    Hediff hediffIgnorePain = new Hediff();
-                    hediffIgnorePain = HediffMaker.MakeHediff(RWBYDefOf.RWBY_IgnorePain, ___pawn);
-                    ___pawn.health.AddHediff(hediffIgnorePain);
-                }
-            }
-            if (___pawn.Map != null && ___pawn.Map.PlayerPawnsForStoryteller.ToList().Any(p => p != ___pawn && p.story != null && p.story.traits.HasTrait(RWBYDefOf.RWBY_Aura) && p.relations.OpinionOf(___pawn) >= 30))
-            {
-                if (Rand.Chance(0.1f))
-                {
-                    List<Pawn> pawns = ___pawn.Map.PlayerPawnsForStoryteller.ToList().FindAll(p => p != ___pawn && p.story != null && p.story.traits.HasTrait(RWBYDefOf.RWBY_Aura) && p.relations.OpinionOf(___pawn) >= 30);
-                    Pawn pawn = pawns.RandomElement();
-                    if (SemblanceUtility.UnlockSemblance(pawn, RWBYDefOf.Semblance_Raven, "LetterTextUnlockSemblanceRaven"))
+                    if (products[i].def.IsNutritionGivingIngestible && products[i].def.ingestible.preferability >= FoodPreferability.MealAwful)
                     {
-                        if (pawn.TryGetComp<CompAbilityUserAura>().aura is Aura_Raven aura_Raven)
-                        {
-                            aura_Raven.RegisterBondedPawn(___pawn);
-                        }
+                        // do nothing
+                    }
+                    else if (products[i].def.HasComp(typeof(CompArt)) && products[i].TryGetComp<CompArt>() is CompArt compArt && compArt.Active)
+                    {
+                        if (Rand.Chance(0.05f)) compAbilityUserAura.TryUnlockSemblanceWith(SkillDefOf.Artistic);
+                    }
+                    else if (!products[i].def.HasComp(typeof(CompArt)))
+                    {
+                        if (Rand.Chance(0.005f)) compAbilityUserAura.TryUnlockSemblanceWith(SkillDefOf.Crafting);
                     }
                 }
             }
         }
 
         [HarmonyPostfix]
-        public static void GiveRandomSurgeryInjuries_PostFix(Pawn p) // unlocks Semblance Qrow
+        public static void TryInteractWith_PostFix(Pawn ___pawn, Pawn recipient, bool __result) // unlock Semblance Social
         {
+            if (!__result) return;
             if (!LoadedModManager.GetMod<RemnantMod>().GetSettings<RemnantModSettings>().semblanceUnlockable) return;
-            if (p.story != null && p.story.traits.HasTrait(RWBYDefOf.RWBY_Aura) && p.Faction == Faction.OfPlayer)
+            if (___pawn.GetComp<CompAbilityUserAura>() is CompAbilityUserAura compAbilityUserAura && ___pawn.story != null && ___pawn.story.traits.HasTrait(RWBYDefOf.RWBY_Aura))
             {
-                if (Rand.Chance(0.1f)) SemblanceUtility.UnlockSemblance(p, RWBYDefOf.Semblance_Qrow, "LetterTextUnlockSemblanceQrow");
+                if (Rand.Chance(0.001f)) compAbilityUserAura.TryUnlockSemblanceWith(SkillDefOf.Social);
             }
         }
 
         [HarmonyPostfix]
-        public static void Notify_PawnKilled_PostFix(Pawn killed, Pawn killer) // unlocks Semblance Weiss
+        public static void StartJob_PostFix(Pawn_JobTracker __instance, Job newJob, Pawn ___pawn) // unlocks Semblance Intellectual
         {
             if (!LoadedModManager.GetMod<RemnantMod>().GetSettings<RemnantModSettings>().semblanceUnlockable) return;
-            if (killer.story != null && killer.story.traits.HasTrait(RWBYDefOf.RWBY_Aura) && killer.Faction == Faction.OfPlayer && killed.Faction != null && killed.Faction.def == RWBYDefOf.Creatures_of_Grimm)
+            if (___pawn.GetComp<CompAbilityUserAura>() is CompAbilityUserAura compAbilityUserAura && ___pawn.story != null && ___pawn.story.traits.HasTrait(RWBYDefOf.RWBY_Aura))
             {
-                if (Rand.Chance(0.02f)) SemblanceUtility.UnlockSemblance(killer, RWBYDefOf.Semblance_Weiss, "LetterTextUnlockSemblanceWeiss");
-            }
-        }
-
-        [HarmonyPostfix]
-        public static void TryExecuteWorker_PostFix(IncidentWorker_Raid __instance, IncidentParms parms) // unlocks Semblance Ren
-        {
-            if (!LoadedModManager.GetMod<RemnantMod>().GetSettings<RemnantModSettings>().semblanceUnlockable) return;
-            if (parms.faction == null || parms.faction.def != RWBYDefOf.Creatures_of_Grimm) return;
-            List<Pawn> pawns = ((Map)parms.target).PlayerPawnsForStoryteller.ToList().FindAll(p => p.RaceProps.Humanlike && p.story.traits.HasTrait(RWBYDefOf.RWBY_Aura));
-            if (pawns.Count() > 0 && Rand.Chance(0.2f)) SemblanceUtility.UnlockSemblance(pawns.RandomElement(), RWBYDefOf.Semblance_Ren, "LetterTextUnlockSemblanceRen");
-        }
-
-        [HarmonyPostfix]
-        public static void FireEvent_PostFix(WeatherEvent_LightningStrike __instance, Map ___map, IntVec3 ___strikeLoc, Mesh ___boltMesh) // unlocks Semblance Nora
-        {
-            if (!LoadedModManager.GetMod<RemnantMod>().GetSettings<RemnantModSettings>().semblanceUnlockable) return;
-            List<Pawn> pawns = ___map.PlayerPawnsForStoryteller.ToList().FindAll(p => p.RaceProps.Humanlike);
-            foreach (Pawn pawn in pawns)
-            {
-                if (pawn.Position.DistanceTo(___strikeLoc) <= 1.1f && pawn.story.traits.HasTrait(RWBYDefOf.RWBY_Aura))
+                if (newJob.def == JobDefOf.Research)
                 {
-                    SemblanceUtility.UnlockSemblance(pawn, RWBYDefOf.Semblance_Nora, "LetterTextUnlockSemblanceNora");
-                    break;
+                    if (Rand.Chance(0.01f)) compAbilityUserAura.TryUnlockSemblanceWith(SkillDefOf.Intellectual);
                 }
             }
         }
 
         [HarmonyPostfix]
-        public static void StartJob_PostFix(Pawn_JobTracker __instance, Job newJob, Pawn ___pawn) // unlocks Semblance Blake
+        public static void Increment_PostFix(Pawn_RecordsTracker __instance, RecordDef def) // unlocks Semblance Shooting Melee Construction Mining Cooking Plants Animals Medicine
         {
             if (!LoadedModManager.GetMod<RemnantMod>().GetSettings<RemnantModSettings>().semblanceUnlockable) return;
-            if (___pawn.story != null && ___pawn.story.traits.HasTrait(RWBYDefOf.RWBY_Aura) && ___pawn.Faction == Faction.OfPlayer)
+            if (__instance.pawn.GetComp<CompAbilityUserAura>() is CompAbilityUserAura compAbilityUserAura && __instance.pawn.story != null && __instance.pawn.story.traits.HasTrait(RWBYDefOf.RWBY_Aura))
             {
-                if (newJob.def == JobDefOf.Flee || newJob.def == JobDefOf.FleeAndCower)
+                if (def == RecordDefOf.ShotsFired)
                 {
-                    if (Rand.Chance(0.05f)) SemblanceUtility.UnlockSemblance(___pawn, RWBYDefOf.Semblance_Blake, "LetterTextUnlockSemblanceBlake");
+                    if (Rand.Chance(0.005f)) compAbilityUserAura.TryUnlockSemblanceWith(SkillDefOf.Shooting);
                 }
-            }
-        }
-
-        [HarmonyPostfix]
-        public static void Increment_PostFix(Pawn_RecordsTracker __instance, RecordDef def) // unlocks Semblance Jaune Pyrrha Cinder
-        {
-            if (!LoadedModManager.GetMod<RemnantMod>().GetSettings<RemnantModSettings>().semblanceUnlockable) return;
-            if (__instance.pawn.story != null && __instance.pawn.story.traits.HasTrait(RWBYDefOf.RWBY_Aura) && __instance.pawn.Faction == Faction.OfPlayer)
-            {
-                if (def == RecordDefOf.TimesTendedOther)
-                {
-                    if (Rand.Chance(0.02f)) SemblanceUtility.UnlockSemblance(__instance.pawn, RWBYDefOf.Semblance_Jaune, "LetterTextUnlockSemblanceJaune");
-                }
-                else if (def == RecordDefOf.KillsMechanoids || def == RecordDefOf.PawnsDownedMechanoids)
-                {
-                    if (Rand.Chance(0.02f)) SemblanceUtility.UnlockSemblance(__instance.pawn, RWBYDefOf.Semblance_Pyrrha, "LetterTextUnlockSemblancePyrrha");
-                }
-                else if (def == RecordDefOf.TimesOnFire)
-                {
-                    if (Rand.Chance(0.05f)) SemblanceUtility.UnlockSemblance(__instance.pawn, RWBYDefOf.Semblance_Cinder, "LetterTextUnlockSemblanceCinder");
-                }
-            }
-        }
-
-        [HarmonyPostfix]
-        public static void AddTo_PostFix(Pawn_RecordsTracker __instance, RecordDef def, float value) // unlocks Semblance Yang
-        {
-            if (!LoadedModManager.GetMod<RemnantMod>().GetSettings<RemnantModSettings>().semblanceUnlockable) return;
-            if (__instance.pawn.story != null && __instance.pawn.story.traits.HasTrait(RWBYDefOf.RWBY_Aura) && __instance.pawn.Faction == Faction.OfPlayer)
-            {
                 if (def == RecordDefOf.DamageTaken)
                 {
-                    if (Rand.Chance(0.005f * Math.Min(1f, (value / 20f)))) SemblanceUtility.UnlockSemblance(__instance.pawn, RWBYDefOf.Semblance_Yang, "LetterTextUnlockSemblanceYang");
+                    if (Rand.Chance(0.005f)) compAbilityUserAura.TryUnlockSemblanceWith(SkillDefOf.Melee);
                 }
-            }
-        }
-
-        [HarmonyPostfix]
-        public static void TakeDamage_PostFix(Thing __instance, DamageInfo dinfo) // unlocks Semblance Ruby
-        {
-            if (!LoadedModManager.GetMod<RemnantMod>().GetSettings<RemnantModSettings>().semblanceUnlockable) return;
-            if (__instance is Pawn pawn && pawn.RaceProps.intelligence != Intelligence.Animal && dinfo.Instigator is Pawn instigatorPawn && instigatorPawn.story != null && instigatorPawn.story.traits.HasTrait(RWBYDefOf.RWBY_Aura) && instigatorPawn.Faction == Faction.OfPlayer)
-            {
-                if (Rand.Chance(0.005f * Math.Min(1f, (dinfo.Amount / 30f)))) SemblanceUtility.UnlockSemblance(instigatorPawn, RWBYDefOf.Semblance_Ruby, "LetterTextUnlockSemblanceRuby");
+                if (def == RecordDefOf.ThingsConstructed)
+                {
+                    if (Rand.Chance(0.005f)) compAbilityUserAura.TryUnlockSemblanceWith(SkillDefOf.Construction);
+                }
+                if (def == RecordDefOf.CellsMined)
+                {
+                    if (Rand.Chance(0.005f)) compAbilityUserAura.TryUnlockSemblanceWith(SkillDefOf.Mining);
+                }
+                if (def == RecordDefOf.MealsCooked)
+                {
+                    if (Rand.Chance(0.005f)) compAbilityUserAura.TryUnlockSemblanceWith(SkillDefOf.Cooking);
+                }
+                if (def == RecordDefOf.PlantsHarvested)
+                {
+                    if (Rand.Chance(0.005f)) compAbilityUserAura.TryUnlockSemblanceWith(SkillDefOf.Plants);
+                }
+                if (def == RecordDefOf.AnimalsSlaughtered || def == RecordDefOf.AnimalsTamed)
+                {
+                    if (Rand.Chance(0.01f)) compAbilityUserAura.TryUnlockSemblanceWith(SkillDefOf.Animals);
+                }
+                if (def == RecordDefOf.TimesTendedOther)
+                {
+                    if (Rand.Chance(0.01f)) compAbilityUserAura.TryUnlockSemblanceWith(SkillDefOf.Medicine);
+                }
             }
         }
 
@@ -364,15 +301,6 @@ namespace RWBYRemnant
             if (___pawn.CurJobDef == RWBYDefOf.RWBY_StealAura) ___pawn.jobs.EndCurrentJob(JobCondition.InterruptForced); // makes the Aura steal interruptable
             if (!absorbed && ___pawn.TryGetComp<CompAbilityUserAura>() != null && ___pawn.TryGetComp<CompAbilityUserAura>().IsInitialized)
             {
-                if (___pawn.story.traits.HasTrait(RWBYDefOf.RWBY_Aura) && (dinfo.Def == DamageDefOf.EMP || dinfo.Def == RWBYDefOf.Bomb_Lightning || dinfo.Def == RWBYDefOf.RWBY_Lightning_Slash || dinfo.Def == RWBYDefOf.RWBY_Lightning_Blunt || dinfo.Def == RWBYDefOf.RWBY_Lightning_Bullet || SemblanceUtility.noraDmgAbsorbDefs.Contains(dinfo.Def.defName)))
-                {
-                    if (Rand.Chance(0.01f))
-                    {
-                        SemblanceUtility.UnlockSemblance(___pawn, RWBYDefOf.Semblance_Nora, "LetterTextUnlockSemblanceNora"); // Unlock Semblance Nora
-                        absorbed = true;
-                        return;
-                    }
-                }
                 if (___pawn.GetComp<CompAbilityUserAura>().aura.TryAbsorbDamage(dinfo))
                 {
                     absorbed = true;
