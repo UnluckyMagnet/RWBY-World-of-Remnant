@@ -8,3 +8,4 @@
 - made some abilities usable by pawns incapable of violent
 - reworked Semblance unlocking completely to be more lore accurate:
 	pawns now get a Semblance based on their passions (personality) and have to find a way to discover it
+- added mod option for Semblance Qrow friendly fire

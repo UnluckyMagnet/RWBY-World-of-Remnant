@@ -33,6 +33,8 @@
 	<HideAuraWhenMultiselectTooltip>Hide the Aura status and abilities if multiple pawns are selected (default: disabled)</HideAuraWhenMultiselectTooltip>
 	<FixTraitDisabledWorkTagsLabel>Show disabled work tags in trait description</FixTraitDisabledWorkTagsLabel>
 	<FixTraitDisabledWorkTagsTooltip>Show disabled work tags in trait descriptions, will also affect traits from other mods. (Vanilla Rimworld doesn't show them)</FixTraitDisabledWorkTagsTooltip>
+	<QrowFriendlyFireLabel>Qrow Semblance friendly fire</QrowFriendlyFireLabel>
+	<QrowFriendlyFireTooltip>Decide if minor accidents like "harvest botched" etc. affect your colonists aswell.</QrowFriendlyFireTooltip>
 
 	<!-- Aura Gizmo -->
 	<AuraGizmoLabel>{0}'s Aura</AuraGizmoLabel>

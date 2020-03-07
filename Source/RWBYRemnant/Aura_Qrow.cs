@@ -17,6 +17,7 @@ namespace RWBYRemnant
             if (pawn.Map != null && currentEnergy > 0f && Find.TickManager.TicksGame % GenTicks.SecondsToTicks(15) == 0)
             {
                 List<Pawn> pawns = pawn.Map.mapPawns.AllPawnsSpawned.FindAll(p => p.RaceProps.Humanlike && p.Position.DistanceTo(pawn.Position) < misfortuneRange && p != pawn);
+                if (!LoadedModManager.GetMod<RemnantMod>().GetSettings<RemnantModSettings>().qrowFriendlyFire) pawns.RemoveAll(p => p.IsColonistPlayerControlled);
                 if (pawns.NullOrEmpty())
                 {
                     return;

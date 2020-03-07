@@ -22,6 +22,7 @@ namespace RWBYRemnant
             listingStandard.CheckboxLabeled("AmmunitionLabel".Translate(), ref remnantModSettings.autoCollectAmmunition, "AmmunitionTooltip".Translate());
             listingStandard.CheckboxLabeled("EveryoneMakesPhotosForJoyLabel".Translate(), ref remnantModSettings.everyoneMakesPhotosForJoy, "EveryoneMakesPhotosForJoyTooltip".Translate());
             listingStandard.CheckboxLabeled("HideAuraWhenMultiselectLabel".Translate(), ref remnantModSettings.hideAuraWhenMultiselect, "HideAuraWhenMultiselectTooltip".Translate());
+            listingStandard.CheckboxLabeled("QrowFriendlyFireLabel".Translate(), ref remnantModSettings.qrowFriendlyFire, "QrowFriendlyFireTooltip".Translate());
             listingStandard.CheckboxLabeled("FixTraitDisabledWorkTagsLabel".Translate(), ref remnantModSettings.fixTraitDisabledWorkTags, "FixTraitDisabledWorkTagsTooltip".Translate());
             listingStandard.End();
         }
