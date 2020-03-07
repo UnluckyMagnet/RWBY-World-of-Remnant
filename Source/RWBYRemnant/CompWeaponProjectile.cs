@@ -86,7 +86,7 @@ namespace RWBYRemnant
             {
                 disabled = true;
                 if (GetPawn().story.traits.HasTrait(RWBYDefOf.Semblance_Velvet) && GetPawn().equipment.Primary != null && GetPawn().equipment.Primary.TryGetComp<CompLightCopy>() != null) disabled = false;
-                disabledReason = "DisabledNoDustPowderAmmunition".Translate(Props.usesAmmunition.label).CapitalizeFirst();
+                disabledReason = "DisabledNoAmmunition".Translate(Props.usesAmmunition.label).CapitalizeFirst();
             }
 
             TargetingParameters targetingParameters = TargetingParameters.ForAttackAny();

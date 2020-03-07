@@ -71,6 +71,7 @@
 				</disallowedStrategies>
 				<options>
 					<Grimm_Lancer>10</Grimm_Lancer>
+					<Grimm_LancerQueen>3</Grimm_LancerQueen>
 				</options>
 			</li>
 		</pawnGroupMakers>

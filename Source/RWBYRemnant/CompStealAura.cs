@@ -63,7 +63,7 @@ namespace RWBYRemnant
                 if (compAbilityUserAura.IsInitialized && GetPawn.story.traits.allTraits.Any(t => SemblanceUtility.semblanceList.Contains(t.def))) // if pawn has Semblance
                 {
                     compAbilityUserAura.aura.maxEnergy += 0.5f;
-                    // Aura specific: Yang, Blake, Raven
+                    // Aura specific: Yang, Blake, Raven, Adam
                     // no active abilities: Nora, Qrow, Velvet
                     if (stolenTraitDef == RWBYDefOf.Semblance_Ruby)
                     {

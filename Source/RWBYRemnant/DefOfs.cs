@@ -88,6 +88,7 @@ namespace RWBYRemnant
         public static PawnKindDef Grimm_ArmaGigas_Summoned;
         public static PawnKindDef Grimm_ArmaGigasSword_Summoned;
         public static PawnKindDef Grimm_Lancer_Summoned;
+        public static PawnKindDef Grimm_LancerQueen_Summoned;
         public static FleshTypeDef Grimm;
         public static SemblanceDef Weiss_TimeDilationGlyph_Summon;
         public static ThingDef Weiss_Glyph_TimeDilation;
@@ -169,6 +170,12 @@ namespace RWBYRemnant
         public static HediffDef RWBY_VelvetMimicMoves;
         public static ThingDef Bullet_Velvet_Camera;
         public static SoundDef Shot_Velvet_Camera;
+
+        // Adam
+        public static TraitDef Semblance_Adam;
+        public static SemblanceDef Adam_UnleashDamage;
+        public static ThingDef RWBY_Ability_Adam_Projectile;
+        public static SoundDef Draw_Gambol_Shroud_Katana;
 
         #endregion
     }

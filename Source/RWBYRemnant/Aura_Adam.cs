@@ -2,10 +2,11 @@
 using Verse;
 using RimWorld;
 using UnityEngine;
+using Verse.Sound;
 
 namespace RWBYRemnant
 {
-    public class Aura_Yang : Aura
+    public class Aura_Adam : Aura
     {
         public override void Tick()
         {
@@ -18,46 +19,25 @@ namespace RWBYRemnant
                 absorbedDamage -= 1f;
                 if (absorbedDamage < 0f) absorbedDamage = 0f;                
             }
-            if (absorbedDamage > 75f)
-            {
-                Hediff returnDamageHediff = new Hediff();
-                returnDamageHediff = HediffMaker.MakeHediff(RWBYDefOf.RWBY_YangReturnDamage, pawn);
-                pawn.health.AddHediff(returnDamageHediff);
-            }
             base.Tick();
         }
 
         public override bool TryAbsorbDamage(DamageInfo dinfo)
         {
-            absorbedDamage += (dinfo.Amount * 2f);
-            if (absorbedDamage > 100f) absorbedDamage = 100f;
+            if (absorbedDamage < 100f && Rand.Chance(0.7f) && (pawn.Drafted || pawn.IsFighting()) && pawn.equipment.Primary != null && pawn.equipment.Primary.def.IsMeleeWeapon)
+            {
+                absorbedDamage += dinfo.Amount;
+                if (absorbedDamage > 100f) absorbedDamage = 100f;
+                RWBYDefOf.Draw_Gambol_Shroud_Katana.PlayOneShot(new TargetInfo(pawn.Position, pawn.Map, false));
+                return true;
+            }
             return base.TryAbsorbDamage(dinfo);
         }
 
         public override IEnumerable<Gizmo> GetGizmos()
         {
-            string label = "";
-            if (absorbedDamage == 0f)
-            {
-                label = "AngerLevelNotAngryLabel".Translate().CapitalizeFirst();
-            }
-            else if (absorbedDamage <= 25f)
-            {
-                label = "AngerLevelAnnoyedLabel".Translate().CapitalizeFirst();
-            }
-            else if (absorbedDamage <= 50f)
-            {
-                label = "AngerLevelAngryLabel".Translate().CapitalizeFirst();
-            }
-            else if (absorbedDamage <= 75f)
-            {
-                label = "AngerLevelRagingLabel".Translate().CapitalizeFirst();
-            }
-            else
-            {
-                label = "AngerLevelLostHairLabel".Translate().CapitalizeFirst();
-            }
-            yield return new GizmoYangAngerLevel
+            string label = "AdamAbsorbDamageLabel".Translate().CapitalizeFirst();
+            yield return new GizmoAdamAbsorbLevel
             {
                 label = label,
                 labelColor = GetLabelColor(),
@@ -68,7 +48,7 @@ namespace RWBYRemnant
 
         public override Color GetColor()
         {
-            return new Color(0.8f, 0.8f, 0f);
+            return new Color(1f, 0f, 0f);
         }
 
         public override void ExposeData()

@@ -28,7 +28,8 @@ namespace RWBYRemnant
             RWBYDefOf.Semblance_Raven,
             RWBYDefOf.Semblance_Cinder,
             RWBYDefOf.Semblance_Hazel,
-            RWBYDefOf.Semblance_Velvet
+            RWBYDefOf.Semblance_Velvet,
+            RWBYDefOf.Semblance_Adam
         };
 
         public static readonly List<string> noraDmgAbsorbDefs = new List<string>
@@ -63,6 +64,7 @@ namespace RWBYRemnant
                 yield return RWBYDefOf.Semblance_Yang;
                 yield return RWBYDefOf.Semblance_Hazel;
                 yield return RWBYDefOf.Semblance_Qrow;
+                yield return RWBYDefOf.Semblance_Adam;
             }
             if (skill == SkillDefOf.Construction)
             {
@@ -94,12 +96,14 @@ namespace RWBYRemnant
                 yield return RWBYDefOf.Semblance_Weiss;
                 yield return RWBYDefOf.Semblance_Blake;
                 yield return RWBYDefOf.Semblance_Yang;
+                yield return RWBYDefOf.Semblance_Adam;
             }
             if (skill == SkillDefOf.Crafting)
             {
                 yield return RWBYDefOf.Semblance_Ren;
                 yield return RWBYDefOf.Semblance_Pyrrha;
                 yield return RWBYDefOf.Semblance_Cinder;
+                yield return RWBYDefOf.Semblance_Adam;
             }
             if (skill == SkillDefOf.Artistic)
             {

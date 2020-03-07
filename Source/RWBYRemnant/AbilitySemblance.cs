@@ -77,6 +77,21 @@ namespace RWBYRemnant
                     baseResult = false;
                     reason = "DisabledNotEnoughAura".Translate(Pawn.Name.ToStringShort);
                 }
+                if (SemblanceDef == RWBYDefOf.Adam_UnleashDamage && Pawn.TryGetComp<CompAbilityUserAura>() is CompAbilityUserAura comp1 && comp1.aura is Aura_Adam aura_Adam && aura_Adam.absorbedDamage == 0)
+                {
+                    baseResult = false;
+                    reason = "DisabledNoDamageAbosrbed".Translate(Pawn.Name.ToStringShort);
+                }
+                if (SemblanceDef == RWBYDefOf.Adam_UnleashDamage && (Pawn.equipment.Primary == null || !Pawn.equipment.Primary.def.IsMeleeWeapon))
+                {
+                    baseResult = false;
+                    reason = "DisabledNoMeleeWeapon".Translate(Pawn.Name.ToStringShort);
+                }
+                if (SemblanceDef == RWBYDefOf.Yang_ReturnDamage && Pawn.TryGetComp<CompAbilityUserAura>() is CompAbilityUserAura comp2 && comp2.aura is Aura_Yang aura_Yang && aura_Yang.absorbedDamage == 0)
+                {
+                    baseResult = false;
+                    reason = "DisabledNoDamageAbosrbed".Translate(Pawn.Name.ToStringShort);
+                }
             }
             return baseResult;
         }

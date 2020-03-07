@@ -27,6 +27,7 @@
 			<li>Semblance_Cinder</li>
 			<li>Semblance_Hazel</li>
 			<li>Semblance_Velvet</li>
+			<li>Semblance_Adam</li>
 		</conflictingTraits>
 	</TraitDef>
 
@@ -68,6 +69,7 @@
 			<li>Semblance_Cinder</li>
 			<li>Semblance_Hazel</li>
 			<li>Semblance_Velvet</li>
+			<li>Semblance_Adam</li>
 		</conflictingTraits>
 		<requiredWorkTags>
 			<li>Violent</li>
@@ -108,6 +110,7 @@
 			<li>Semblance_Cinder</li>
 			<li>Semblance_Hazel</li>
 			<li>Semblance_Velvet</li>
+			<li>Semblance_Adam</li>
 		</conflictingTraits>
 		<requiredWorkTags>
 			<li>Violent</li>
@@ -153,6 +156,7 @@
 			<li>Semblance_Cinder</li>
 			<li>Semblance_Hazel</li>
 			<li>Semblance_Velvet</li>
+			<li>Semblance_Adam</li>
 		</conflictingTraits>
 	</TraitDef>
 
@@ -198,6 +202,7 @@
 			<li>Semblance_Cinder</li>
 			<li>Semblance_Hazel</li>
 			<li>Semblance_Velvet</li>
+			<li>Semblance_Adam</li>
 		</conflictingTraits>
 	</TraitDef>
 
@@ -239,6 +244,7 @@
 			<li>Semblance_Cinder</li>
 			<li>Semblance_Hazel</li>
 			<li>Semblance_Velvet</li>
+			<li>Semblance_Adam</li>
 		</conflictingTraits>
 	</TraitDef>
 
@@ -280,6 +286,7 @@
 			<li>Semblance_Cinder</li>
 			<li>Semblance_Hazel</li>
 			<li>Semblance_Velvet</li>
+			<li>Semblance_Adam</li>
 		</conflictingTraits>
 	</TraitDef>
 
@@ -322,6 +329,7 @@
 			<li>Semblance_Cinder</li>
 			<li>Semblance_Hazel</li>
 			<li>Semblance_Velvet</li>
+			<li>Semblance_Adam</li>
 		</conflictingTraits>
 		<requiredWorkTags>
 			<li>Violent</li>
@@ -370,6 +378,7 @@
 			<li>Semblance_Cinder</li>
 			<li>Semblance_Hazel</li>
 			<li>Semblance_Velvet</li>
+			<li>Semblance_Adam</li>
 		</conflictingTraits>
 	</TraitDef>
 
@@ -412,6 +421,7 @@
 			<li>Semblance_Cinder</li>
 			<li>Semblance_Hazel</li>
 			<li>Semblance_Velvet</li>
+			<li>Semblance_Adam</li>
 		</conflictingTraits>
 	</TraitDef>
 
@@ -449,6 +459,7 @@
 			<li>Semblance_Cinder</li>
 			<li>Semblance_Hazel</li>
 			<li>Semblance_Velvet</li>
+			<li>Semblance_Adam</li>
 		</conflictingTraits>
 	</TraitDef>
 
@@ -490,6 +501,7 @@
 			<li>RWBY_Aura</li>
 			<li>Semblance_Hazel</li>
 			<li>Semblance_Velvet</li>
+			<li>Semblance_Adam</li>
 		</conflictingTraits>
 		<requiredWorkTags>
 			<li>Violent</li>
@@ -533,6 +545,7 @@
 			<li>Semblance_Cinder</li>
 			<li>RWBY_Aura</li>
 			<li>Semblance_Velvet</li>
+			<li>Semblance_Adam</li>
 		</conflictingTraits>
 		<requiredWorkTags>
 			<li>Violent</li>
@@ -581,10 +594,56 @@
 			<li>Semblance_Cinder</li>
 			<li>Semblance_Hazel</li>
 			<li>RWBY_Aura</li>
+			<li>Semblance_Adam</li>
 		</conflictingTraits>
 		<requiredWorkTags>
 			<li>Violent</li>
 			<li>Social</li>
+		</requiredWorkTags>
+	</TraitDef>
+	
+		<TraitDef>
+		<defName>Semblance_Adam</defName>
+		<commonality>0.1</commonality>
+		<degreeDatas>
+			<li>
+				<label>Semblance Adam</label>
+				<description>With {PAWN_possessive} Semblance, Moonslice, {PAWN_nameDef} is able to absorb or block the energy from an enemy attack with {PAWN_possessive} melee weapon and re-emit it again in powerful red energy strikes.</description>
+				<statOffsets>
+					<MeleeHitChance>8</MeleeHitChance>
+					<SocialImpact>0.10</SocialImpact>
+					<MoveSpeed>0.2</MoveSpeed>
+				</statOffsets>
+				<skillGains>
+					<li>
+						<key>Shooting</key>
+						<value>1</value>
+					</li>
+					<li>
+						<key>Melee</key>
+						<value>3</value>
+					</li>
+				</skillGains>
+			</li>
+		</degreeDatas>
+		<conflictingTraits>
+			<li>Semblance_Ruby</li>
+			<li>Semblance_Yang</li>
+			<li>Semblance_Weiss</li>
+			<li>Semblance_Blake</li>
+			<li>Semblance_Nora</li>
+			<li>Semblance_Jaune</li>
+			<li>Semblance_Pyrrha</li>
+			<li>Semblance_Ren</li>
+			<li>Semblance_Qrow</li>
+			<li>Semblance_Raven</li>
+			<li>Semblance_Cinder</li>
+			<li>Semblance_Hazel</li>
+			<li>Semblance_Velvet</li>
+			<li>RWBY_Aura</li>
+		</conflictingTraits>
+		<requiredWorkTags>
+			<li>Violent</li>
 		</requiredWorkTags>
 	</TraitDef>
 

@@ -507,6 +507,82 @@
 		</lifeStages>
 	</PawnKindDef>
 
+	<ThingDef ParentName="GrimmThingBaseSummoned">
+		<defName>Grimm_LancerQueen</defName>
+		<label>lancer Queen</label>
+		<description>Lancers have a three-segmented black body with three sets of legs. They have a white armored mask and armor along their back. On the back of their abdomen, the armor is in four overlapping plates. They have jagged pincers, antenna, four red transparent wings and a stinger.</description>
+		<statBases>
+			<Mass>200</Mass>
+			<MoveSpeed>4.6</MoveSpeed>
+			<ArmorRating_Blunt>0.13</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.23</ArmorRating_Sharp>
+		</statBases>
+		<tools>
+			<li>
+				<label>sting</label>
+				<capacities>
+					<li>RWBY_Toxic_Stab</li>
+				</capacities>
+				<power>32</power>
+				<cooldownTime>2.1</cooldownTime>
+				<linkedBodyPartsGroup>Grimm_StingAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+			</li>
+			<li>
+				<label>mouth</label>
+				<capacities>
+					<li>Bite</li>
+				</capacities>
+				<power>18</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+				<chanceFactor>0.2</chanceFactor>
+			</li>
+		</tools>
+		<race>
+			<body>Grimm_Lancer</body>
+			<baseBodySize>2.0</baseBodySize>
+			<baseHealthScale>4.0</baseHealthScale>
+			<lifeExpectancy>500</lifeExpectancy>
+			<lifeStageAges>
+				<li>
+					<def>Grimm_FullGrown</def>
+					<minAge>0</minAge>
+					<soundWounded>Pawn_Spelopede_Pain</soundWounded>
+					<soundDeath>Pawn_Spelopede_Death</soundDeath>
+					<soundCall>Pawn_Spelopede_Call</soundCall>
+					<soundAngry>Pawn_Spelopede_Angry</soundAngry>
+				</li>
+			</lifeStageAges>
+			<soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+		</race>
+	</ThingDef>
+
+	<PawnKindDef>
+		<defName>Grimm_LancerQueen</defName>
+		<label>lancer Queen</label>
+		<race>Grimm_LancerQueen</race>
+		<ecoSystemWeight>0</ecoSystemWeight>
+		<canArriveManhunter>false</canArriveManhunter>
+		<combatPower>250</combatPower>
+		<!--defaultFactionType>Creatures_of_Grimm</defaultFactionType-->
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Grimm/LancerQueen/LancerQueen</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>3.0</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.4, 0.4)</volume>
+						<offset>(0,0,-0.2)</offset>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+	</PawnKindDef>
+
 	<ThingDef ParentName="GrimmThingBase">
 		<defName>Grimm_DeathStalker</defName>
 		<label>death Stalker</label>

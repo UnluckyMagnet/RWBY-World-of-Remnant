@@ -17,6 +17,8 @@
 	<DisabledNoAmmunition>{0} needed to use this ability</DisabledNoAmmunition>
 	<DisabledNeedsItemEquipped>Cannot transform without {0} equipped</DisabledNeedsItemEquipped>
 	<DisabledNotEnoughAura>{0} has not enough Aura to use this ability</DisabledNotEnoughAura>
+	<DisabledNoDamageAbosrbed>{0} has no absorbed damage</DisabledNoDamageAbosrbed>
+	<DisabledNoMeleeWeapon>{0} has no melee weapon equipped</DisabledNoMeleeWeapon>
 
 	<!-- Mod Options -->
 	<AuraEveryoneLabel>Every pawn has an Aura</AuraEveryoneLabel>
@@ -43,6 +45,7 @@
 	<AngerLevelAngryLabel>angry</AngerLevelAngryLabel>
 	<AngerLevelRagingLabel>raging</AngerLevelRagingLabel>
 	<AngerLevelLostHairLabel>lost a hair kind of angry</AngerLevelLostHairLabel>
+	<AdamAbsorbDamageLabel>absorbed damage</AdamAbsorbDamageLabel>
 
 	<!-- Raven Portal Gizmo -->
 	<RavenPortalDisabled>Another portal is still active</RavenPortalDisabled>

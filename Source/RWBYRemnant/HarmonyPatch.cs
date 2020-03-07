@@ -100,31 +100,31 @@ namespace RWBYRemnant
                 {
                     if (Rand.Chance(0.005f)) compAbilityUserAura.TryUnlockSemblanceWith(SkillDefOf.Shooting);
                 }
-                if (def == RecordDefOf.DamageTaken)
+                else if (def == RecordDefOf.DamageTaken)
                 {
                     if (Rand.Chance(0.005f)) compAbilityUserAura.TryUnlockSemblanceWith(SkillDefOf.Melee);
                 }
-                if (def == RecordDefOf.ThingsConstructed)
+                else if (def == RecordDefOf.ThingsConstructed)
                 {
                     if (Rand.Chance(0.005f)) compAbilityUserAura.TryUnlockSemblanceWith(SkillDefOf.Construction);
                 }
-                if (def == RecordDefOf.CellsMined)
+                else if (def == RecordDefOf.CellsMined)
                 {
                     if (Rand.Chance(0.005f)) compAbilityUserAura.TryUnlockSemblanceWith(SkillDefOf.Mining);
                 }
-                if (def == RecordDefOf.MealsCooked)
+                else if (def == RecordDefOf.MealsCooked)
                 {
                     if (Rand.Chance(0.005f)) compAbilityUserAura.TryUnlockSemblanceWith(SkillDefOf.Cooking);
                 }
-                if (def == RecordDefOf.PlantsHarvested)
+                else if (def == RecordDefOf.PlantsHarvested)
                 {
                     if (Rand.Chance(0.005f)) compAbilityUserAura.TryUnlockSemblanceWith(SkillDefOf.Plants);
                 }
-                if (def == RecordDefOf.AnimalsSlaughtered || def == RecordDefOf.AnimalsTamed)
+                else if (def == RecordDefOf.AnimalsSlaughtered || def == RecordDefOf.AnimalsTamed)
                 {
                     if (Rand.Chance(0.01f)) compAbilityUserAura.TryUnlockSemblanceWith(SkillDefOf.Animals);
                 }
-                if (def == RecordDefOf.TimesTendedOther)
+                else if (def == RecordDefOf.TimesTendedOther)
                 {
                     if (Rand.Chance(0.01f)) compAbilityUserAura.TryUnlockSemblanceWith(SkillDefOf.Medicine);
                 }

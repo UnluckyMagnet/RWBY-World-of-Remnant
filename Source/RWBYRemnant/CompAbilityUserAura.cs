@@ -226,6 +226,16 @@ namespace RWBYRemnant
                     currentEnergy = 1f
                 };
             }
+            else if (AbilityUser.story.traits.HasTrait(RWBYDefOf.Semblance_Adam)) // Adam
+            {
+                aura = new Aura_Adam
+                {
+                    pawn = AbilityUser,
+                    maxEnergy = 1f,
+                    currentEnergy = 1f
+                };
+                if (!AbilityData.AllPowers.Any(p => p.Def == RWBYDefOf.Adam_UnleashDamage)) AddPawnAbility(RWBYDefOf.Adam_UnleashDamage);
+            }
             else if (AbilityUser.story.traits.HasTrait(RWBYDefOf.RWBY_Aura)) // Aura
             {
                 aura = new Aura
@@ -248,12 +258,13 @@ namespace RWBYRemnant
 
         public bool TryUnlockSemblanceWith(SkillDef skillDef, bool forceUnlock = false)
         {
+            if (Pawn.health.hediffSet.HasHediff(RWBYDefOf.RWBY_AuraStolen)) return false;
             if (!AbilityUser.story.traits.HasTrait(RWBYDefOf.RWBY_Aura)) return false;
             if (forceUnlock)
             {
                 SemblanceUtility.UnlockSemblance(AbilityUser, hiddenSemblance, "LetterTextUnlockSemblanceGeneral");
                 return true;
-            }                
+            }
             if (SemblanceUtility.GetSemblancesForPassion(skillDef).Contains(hiddenSemblance))
             {
                 SemblanceUtility.UnlockSemblance(AbilityUser, hiddenSemblance, "LetterTextUnlock" + hiddenSemblance.defName.Replace("_",""));
@@ -330,6 +341,7 @@ namespace RWBYRemnant
             if (AbilityUser.story.traits.HasTrait(RWBYDefOf.Semblance_Cinder)) return true;
             if (AbilityUser.story.traits.HasTrait(RWBYDefOf.Semblance_Hazel)) return true;
             if (AbilityUser.story.traits.HasTrait(RWBYDefOf.Semblance_Velvet)) return true;
+            if (AbilityUser.story.traits.HasTrait(RWBYDefOf.Semblance_Adam)) return true;
             return false;
         }
 

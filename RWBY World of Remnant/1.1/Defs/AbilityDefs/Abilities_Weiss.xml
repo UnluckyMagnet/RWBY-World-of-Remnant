@@ -111,9 +111,9 @@
 
 	<RWBYRemnant.SemblanceDef ParentName="BaseAbilityRWBY">
 		<defName>Weiss_SummonLancer</defName>
-		<label>Summon Lancer</label>
-		<uiIconPath>Things/Pawn/Grimm/Lancer/Lancer_Summon_south</uiIconPath>
-		<description>Summnon the spirit of a Lancer, which lasts a short period of time.</description>
+		<label>Summon Lancer Queen</label>
+		<uiIconPath>Things/Pawn/Grimm/LancerQueen/LancerQueen_Summon_south</uiIconPath>
+		<description>Summnon the spirit of a Lancer Queen, which lasts a short period of time.</description>
 		<auraCost>0.1</auraCost>
 		<MainVerb Class="AbilityUser.VerbProperties_Ability">
 			<verbClass>RWBYRemnant.Verb_AbilitySummonLancer</verbClass>

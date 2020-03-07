@@ -1,11 +1,5 @@
-- updated for 1.1
-- reworked weapon transforming: it now takes a little time and not instant
-- reworked weapon projectile abilities and Dust throwing to show an aiming circle
-- reworked trader/visitor/orbital trader
-- added "Dust weapon" weapon tag
-- added descriptions to all hediffs
-- reworked traits to have less required workTags and disabled workTags
-- made some abilities usable by pawns incapable of violent
-- reworked Semblance unlocking completely to be more lore accurate:
-	pawns now get a Semblance based on their passions (personality) and have to find a way to discover it
-- added mod option for Semblance Qrow friendly fire
+- fixed weapon projectile disable tag
+- fixed Semblance unlocking ignoring stolen Aura
+- added Lancer Queen
+- changed Semblance Weiss Lancer summon to Lancer Queen summon
+- added Semblance Adam

@@ -80,6 +80,7 @@
     <Compile Include="Aura_Qrow.cs" />
     <Compile Include="Aura_Velvet.cs" />
     <Compile Include="Aura_Weiss.cs" />
+    <Compile Include="Aura_Adam.cs" />
     <Compile Include="Aura_Yang.cs" />
     <Compile Include="Aura_Ruby.cs" />
     <Compile Include="Aura_Cinder.cs" />
@@ -96,6 +97,7 @@
     <Compile Include="CompShadowClone.cs" />
     <Compile Include="CompTimeDilationGlyph.cs" />
     <Compile Include="CompGlyphSummon.cs" />
+    <Compile Include="GizmoAdamAbsorbLevel.cs" />
     <Compile Include="GizmoYangAngerLevel.cs" />
     <Compile Include="Grimm_DeathWorker.cs" />
     <Compile Include="HediffComp_FrozenWorker.cs" />
@@ -144,6 +146,7 @@
     <Compile Include="CompLightCopy.cs" />
     <Compile Include="Command_TargetWithRadius.cs" />
     <Compile Include="SemblanceUtility.cs" />
+    <Compile Include="Verb_AbilityUnleashDamage.cs" />
     <Compile Include="Verb_AbilityFormBond.cs" />
     <Compile Include="Verb_AbilityMaskEmotions.cs" />
     <Compile Include="Verb_AbilityMagneticPulse.cs" />
