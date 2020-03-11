@@ -3,9 +3,9 @@
 
   <Grimm_Boarbatusk_Summoned.label>獠牙野豬</Grimm_Boarbatusk_Summoned.label>
   <Grimm_Boarbatusk_Summoned.description>獠牙野豬是有四隻腳的野豬,背部上有一排毫毛、獅鼻和獠牙.\n\n獠牙野豬有四隻眼睛和像是骨頭的面具,似乎是被黑色的血管狀繫帶緊緊卡進面部,牠的背部和腿上有一排骨板保護,並且有兩組獠牙,其中一組又大又彎,然而牠們的腹部相較之下成為弱點,幾乎沒有護甲或防禦手段.</Grimm_Boarbatusk_Summoned.description>
-  <Grimm_Boarbatusk_Summoned.tools.0.label>主獠牙</Grimm_Boarbatusk_Summoned.tools.0.label>
-  <Grimm_Boarbatusk_Summoned.tools.1.label>副獠牙</Grimm_Boarbatusk_Summoned.tools.1.label>
-  <Grimm_Boarbatusk_Summoned.tools.2.label>頭</Grimm_Boarbatusk_Summoned.tools.2.label>
+  <Grimm_Boarbatusk_Summoned.tools.0.label>big tusks</Grimm_Boarbatusk_Summoned.tools.0.label>
+  <Grimm_Boarbatusk_Summoned.tools.1.label>small tusks</Grimm_Boarbatusk_Summoned.tools.1.label>
+  <Grimm_Boarbatusk_Summoned.tools.2.label>head</Grimm_Boarbatusk_Summoned.tools.2.label>
   <!-- Leather Amount: 0 -->
   <!-- Meat Amount: 0 -->
   <Grimm_Boarbatusk_Summoned_Corpse.label>獠牙野豬屍體</Grimm_Boarbatusk_Summoned_Corpse.label>
@@ -13,31 +13,40 @@
 
   <Grimm_ArmaGigas_Summoned.label>武巨靈</Grimm_ArmaGigas_Summoned.label>
   <Grimm_ArmaGigas_Summoned.description>武巨靈是幽鬼(Geist)的亞種,是依附型的戮獸,武巨靈具有中世紀盔甲的外觀,並且具有很高的劍法.</Grimm_ArmaGigas_Summoned.description>
-  <Grimm_ArmaGigas_Summoned.tools.0.label>右手</Grimm_ArmaGigas_Summoned.tools.0.label>
-  <Grimm_ArmaGigas_Summoned.tools.1.label>左手</Grimm_ArmaGigas_Summoned.tools.1.label>
+  <Grimm_ArmaGigas_Summoned.tools.0.label>右拳</Grimm_ArmaGigas_Summoned.tools.0.label>
+  <Grimm_ArmaGigas_Summoned.tools.1.label>左拳</Grimm_ArmaGigas_Summoned.tools.1.label>
   <!-- Leather Amount: 0 -->
   <!-- Meat Amount: 0 -->
-  <Grimm_ArmaGigas_Summoned_Corpse.label>武巨靈屍體</Grimm_ArmaGigas_Summoned_Corpse.label>
-  <Grimm_ArmaGigas_Summoned_Corpse.description>武巨靈屍體</Grimm_ArmaGigas_Summoned_Corpse.description>
+  <Grimm_ArmaGigas_Summoned_Corpse.label>Arma Gigas corpse</Grimm_ArmaGigas_Summoned_Corpse.label>
+  <Grimm_ArmaGigas_Summoned_Corpse.description>Arma Gigas corpse</Grimm_ArmaGigas_Summoned_Corpse.description>
 
   <Grimm_ArmaGigasSword_Summoned.label>武巨靈</Grimm_ArmaGigasSword_Summoned.label>
   <Grimm_ArmaGigasSword_Summoned.description>武巨靈是幽鬼(Geist)的亞種,是依附型的戮獸,武巨靈具有中世紀盔甲的外觀,並且具有很高的劍法.</Grimm_ArmaGigasSword_Summoned.description>
   <Grimm_ArmaGigasSword_Summoned.tools.0.label>劍</Grimm_ArmaGigasSword_Summoned.tools.0.label>
-  <Grimm_ArmaGigasSword_Summoned.tools.1.label>右手</Grimm_ArmaGigasSword_Summoned.tools.1.label>
-  <Grimm_ArmaGigasSword_Summoned.tools.2.label>左手</Grimm_ArmaGigasSword_Summoned.tools.2.label>
+  <Grimm_ArmaGigasSword_Summoned.tools.1.label>右拳</Grimm_ArmaGigasSword_Summoned.tools.1.label>
+  <Grimm_ArmaGigasSword_Summoned.tools.2.label>左拳</Grimm_ArmaGigasSword_Summoned.tools.2.label>
   <!-- Leather Amount: 0 -->
   <!-- Meat Amount: 0 -->
-  <Grimm_ArmaGigasSword_Summoned_Corpse.label>>武巨靈屍體</Grimm_ArmaGigasSword_Summoned_Corpse.label>
-  <Grimm_ArmaGigasSword_Summoned_Corpse.description>>武巨靈屍體</Grimm_ArmaGigasSword_Summoned_Corpse.description>
+  <Grimm_ArmaGigasSword_Summoned_Corpse.label>Arma Gigas corpse</Grimm_ArmaGigasSword_Summoned_Corpse.label>
+  <Grimm_ArmaGigasSword_Summoned_Corpse.description>Arma Gigas corpse</Grimm_ArmaGigasSword_Summoned_Corpse.description>
 
   <Grimm_Lancer_Summoned.label>索矛蜂</Grimm_Lancer_Summoned.label>
   <Grimm_Lancer_Summoned.description>Lancers have a three-segmented black body with three sets of legs. They have a white armored mask and armor along their back. On the back of their abdomen, the armor is in four overlapping plates. They have jagged pincers, antenna, four red transparent wings and a stinger.</Grimm_Lancer_Summoned.description>
   <Grimm_Lancer_Summoned.tools.0.label>刺</Grimm_Lancer_Summoned.tools.0.label>
-  <Grimm_Lancer_Summoned.tools.1.label>嘴</Grimm_Lancer_Summoned.tools.1.label>
+  <Grimm_Lancer_Summoned.tools.1.label>mouth</Grimm_Lancer_Summoned.tools.1.label>
   <!-- Leather Amount: 0 -->
   <!-- Meat Amount: 0 -->
-  <Grimm_Lancer_Summoned_Corpse.label>索矛蜂屍體</Grimm_Lancer_Summoned_Corpse.label>
-  <Grimm_Lancer_Summoned_Corpse.description>索矛蜂屍體</Grimm_Lancer_Summoned_Corpse.description>
+  <Grimm_Lancer_Summoned_Corpse.label>lancer corpse</Grimm_Lancer_Summoned_Corpse.label>
+  <Grimm_Lancer_Summoned_Corpse.description>lancer corpse</Grimm_Lancer_Summoned_Corpse.description>
+
+  <Grimm_LancerQueen_Summoned.label>lancer Queen</Grimm_LancerQueen_Summoned.label>
+  <Grimm_LancerQueen_Summoned.description>Lancers have a three-segmented black body with three sets of legs. They have a white armored mask and armor along their back. On the back of their abdomen, the armor is in four overlapping plates. They have jagged pincers, antenna, four red transparent wings and a stinger.</Grimm_LancerQueen_Summoned.description>
+  <Grimm_LancerQueen_Summoned.tools.0.label>刺</Grimm_LancerQueen_Summoned.tools.0.label>
+  <Grimm_LancerQueen_Summoned.tools.1.label>mouth</Grimm_LancerQueen_Summoned.tools.1.label>
+  <!-- Leather Amount: 0 -->
+  <!-- Meat Amount: 0 -->
+  <Grimm_LancerQueen_Summoned_Corpse.label>lancer Queen corpse</Grimm_LancerQueen_Summoned_Corpse.label>
+  <Grimm_LancerQueen_Summoned_Corpse.description>lancer Queen corpse</Grimm_LancerQueen_Summoned_Corpse.description>
 
 
 </LanguageData>

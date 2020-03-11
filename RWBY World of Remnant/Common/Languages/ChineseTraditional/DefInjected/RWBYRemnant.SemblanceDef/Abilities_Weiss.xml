@@ -5,15 +5,15 @@
   <Weiss_SummonBoar.description>召喚我方獠牙野豬,持續時間很短.</Weiss_SummonBoar.description>
 
   <Weiss_SummonArmaGigas.label>召喚武巨靈</Weiss_SummonArmaGigas.label>
-  <Weiss_SummonArmaGigas.description>召喚我方武巨靈(沒有武器),持續時間很短.</Weiss_SummonArmaGigas.description>
+  <Weiss_SummonArmaGigas.description>召喚我方武巨靈 (沒有持劍),持續時間很短.</Weiss_SummonArmaGigas.description>
 
-  <Weiss_SummonArmaGigasSword.label>召喚武巨靈(劍)</Weiss_SummonArmaGigasSword.label>
-  <Weiss_SummonArmaGigasSword.description>召喚我方武巨靈(持有武器),持續時間很短.</Weiss_SummonArmaGigasSword.description>
+  <Weiss_SummonArmaGigasSword.label>召喚武巨靈(持劍)</Weiss_SummonArmaGigasSword.label>
+  <Weiss_SummonArmaGigasSword.description>召喚我方武巨靈(持劍),持續時間很短.</Weiss_SummonArmaGigasSword.description>
 
-  <Weiss_SummonLancer.label>召喚索矛蜂</Weiss_SummonLancer.label>
+  <Weiss_SummonLancer.label>召喚女王索矛蜂</Weiss_SummonLancer.label>
   <Weiss_SummonLancer.description>召喚我方索矛蜂,持續時間很短.</Weiss_SummonLancer.description>
 
-  <Weiss_TimeDilationGlyph_Summon.label>Time dilation</Weiss_TimeDilationGlyph_Summon.label>
+  <Weiss_TimeDilationGlyph_Summon.label>時間延遲</Weiss_TimeDilationGlyph_Summon.label>
   <Weiss_TimeDilationGlyph_Summon.description>Summon a time dilation glyph that slows every pawn near it.</Weiss_TimeDilationGlyph_Summon.description>
 
 

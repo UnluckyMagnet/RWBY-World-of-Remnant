@@ -43,32 +43,41 @@
 
   <Grimm_Nevermore.label>影魔鴉</Grimm_Nevermore.label>
   <Grimm_Nevermore.description>The Nevermore is an avian that has features resembling those of several other bird species. Two notable examples of this are its resemblances to condors and ravens. Like other Grimm, it has a mask-like, white bony structure overlaying the upper front of its head. It also has four glowing red eyes, two on each side of its head. The headpiece also includes a dorsal spine or fin, reminiscent of that on the heads of condors and some prehistoric pterosaurs.</Grimm_Nevermore.description>
-  <Grimm_Nevermore.tools.0.label>爪</Grimm_Nevermore.tools.0.label>
+  <Grimm_Nevermore.tools.0.label>爪子</Grimm_Nevermore.tools.0.label>
   <Grimm_Nevermore.tools.1.label>喙</Grimm_Nevermore.tools.1.label>
   <!-- Leather Amount: 0 -->
   <!-- Meat Amount: 0 -->
-  <Grimm_Nevermore_Corpse.label>影魔鴉屍體</Grimm_Nevermore_Corpse.label>
-  <Grimm_Nevermore_Corpse.description>影魔鴉屍體</Grimm_Nevermore_Corpse.description>
+  <Grimm_Nevermore_Corpse.label>Nevermore corpse</Grimm_Nevermore_Corpse.label>
+  <Grimm_Nevermore_Corpse.description>Nevermore corpse</Grimm_Nevermore_Corpse.description>
 
   <Grimm_Lancer.label>索矛蜂</Grimm_Lancer.label>
   <Grimm_Lancer.description>Lancers have a three-segmented black body with three sets of legs. They have a white armored mask and armor along their back. On the back of their abdomen, the armor is in four overlapping plates. They have jagged pincers, antenna, four red transparent wings and a stinger.</Grimm_Lancer.description>
   <Grimm_Lancer.tools.0.label>刺</Grimm_Lancer.tools.0.label>
-  <Grimm_Lancer.tools.1.label>嘴</Grimm_Lancer.tools.1.label>
+  <Grimm_Lancer.tools.1.label>口器</Grimm_Lancer.tools.1.label>
   <!-- Leather Amount: 0 -->
   <!-- Meat Amount: 0 -->
-  <Grimm_Lancer_Corpse.label>索矛蜂屍體</Grimm_Lancer_Corpse.label>
-  <Grimm_Lancer_Corpse.description>索矛蜂屍體</Grimm_Lancer_Corpse.description>
+  <Grimm_Lancer_Corpse.label>lancer corpse</Grimm_Lancer_Corpse.label>
+  <Grimm_Lancer_Corpse.description>lancer corpse</Grimm_Lancer_Corpse.description>
+
+  <Grimm_LancerQueen.label>lancer Queen</Grimm_LancerQueen.label>
+  <Grimm_LancerQueen.description>Lancers have a three-segmented black body with three sets of legs. They have a white armored mask and armor along their back. On the back of their abdomen, the armor is in four overlapping plates. They have jagged pincers, antenna, four red transparent wings and a stinger.</Grimm_LancerQueen.description>
+  <Grimm_LancerQueen.tools.0.label>刺</Grimm_LancerQueen.tools.0.label>
+  <Grimm_LancerQueen.tools.1.label>口器</Grimm_LancerQueen.tools.1.label>
+  <!-- Leather Amount: 0 -->
+  <!-- Meat Amount: 0 -->
+  <Grimm_LancerQueen_Corpse.label>lancer Queen corpse</Grimm_LancerQueen_Corpse.label>
+  <Grimm_LancerQueen_Corpse.description>lancer Queen corpse</Grimm_LancerQueen_Corpse.description>
 
   <Grimm_DeathStalker.label>死亡闊步者</Grimm_DeathStalker.label>
   <Grimm_DeathStalker.description>As opposed to most Creatures of Grimm, which have black fur or feathers, a Death Stalker has a jet-black exoskeleton underneath several large, white, bonelike plates upon its back, which are adorned with red markings. One of the more prominent attributes of this Grimm is the glowing golden stinger on its tail that it uses as a lure. It also has a pair of large pincers that it uses to defend itself and grab or cut into its prey. The Death Stalker's ten red eyes and markings can also glow in the dark when it chooses to reveal itself to its prey.</Grimm_DeathStalker.description>
   <Grimm_DeathStalker.tools.0.label>刺</Grimm_DeathStalker.tools.0.label>
-  <Grimm_DeathStalker.tools.1.label>嘴</Grimm_DeathStalker.tools.1.label>
+  <Grimm_DeathStalker.tools.1.label>口器</Grimm_DeathStalker.tools.1.label>
   <Grimm_DeathStalker.tools.2.label>左爪</Grimm_DeathStalker.tools.2.label>
   <Grimm_DeathStalker.tools.3.label>右爪</Grimm_DeathStalker.tools.3.label>
   <!-- Leather Amount: 0 -->
   <!-- Meat Amount: 0 -->
-  <Grimm_DeathStalker_Corpse.label>死亡闊步者屍體</Grimm_DeathStalker_Corpse.label>
-  <Grimm_DeathStalker_Corpse.description>死亡闊步者屍體</Grimm_DeathStalker_Corpse.description>
+  <Grimm_DeathStalker_Corpse.label>death Stalker corpse</Grimm_DeathStalker_Corpse.label>
+  <Grimm_DeathStalker_Corpse.description>death Stalker corpse</Grimm_DeathStalker_Corpse.description>
 
   <Grimm_Nuckelavee.label>半人馬</Grimm_Nuckelavee.label>
   <Grimm_Nuckelavee.description>半人馬是龐大、如同馬一樣的戮獸,是兩種不同戮獸組成,分別是類人戮獸和馬戮獸,兩者融合在一起.</Grimm_Nuckelavee.description>
@@ -76,7 +85,7 @@
   <Grimm_Nuckelavee.tools.1.label>右爪</Grimm_Nuckelavee.tools.1.label>
   <Grimm_Nuckelavee.tools.2.label>左蹄</Grimm_Nuckelavee.tools.2.label>
   <Grimm_Nuckelavee.tools.3.label>右蹄</Grimm_Nuckelavee.tools.3.label>
-  <Grimm_Nuckelavee.tools.4.label>頭</Grimm_Nuckelavee.tools.4.label>
+  <Grimm_Nuckelavee.tools.4.label>head</Grimm_Nuckelavee.tools.4.label>
   <!-- Leather Amount: 0 -->
   <!-- Meat Amount: 0 -->
   <Grimm_Nuckelavee_Corpse.label>半人馬屍體</Grimm_Nuckelavee_Corpse.label>
