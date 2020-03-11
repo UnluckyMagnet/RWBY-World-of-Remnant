@@ -258,17 +258,13 @@ namespace RWBYRemnant
 
         public bool TryUnlockSemblanceWith(SkillDef skillDef, bool forceUnlock = false)
         {
-            if (Pawn.health.hediffSet.HasHediff(RWBYDefOf.RWBY_AuraStolen)) return false;
-            if (!AbilityUser.story.traits.HasTrait(RWBYDefOf.RWBY_Aura)) return false;
             if (forceUnlock)
             {
-                SemblanceUtility.UnlockSemblance(AbilityUser, hiddenSemblance, "LetterTextUnlockSemblanceGeneral");
-                return true;
+                return SemblanceUtility.UnlockSemblance(AbilityUser, hiddenSemblance, "LetterTextUnlockSemblanceGeneral");
             }
             if (SemblanceUtility.GetSemblancesForPassion(skillDef).Contains(hiddenSemblance))
             {
-                SemblanceUtility.UnlockSemblance(AbilityUser, hiddenSemblance, "LetterTextUnlock" + hiddenSemblance.defName.Replace("_",""));
-                return true;
+                return SemblanceUtility.UnlockSemblance(AbilityUser, hiddenSemblance, "LetterTextUnlock" + hiddenSemblance.defName.Replace("_",""));
             }
             return false;
         }
