@@ -17,7 +17,7 @@
   <Semblance_Blake.degreeDatas.0.description>{PAWN_nameDef}的外像力讓{PAWN_objective}能夠創造出影子替身,{PAWN_nameDef}能運用這些替身分散敵人注意、替{PAWN_objective}自身擋刀或短暫地躲避敵方.</Semblance_Blake.degreeDatas.0.description>
 
   <Semblance_Nora.degreeDatas.0.label>Semblance Nora</Semblance_Nora.degreeDatas.0.label>
-  <Semblance_Nora.degreeDatas.0.description>{PAWN_nameDef}的外像力是能夠製造和引導電能流入{PAWN_possessive} 肌肉,讓{PAWN_objective}強化肌力,電流耗損轉化為{PAWN_nameDef}的Aura.</Semblance_Nora.degreeDatas.0.description>
+  <Semblance_Nora.degreeDatas.0.description>{PAWN_nameDef}的外像力是能夠製造和引導電能流入{PAWN_possessive}肌肉,讓{PAWN_objective}強化肌力,電流耗損轉化為{PAWN_nameDef}的Aura.</Semblance_Nora.degreeDatas.0.description>
 
   <Semblance_Jaune.degreeDatas.0.label>Semblance Jaune</Semblance_Jaune.degreeDatas.0.label>
   <Semblance_Jaune.degreeDatas.0.description>{PAWN_nameDef}的外像力是能夠強化某些人的Aura,{PAWN_pronoun}也能用自己的Aura來強化{PAWN_possessive}防禦力.</Semblance_Jaune.degreeDatas.0.description>
@@ -42,6 +42,9 @@
 
   <Semblance_Velvet.degreeDatas.0.label>Semblance Velvet</Semblance_Velvet.degreeDatas.0.label>
   <Semblance_Velvet.degreeDatas.0.description>{PAWN_nameDef}'s Semblance is the ability to mimic the exact moves that other people have learned and used in combat to a degree. However, {PAWN_possessive} Semblance does not allow {PAWN_objective} to mimic the Semblances and capabilities of others and perform moves that are a direct result of another person's Semblance.</Semblance_Velvet.degreeDatas.0.description>
+
+  <Semblance_Adam.degreeDatas.0.label>Semblance Adam</Semblance_Adam.degreeDatas.0.label>
+  <Semblance_Adam.degreeDatas.0.description>With {PAWN_possessive} Semblance, Moonslice, {PAWN_nameDef} is able to absorb or block the energy from an enemy attack with {PAWN_possessive} melee weapon and re-emit it again in powerful red energy strikes.</Semblance_Adam.degreeDatas.0.description>
 
 
 </LanguageData>

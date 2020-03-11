@@ -8,10 +8,10 @@
 
   <!-- Thief's Respite base weapon, craftable -->
 
-  <RWBY_Emerald_Gun.label>Thief's Respite</RWBY_Emerald_Gun.label>
-  <RWBY_Emerald_Gun.description>Thief's Respite are a pair of convertible revolver-sickles wielded by Emerald Sustrai.</RWBY_Emerald_Gun.description>
-  <RWBY_Emerald_Gun.tools.0.label>stock</RWBY_Emerald_Gun.tools.0.label>
-  <RWBY_Emerald_Gun.tools.1.label>barrel</RWBY_Emerald_Gun.tools.1.label>
+  <RWBY_ThiefsRespite_Gun.label>Thief's Respite</RWBY_ThiefsRespite_Gun.label>
+  <RWBY_ThiefsRespite_Gun.description>Thief's Respite are a pair of convertible revolver-sickles wielded by Emerald Sustrai.</RWBY_ThiefsRespite_Gun.description>
+  <RWBY_ThiefsRespite_Gun.tools.0.label>stock</RWBY_ThiefsRespite_Gun.tools.0.label>
+  <RWBY_ThiefsRespite_Gun.tools.1.label>barrel</RWBY_ThiefsRespite_Gun.tools.1.label>
 
 
   <!-- Thief's Respite hook custom bullet -->
@@ -22,10 +22,10 @@
 
   <!-- Thief's Respite melee with hook, not craftable -->
 
-  <RWBY_Emerald_Sickle.label>Thief's Respite</RWBY_Emerald_Sickle.label>
-  <RWBY_Emerald_Sickle.description>Thief's Respite are a pair of convertible revolver-sickles wielded by Emerald Sustrai.</RWBY_Emerald_Sickle.description>
-  <RWBY_Emerald_Sickle.tools.0.label>point</RWBY_Emerald_Sickle.tools.0.label>
-  <RWBY_Emerald_Sickle.tools.1.label>blade</RWBY_Emerald_Sickle.tools.1.label>
+  <RWBY_ThiefsRespite_Sickle.label>Thief's Respite</RWBY_ThiefsRespite_Sickle.label>
+  <RWBY_ThiefsRespite_Sickle.description>Thief's Respite are a pair of convertible revolver-sickles wielded by Emerald Sustrai.</RWBY_ThiefsRespite_Sickle.description>
+  <RWBY_ThiefsRespite_Sickle.tools.0.label>point</RWBY_ThiefsRespite_Sickle.tools.0.label>
+  <RWBY_ThiefsRespite_Sickle.tools.1.label>blade</RWBY_ThiefsRespite_Sickle.tools.1.label>
 
 
 </LanguageData>

@@ -14,18 +14,18 @@
 
   <!-- Midnight base weapon, melee, dual blades, craftable -->
 
-  <RWBY_Cinder_Metal_Blades.label>Midnight</RWBY_Cinder_Metal_Blades.label>
-  <RWBY_Cinder_Metal_Blades.description>Midnight is Cinder's old weapon and a metal-based weapon with multiple forms created by Cinder Fall.</RWBY_Cinder_Metal_Blades.description>
-  <RWBY_Cinder_Metal_Blades.tools.0.label>edge</RWBY_Cinder_Metal_Blades.tools.0.label>
-  <RWBY_Cinder_Metal_Blades.tools.1.label>point</RWBY_Cinder_Metal_Blades.tools.1.label>
+  <RWBY_Midnight_Blades.label>Midnight</RWBY_Midnight_Blades.label>
+  <RWBY_Midnight_Blades.description>Midnight is Cinder's old weapon and a metal-based weapon with multiple forms created by Cinder Fall.</RWBY_Midnight_Blades.description>
+  <RWBY_Midnight_Blades.tools.0.label>edge</RWBY_Midnight_Blades.tools.0.label>
+  <RWBY_Midnight_Blades.tools.1.label>point</RWBY_Midnight_Blades.tools.1.label>
 
 
   <!-- Midnight weapon, ranged, bow -->
 
-  <RWBY_Cinder_Metal_Bow.label>Midnight</RWBY_Cinder_Metal_Bow.label>
-  <RWBY_Cinder_Metal_Bow.description>Midnight is Cinder's old weapon and a metal-based weapon with multiple forms created by Cinder Fall.</RWBY_Cinder_Metal_Bow.description>
-  <RWBY_Cinder_Metal_Bow.tools.0.label>arrow</RWBY_Cinder_Metal_Bow.tools.0.label>
-  <RWBY_Cinder_Metal_Bow.tools.1.label>bow</RWBY_Cinder_Metal_Bow.tools.1.label>
+  <RWBY_Midnight_Bow.label>Midnight</RWBY_Midnight_Bow.label>
+  <RWBY_Midnight_Bow.description>Midnight is Cinder's old weapon and a metal-based weapon with multiple forms created by Cinder Fall.</RWBY_Midnight_Bow.description>
+  <RWBY_Midnight_Bow.tools.0.label>arrow</RWBY_Midnight_Bow.tools.0.label>
+  <RWBY_Midnight_Bow.tools.1.label>bow</RWBY_Midnight_Bow.tools.1.label>
 
 
   <!-- Cinder ability weapons -->

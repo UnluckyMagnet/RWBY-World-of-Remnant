@@ -27,38 +27,38 @@
   <Grimm_QuadrupedWithPawsAndTail.corePart.parts.2.parts.0.parts.3.customLabel>左耳</Grimm_QuadrupedWithPawsAndTail.corePart.parts.2.parts.0.parts.3.customLabel>
   <Grimm_QuadrupedWithPawsAndTail.corePart.parts.2.parts.0.parts.4.customLabel>右耳</Grimm_QuadrupedWithPawsAndTail.corePart.parts.2.parts.0.parts.4.customLabel>
   <Grimm_QuadrupedWithPawsAndTail.corePart.parts.3.customLabel>左前腿</Grimm_QuadrupedWithPawsAndTail.corePart.parts.3.customLabel>
-  <Grimm_QuadrupedWithPawsAndTail.corePart.parts.3.parts.0.customLabel>左前爪</Grimm_QuadrupedWithPawsAndTail.corePart.parts.3.parts.0.customLabel>
+  <Grimm_QuadrupedWithPawsAndTail.corePart.parts.3.parts.0.customLabel>左前爪子</Grimm_QuadrupedWithPawsAndTail.corePart.parts.3.parts.0.customLabel>
   <Grimm_QuadrupedWithPawsAndTail.corePart.parts.4.customLabel>右前腿</Grimm_QuadrupedWithPawsAndTail.corePart.parts.4.customLabel>
-  <Grimm_QuadrupedWithPawsAndTail.corePart.parts.4.parts.0.customLabel>右前爪</Grimm_QuadrupedWithPawsAndTail.corePart.parts.4.parts.0.customLabel>
+  <Grimm_QuadrupedWithPawsAndTail.corePart.parts.4.parts.0.customLabel>右前爪子</Grimm_QuadrupedWithPawsAndTail.corePart.parts.4.parts.0.customLabel>
   <Grimm_QuadrupedWithPawsAndTail.corePart.parts.5.customLabel>左後腿</Grimm_QuadrupedWithPawsAndTail.corePart.parts.5.customLabel>
-  <Grimm_QuadrupedWithPawsAndTail.corePart.parts.5.parts.0.customLabel>左後爪</Grimm_QuadrupedWithPawsAndTail.corePart.parts.5.parts.0.customLabel>
+  <Grimm_QuadrupedWithPawsAndTail.corePart.parts.5.parts.0.customLabel>左後爪子</Grimm_QuadrupedWithPawsAndTail.corePart.parts.5.parts.0.customLabel>
   <Grimm_QuadrupedWithPawsAndTail.corePart.parts.6.customLabel>右後腿</Grimm_QuadrupedWithPawsAndTail.corePart.parts.6.customLabel>
-  <Grimm_QuadrupedWithPawsAndTail.corePart.parts.6.parts.0.customLabel>右後爪</Grimm_QuadrupedWithPawsAndTail.corePart.parts.6.parts.0.customLabel>
+  <Grimm_QuadrupedWithPawsAndTail.corePart.parts.6.parts.0.customLabel>右後爪子</Grimm_QuadrupedWithPawsAndTail.corePart.parts.6.parts.0.customLabel>
 
   <Grimm_DeathStalker.label>死亡闊步者</Grimm_DeathStalker.label>
   <Grimm_DeathStalker.corePart.parts.0.parts.0.customLabel>刺</Grimm_DeathStalker.corePart.parts.0.parts.0.customLabel>
-  <Grimm_DeathStalker.corePart.parts.2.parts.0.parts.1.customLabel>first left眼</Grimm_DeathStalker.corePart.parts.2.parts.0.parts.1.customLabel>
-  <Grimm_DeathStalker.corePart.parts.2.parts.0.parts.2.customLabel>first right眼</Grimm_DeathStalker.corePart.parts.2.parts.0.parts.2.customLabel>
-  <Grimm_DeathStalker.corePart.parts.2.parts.0.parts.3.customLabel>second left眼</Grimm_DeathStalker.corePart.parts.2.parts.0.parts.3.customLabel>
-  <Grimm_DeathStalker.corePart.parts.2.parts.0.parts.4.customLabel>second right眼</Grimm_DeathStalker.corePart.parts.2.parts.0.parts.4.customLabel>
-  <Grimm_DeathStalker.corePart.parts.2.parts.0.parts.5.customLabel>third left眼</Grimm_DeathStalker.corePart.parts.2.parts.0.parts.5.customLabel>
-  <Grimm_DeathStalker.corePart.parts.2.parts.0.parts.6.customLabel>third right眼</Grimm_DeathStalker.corePart.parts.2.parts.0.parts.6.customLabel>
-  <Grimm_DeathStalker.corePart.parts.2.parts.0.parts.7.customLabel>fourth left眼</Grimm_DeathStalker.corePart.parts.2.parts.0.parts.7.customLabel>
-  <Grimm_DeathStalker.corePart.parts.2.parts.0.parts.8.customLabel>fourth right眼</Grimm_DeathStalker.corePart.parts.2.parts.0.parts.8.customLabel>
-  <Grimm_DeathStalker.corePart.parts.2.parts.0.parts.9.customLabel>fifth left眼</Grimm_DeathStalker.corePart.parts.2.parts.0.parts.9.customLabel>
-  <Grimm_DeathStalker.corePart.parts.2.parts.0.parts.10.customLabel>fifth right眼</Grimm_DeathStalker.corePart.parts.2.parts.0.parts.10.customLabel>
+  <Grimm_DeathStalker.corePart.parts.2.parts.0.parts.1.customLabel>左眼(第一對)</Grimm_DeathStalker.corePart.parts.2.parts.0.parts.1.customLabel>
+  <Grimm_DeathStalker.corePart.parts.2.parts.0.parts.2.customLabel>右眼(第一對)</Grimm_DeathStalker.corePart.parts.2.parts.0.parts.2.customLabel>
+  <Grimm_DeathStalker.corePart.parts.2.parts.0.parts.3.customLabel>左眼(第二對)</Grimm_DeathStalker.corePart.parts.2.parts.0.parts.3.customLabel>
+  <Grimm_DeathStalker.corePart.parts.2.parts.0.parts.4.customLabel>右眼(第二對)</Grimm_DeathStalker.corePart.parts.2.parts.0.parts.4.customLabel>
+  <Grimm_DeathStalker.corePart.parts.2.parts.0.parts.5.customLabel>左眼(第三對)</Grimm_DeathStalker.corePart.parts.2.parts.0.parts.5.customLabel>
+  <Grimm_DeathStalker.corePart.parts.2.parts.0.parts.6.customLabel>右眼(第三對)</Grimm_DeathStalker.corePart.parts.2.parts.0.parts.6.customLabel>
+  <Grimm_DeathStalker.corePart.parts.2.parts.0.parts.7.customLabel>左眼(第四對)</Grimm_DeathStalker.corePart.parts.2.parts.0.parts.7.customLabel>
+  <Grimm_DeathStalker.corePart.parts.2.parts.0.parts.8.customLabel>右眼(第四對)</Grimm_DeathStalker.corePart.parts.2.parts.0.parts.8.customLabel>
+  <Grimm_DeathStalker.corePart.parts.2.parts.0.parts.9.customLabel>左眼(第五對)</Grimm_DeathStalker.corePart.parts.2.parts.0.parts.9.customLabel>
+  <Grimm_DeathStalker.corePart.parts.2.parts.0.parts.10.customLabel>右眼(第五對)</Grimm_DeathStalker.corePart.parts.2.parts.0.parts.10.customLabel>
   <Grimm_DeathStalker.corePart.parts.2.parts.0.parts.11.customLabel>左耳</Grimm_DeathStalker.corePart.parts.2.parts.0.parts.11.customLabel>
   <Grimm_DeathStalker.corePart.parts.2.parts.0.parts.12.customLabel>右耳</Grimm_DeathStalker.corePart.parts.2.parts.0.parts.12.customLabel>
   <Grimm_DeathStalker.corePart.parts.3.customLabel>左臂</Grimm_DeathStalker.corePart.parts.3.customLabel>
   <Grimm_DeathStalker.corePart.parts.3.parts.0.customLabel>左爪</Grimm_DeathStalker.corePart.parts.3.parts.0.customLabel>
   <Grimm_DeathStalker.corePart.parts.4.customLabel>右臂</Grimm_DeathStalker.corePart.parts.4.customLabel>
   <Grimm_DeathStalker.corePart.parts.4.parts.0.customLabel>右爪</Grimm_DeathStalker.corePart.parts.4.parts.0.customLabel>
-  <Grimm_DeathStalker.corePart.parts.5.customLabel>first left 腿</Grimm_DeathStalker.corePart.parts.5.customLabel>
-  <Grimm_DeathStalker.corePart.parts.6.customLabel>first right 腿</Grimm_DeathStalker.corePart.parts.6.customLabel>
-  <Grimm_DeathStalker.corePart.parts.7.customLabel>second left 腿</Grimm_DeathStalker.corePart.parts.7.customLabel>
-  <Grimm_DeathStalker.corePart.parts.8.customLabel>second right 腿</Grimm_DeathStalker.corePart.parts.8.customLabel>
-  <Grimm_DeathStalker.corePart.parts.9.customLabel>third left 腿</Grimm_DeathStalker.corePart.parts.9.customLabel>
-  <Grimm_DeathStalker.corePart.parts.10.customLabel>third right 腿</Grimm_DeathStalker.corePart.parts.10.customLabel>
+  <Grimm_DeathStalker.corePart.parts.5.customLabel>左腿(第一對)</Grimm_DeathStalker.corePart.parts.5.customLabel>
+  <Grimm_DeathStalker.corePart.parts.6.customLabel>右腿(第一對)</Grimm_DeathStalker.corePart.parts.6.customLabel>
+  <Grimm_DeathStalker.corePart.parts.7.customLabel>左腿(第二對)</Grimm_DeathStalker.corePart.parts.7.customLabel>
+  <Grimm_DeathStalker.corePart.parts.8.customLabel>右腿(第二對)</Grimm_DeathStalker.corePart.parts.8.customLabel>
+  <Grimm_DeathStalker.corePart.parts.9.customLabel>左腿(第三對)</Grimm_DeathStalker.corePart.parts.9.customLabel>
+  <Grimm_DeathStalker.corePart.parts.10.customLabel>右腿(第三對)</Grimm_DeathStalker.corePart.parts.10.customLabel>
 
   <Grimm_Griffon.label>獅鳩獸</Grimm_Griffon.label>
   <Grimm_Griffon.corePart.parts.2.parts.0.parts.1.customLabel>左眼</Grimm_Griffon.corePart.parts.2.parts.0.parts.1.customLabel>
@@ -66,9 +66,9 @@
   <Grimm_Griffon.corePart.parts.3.customLabel>左翼</Grimm_Griffon.corePart.parts.3.customLabel>
   <Grimm_Griffon.corePart.parts.4.customLabel>右翼</Grimm_Griffon.corePart.parts.4.customLabel>
   <Grimm_Griffon.corePart.parts.5.customLabel>左前腿</Grimm_Griffon.corePart.parts.5.customLabel>
-  <Grimm_Griffon.corePart.parts.5.parts.0.customLabel>左前爪</Grimm_Griffon.corePart.parts.5.parts.0.customLabel>
+  <Grimm_Griffon.corePart.parts.5.parts.0.customLabel>左前爪子</Grimm_Griffon.corePart.parts.5.parts.0.customLabel>
   <Grimm_Griffon.corePart.parts.6.customLabel>右前腿</Grimm_Griffon.corePart.parts.6.customLabel>
-  <Grimm_Griffon.corePart.parts.6.parts.0.customLabel>右前爪</Grimm_Griffon.corePart.parts.6.parts.0.customLabel>
+  <Grimm_Griffon.corePart.parts.6.parts.0.customLabel>右前爪子</Grimm_Griffon.corePart.parts.6.parts.0.customLabel>
   <Grimm_Griffon.corePart.parts.7.customLabel>左後腿</Grimm_Griffon.corePart.parts.7.customLabel>
   <Grimm_Griffon.corePart.parts.7.parts.0.customLabel>左後腳</Grimm_Griffon.corePart.parts.7.parts.0.customLabel>
   <Grimm_Griffon.corePart.parts.8.customLabel>右後腿</Grimm_Griffon.corePart.parts.8.customLabel>
@@ -88,10 +88,10 @@
   <Grimm_Lancer.corePart.parts.0.parts.0.customLabel>刺</Grimm_Lancer.corePart.parts.0.parts.0.customLabel>
   <Grimm_Lancer.corePart.parts.2.parts.0.parts.1.customLabel>左眼</Grimm_Lancer.corePart.parts.2.parts.0.parts.1.customLabel>
   <Grimm_Lancer.corePart.parts.2.parts.0.parts.2.customLabel>右眼</Grimm_Lancer.corePart.parts.2.parts.0.parts.2.customLabel>
-  <Grimm_Lancer.corePart.parts.3.customLabel>左上翼</Grimm_Lancer.corePart.parts.3.customLabel>
-  <Grimm_Lancer.corePart.parts.4.customLabel>右上翼</Grimm_Lancer.corePart.parts.4.customLabel>
-  <Grimm_Lancer.corePart.parts.5.customLabel>左下翼</Grimm_Lancer.corePart.parts.5.customLabel>
-  <Grimm_Lancer.corePart.parts.6.customLabel>右下翼</Grimm_Lancer.corePart.parts.6.customLabel>
+  <Grimm_Lancer.corePart.parts.3.customLabel>左上翅</Grimm_Lancer.corePart.parts.3.customLabel>
+  <Grimm_Lancer.corePart.parts.4.customLabel>右上翅</Grimm_Lancer.corePart.parts.4.customLabel>
+  <Grimm_Lancer.corePart.parts.5.customLabel>左下翅</Grimm_Lancer.corePart.parts.5.customLabel>
+  <Grimm_Lancer.corePart.parts.6.customLabel>右下翅</Grimm_Lancer.corePart.parts.6.customLabel>
 
   <Grimm_ArmaGigas.label>武巨靈</Grimm_ArmaGigas.label>
   <Grimm_ArmaGigas.corePart.parts.1.parts.0.parts.1.customLabel>左眼</Grimm_ArmaGigas.corePart.parts.1.parts.0.parts.1.customLabel>
@@ -126,6 +126,7 @@
   <Grimm_ArmaGigasSword.corePart.parts.6.parts.0.customLabel>右腳</Grimm_ArmaGigasSword.corePart.parts.6.parts.0.customLabel>
 
   <Grimm_Nuckelavee.label>半人馬</Grimm_Nuckelavee.label>
+  <Grimm_Nuckelavee.corePart.customLabel>馬身</Grimm_Nuckelavee.corePart.customLabel>
   <Grimm_Nuckelavee.corePart.parts.0.customLabel>類人身</Grimm_Nuckelavee.corePart.parts.0.customLabel>
   <Grimm_Nuckelavee.corePart.parts.0.parts.0.customLabel>類人脊椎</Grimm_Nuckelavee.corePart.parts.0.parts.0.customLabel>
   <Grimm_Nuckelavee.corePart.parts.0.parts.1.customLabel>類人脖子</Grimm_Nuckelavee.corePart.parts.0.parts.1.customLabel>
@@ -163,7 +164,6 @@
   <Grimm_Nuckelavee.corePart.parts.6.parts.0.customLabel>左後蹄</Grimm_Nuckelavee.corePart.parts.6.parts.0.customLabel>
   <Grimm_Nuckelavee.corePart.parts.7.customLabel>右後腿</Grimm_Nuckelavee.corePart.parts.7.customLabel>
   <Grimm_Nuckelavee.corePart.parts.7.parts.0.customLabel>右後蹄</Grimm_Nuckelavee.corePart.parts.7.parts.0.customLabel>
-  <Grimm_Nuckelavee.corePart.customLabel>馬身</Grimm_Nuckelavee.corePart.customLabel>
 
 
 </LanguageData>

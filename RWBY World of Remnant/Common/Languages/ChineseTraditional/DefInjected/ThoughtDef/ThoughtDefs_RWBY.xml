@@ -1,21 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-  <RWBY_PictureTaken.stages.0.label>被人拍照</RWBY_PictureTaken.stages.0.label>
-  <RWBY_PictureTaken.stages.0.description>有人對我拍照?我很有名氣嗎??</RWBY_PictureTaken.stages.0.description>
+  <RWBY_PictureTaken.stages.0.label>picture taken of me</RWBY_PictureTaken.stages.0.label>
+  <RWBY_PictureTaken.stages.0.description>Someone took a picture of ME? Am i that important?</RWBY_PictureTaken.stages.0.description>
 
   <RWBY_RubyUsedCrescentRose.stages.0.label>no awkward smalltalk</RWBY_RubyUsedCrescentRose.stages.0.label>
   <RWBY_RubyUsedCrescentRose.stages.0.description>Today i got to let my sweetheart do the talking.</RWBY_RubyUsedCrescentRose.stages.0.description>
 
-  <RWBY_PyrrhaHurtFriendly.stages.0.label>我做了什麼...... </RWBY_PyrrhaHurtFriendly.stages.0.label>
+  <RWBY_PyrrhaHurtFriendly.stages.0.label>what have i done...</RWBY_PyrrhaHurtFriendly.stages.0.label>
   <RWBY_PyrrhaHurtFriendly.stages.0.description>I couldn't control my powers and hurt someone who didn't deserve it.</RWBY_PyrrhaHurtFriendly.stages.0.description>
 
-  <RWBY_JauneAtePumpkinPetes.stages.0.label>吃了我最喜歡的食物</RWBY_JauneAtePumpkinPetes.stages.0.label>
-  <RWBY_JauneAtePumpkinPetes.stages.0.description>南瓜皮克麥片是我最愛的食物. Maybe i will get a reward if i eat enough of them...</RWBY_JauneAtePumpkinPetes.stages.0.description>
+  <RWBY_JauneAtePumpkinPetes.stages.0.label>ate my favorite food</RWBY_JauneAtePumpkinPetes.stages.0.label>
+  <RWBY_JauneAtePumpkinPetes.stages.0.description>Pumpkin Pete´s is my favorite food. Maybe i will get a reward if i eat enough of them...</RWBY_JauneAtePumpkinPetes.stages.0.description>
 
-  <RWBY_AuraStolen_Relation.stages.0.label>我的Aura被偷</RWBY_AuraStolen_Relation.stages.0.label>
+  <RWBY_AuraStolen_Relation.stages.0.label>stole my Aura</RWBY_AuraStolen_Relation.stages.0.label>
 
-  <RWBY_AuraStolen_Mood.stages.0.label>我的Aura被偷</RWBY_AuraStolen_Mood.stages.0.label>
+  <RWBY_AuraStolen_Mood.stages.0.label>my Aura was stolen</RWBY_AuraStolen_Mood.stages.0.label>
   <RWBY_AuraStolen_Mood.stages.0.description>Someone stole my Aura and it will never come back. I am left with nothing.</RWBY_AuraStolen_Mood.stages.0.description>
 
 
