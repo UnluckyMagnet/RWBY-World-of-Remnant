@@ -21,7 +21,7 @@ namespace RWBYRemnant
             {
                 GetActor().pather.StopDead();
                 ThingWithComps thingToTransform = (ThingWithComps)TargetB;
-                if (thingToTransform != null && thingToTransform.TryGetComp<CompWeaponTransform>() is CompWeaponTransform compWeaponTransform)
+                if (thingToTransform != null && thingToTransform.AllComps.Find(c => c is CompWeaponTransform comp1 && comp1.transformationPending) is CompWeaponTransform compWeaponTransform)
                 {
                     totalNeededWork = GenTicks.SecondsToTicks(compWeaponTransform.GetTransformTimeInSeconds());
                     workLeft = totalNeededWork;
@@ -48,9 +48,10 @@ namespace RWBYRemnant
             transformWeapon.initAction = delegate ()
             {
                 ThingWithComps thingToTransform = (ThingWithComps)TargetB;
-                if (thingToTransform != null && thingToTransform.TryGetComp<CompWeaponTransform>() is CompWeaponTransform compWeaponTransform)
+                if (thingToTransform != null && thingToTransform.AllComps.Find(c => c is CompWeaponTransform comp1 && comp1.transformationPending) is CompWeaponTransform compWeaponTransform)
                 {
                     compWeaponTransform.Transform();
+                    compWeaponTransform.transformationPending = false;
                 }
             };
             yield return transformWeapon;

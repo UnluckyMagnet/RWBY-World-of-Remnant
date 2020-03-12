@@ -95,6 +95,11 @@ namespace RWBYRemnant
             }
             else
             {
+                foreach (CompWeaponTransform compWeaponTransform in parent.AllComps.FindAll(c => c is CompWeaponTransform comp1))
+                {
+                    compWeaponTransform.transformationPending = false;
+                }
+                transformationPending = true;
                 GetPawn.jobs.TryTakeOrderedJob(JobMaker.MakeJob(RWBYDefOf.RWBY_TransformWeapon, GetPawn, parent));
             }
         }
@@ -154,5 +159,13 @@ namespace RWBYRemnant
             };
             yield break;
         }
+
+        public override void PostExposeData()
+        {
+            base.PostExposeData();
+            Scribe_Values.Look<bool>(ref transformationPending, "transformationPending", false, false);
+        }
+
+        public bool transformationPending = false;
     }
 }
