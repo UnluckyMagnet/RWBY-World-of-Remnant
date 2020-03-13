@@ -24,10 +24,10 @@ namespace RWBYRemnant
 
         public override bool TryAbsorbDamage(DamageInfo dinfo)
         {
-            if (absorbedDamage < 100f && Rand.Chance(0.7f) && (pawn.Drafted || pawn.IsFighting()) && pawn.equipment.Primary != null && pawn.equipment.Primary.def.IsMeleeWeapon)
+            if (absorbedDamage < 500f && Rand.Chance(0.7f) && (pawn.Drafted || pawn.IsFighting()) && pawn.equipment.Primary != null && pawn.equipment.Primary.def.IsMeleeWeapon)
             {
                 absorbedDamage += dinfo.Amount;
-                if (absorbedDamage > 100f) absorbedDamage = 100f;
+                if (absorbedDamage > 500f) absorbedDamage = 500f;
                 RWBYDefOf.Draw_Gambol_Shroud_Katana.PlayOneShot(new TargetInfo(pawn.Position, pawn.Map, false));
                 return true;
             }

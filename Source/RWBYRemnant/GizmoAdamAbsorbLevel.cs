@@ -28,11 +28,11 @@ namespace RWBYRemnant
                 Widgets.Label(rect2, this.label);
                 Rect rect3 = rect;
                 rect3.yMin = overRect.height / 2f;
-                float fillPercent = this.currentAbsorbedDamage / 100f;
+                float fillPercent = this.currentAbsorbedDamage / 500f;
                 Widgets.FillableBar(rect3, fillPercent, FullShieldBarTex, GizmoAdamAbsorbLevel.EmptyShieldBarTex, false);
                 Text.Font = GameFont.Small;
                 Text.Anchor = TextAnchor.MiddleCenter;
-                Widgets.Label(rect3, labelColor + (this.currentAbsorbedDamage).ToString("F0") + " / " + (100f).ToString("F0") + "</color>");
+                Widgets.Label(rect3, labelColor + (this.currentAbsorbedDamage).ToString("F0") + " / " + (500f).ToString("F0") + "</color>");
                 Text.Anchor = TextAnchor.UpperLeft;
             }, true, false, 1f);
             return new GizmoResult(GizmoState.Clear);

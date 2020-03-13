@@ -44,7 +44,7 @@ namespace RWBYRemnant
                             }
                             else
                             {
-                                damageToDealToAura = compAbilityUserAura.aura.currentEnergy + 1f;
+                                damageToDealToAura = compAbilityUserAura.aura.currentEnergy * 100f + 1f;
                                 damageToDeal = damageToDeal - compAbilityUserAura.aura.currentEnergy;
                             }
                             DamageInfo extraDinfoToAura = new DamageInfo(DamageDefOf.Cut, damageToDealToAura, 0f, -1f, CasterPawn, null, CasterPawn.def, DamageInfo.SourceCategory.ThingOrUnknown, targetPawn);
