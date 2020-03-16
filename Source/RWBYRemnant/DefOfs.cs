@@ -52,6 +52,7 @@ namespace RWBYRemnant
         public static PawnKindDef Grimm_Ursa;
         public static PawnKindDef Grimm_Griffon;
         public static PawnKindDef Grimm_Nuckelavee;
+        public static PawnKindDef Grimm_Lancer;
 
         #endregion
 

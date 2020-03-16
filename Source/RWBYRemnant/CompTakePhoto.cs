@@ -79,7 +79,7 @@ namespace RWBYRemnant
             weaponToCreate.TryGetComp<CompColorable>().Color = Props.LightCopyColor;
 
             // remove certain special abilities from light copy
-            weaponToCreate.AllComps.RemoveAll(x => x.GetType().Equals(typeof(CompWeaponTransform)));
+            weaponToCreate.AllComps.RemoveAll(x => x.GetType().Name.Equals("CompWeaponTransform")); // checking for string because "monster hunter rimworld" mod also has transformable weapons
             weaponToCreate.AllComps.RemoveAll(x => x.GetType().Equals(typeof(CompTakePhoto)));
             
             CompLightCopy rWBYLightCopyDestroyAbility = new CompLightCopy

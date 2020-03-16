@@ -4,7 +4,7 @@ using Verse;
 
 namespace RWBYRemnant
 {
-    class IncidentWorker_GrimmWandersIn : IncidentWorker_Nuckelavee
+    public class IncidentWorker_GrimmWandersIn : IncidentWorker_Nuckelavee
     {
         protected override bool TryExecuteWorker(IncidentParms parms)
         {
@@ -13,7 +13,8 @@ namespace RWBYRemnant
                  RWBYDefOf.Grimm_Boarbatusk,
                  RWBYDefOf.Grimm_Beowolf,
                  RWBYDefOf.Grimm_Ursa,
-                 RWBYDefOf.Grimm_Griffon
+                 RWBYDefOf.Grimm_Griffon,
+                 RWBYDefOf.Grimm_Lancer
             };
 
             Map map = (Map)parms.target;
