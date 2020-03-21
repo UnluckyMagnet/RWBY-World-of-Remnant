@@ -55,7 +55,8 @@
 		</targetTags>
 		<workerClass>RWBYRemnant.IncidentWorker_Nuckelavee</workerClass>
 		<baseChance>5.0</baseChance>
-		<minRefireDays>30</minRefireDays>
+		<minRefireDays>20</minRefireDays>
+		<earliestDay>30</earliestDay>
 	</IncidentDef>
 
 </Defs>
