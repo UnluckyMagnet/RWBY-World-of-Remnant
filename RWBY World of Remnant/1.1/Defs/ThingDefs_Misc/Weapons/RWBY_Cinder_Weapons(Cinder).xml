@@ -12,7 +12,7 @@
 		</graphicData>
 		<projectile>
 			<damageDef>Arrow</damageDef>
-			<damageAmountBase>28</damageAmountBase>
+			<damageAmountBase>30</damageAmountBase>
 			<stoppingPower>2</stoppingPower>
 			<speed>60</speed>
 		</projectile>
@@ -129,7 +129,7 @@
 			<AccuracyTouch>0.65</AccuracyTouch>
 			<AccuracyShort>0.75</AccuracyShort>
 			<AccuracyMedium>0.85</AccuracyMedium>
-			<AccuracyLong>0.80</AccuracyLong>
+			<AccuracyLong>0.87</AccuracyLong>
 			<RangedWeapon_Cooldown>1.2</RangedWeapon_Cooldown>
 		</statBases>
 		<costList>
@@ -143,7 +143,7 @@
 				<verbClass>Verb_Shoot</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>RWBY_Cinder_Bow_Projectile</defaultProjectile>
-				<warmupTime>1.3</warmupTime>
+				<warmupTime>1.1</warmupTime>
 				<range>40</range>
 				<burstShotCount>1</burstShotCount>
 				<soundCast>Shoot_Fireball</soundCast>
@@ -355,7 +355,7 @@
 				<verbClass>Verb_Shoot</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>RWBY_Cinder_Bow_Glass_Projectile</defaultProjectile>
-				<warmupTime>1.3</warmupTime>
+				<warmupTime>1.1</warmupTime>
 				<range>40</range>
 				<burstShotCount>1</burstShotCount>
 				<soundCast>Shoot_Fireball</soundCast>

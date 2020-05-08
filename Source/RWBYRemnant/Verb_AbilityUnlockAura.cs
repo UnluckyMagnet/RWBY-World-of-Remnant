@@ -30,7 +30,7 @@ namespace RWBYRemnant
                 for (int i = 0; i < this.TargetsAoE.Count; i++)
                 {
                     bool abilitySucceeded = true;
-                    if (TargetsAoE[i].Thing != null && TargetsAoE[i].Thing is Pawn targetPawn)
+                    if (TargetsAoE[i].Thing != null && TargetsAoE[i].Thing is Pawn targetPawn && targetPawn.RaceProps.Humanlike)
                     {
                         abilitySucceeded = SemblanceUtility.UnlockAura(targetPawn, "LetterTextUnlockAuraPyrrha");
                     }

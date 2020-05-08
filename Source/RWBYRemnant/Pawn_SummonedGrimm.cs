@@ -4,7 +4,7 @@ using Verse.AI;
 
 namespace RWBYRemnant
 {
-    class Pawn_SummonedGrimm : Pawn
+    public class Pawn_SummonedGrimm : Pawn
     {
         public override void PostMake()
         {

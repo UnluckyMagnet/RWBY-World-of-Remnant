@@ -1522,4 +1522,179 @@
 		</corePart>
 	</BodyDef>
 
+	<BodyDef>
+		<defName>Grimm_Apathy</defName>
+		<label>apathy</label>
+		<corePart>
+			<def>Grimm_Body</def>
+			<height>Middle</height>
+			<depth>Outside</depth>
+			<parts>
+				<li>
+					<def>Grimm_Spine</def>
+					<coverage>0.025</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>Grimm_Neck</def>
+					<coverage>0.075</coverage>
+					<height>Top</height>
+					<groups>
+						<li>Neck</li>
+					</groups>
+					<parts>
+						<li>
+							<def>Grimm_Head</def>
+							<coverage>0.80</coverage>
+							<groups>
+								<li>UpperHead</li>
+								<li>FullHead</li>
+								<li>HeadAttackTool</li>
+							</groups>
+							<parts>
+								<li>
+									<def>Grimm_Skull</def>
+									<coverage>0.18</coverage>
+									<depth>Inside</depth>
+									<groups>
+										<li>UpperHead</li>
+										<li>FullHead</li>
+									</groups>
+									<parts>
+										<li>
+											<def>Grimm_Brain</def>
+											<coverage>0.8</coverage>
+											<groups>
+												<li>UpperHead</li>
+												<li>FullHead</li>
+											</groups>
+										</li>
+									</parts>
+								</li>
+								<li>
+									<def>Grimm_Eye</def>
+									<customLabel>left eye</customLabel>
+									<coverage>0.07</coverage>
+								</li>
+								<li>
+									<def>Grimm_Eye</def>
+									<customLabel>right eye</customLabel>
+									<coverage>0.07</coverage>
+								</li>
+								<li>
+									<def>Grimm_Ear</def>
+									<customLabel>left ear</customLabel>
+									<coverage>0.07</coverage>
+								</li>
+								<li>
+									<def>Grimm_Ear</def>
+									<customLabel>right ear</customLabel>
+									<coverage>0.07</coverage>
+								</li>
+							</parts>
+						</li>
+					</parts>
+				</li>
+				<li>
+					<def>Grimm_Shoulder</def>
+					<customLabel>left shoulder</customLabel>
+					<coverage>0.16</coverage>
+					<groups>
+						<li>Shoulders</li>
+					</groups>
+					<parts>
+						<li>
+							<def>Grimm_Arm</def>
+							<customLabel>left arm</customLabel>
+							<coverage>0.77</coverage>
+							<groups>
+								<li>Arms</li>
+							</groups>
+							<parts>
+								<li>
+									<def>Grimm_Hand</def>
+									<customLabel>left hand</customLabel>
+									<coverage>0.14</coverage>
+									<height>Bottom</height>
+									<groups>
+										<li>Hands</li>
+										<li>LeftHand</li>
+									</groups>
+								</li>
+							</parts>
+						</li>
+					</parts>
+				</li>
+				<li>
+					<def>Grimm_Shoulder</def>
+					<customLabel>right shoulder</customLabel>
+					<coverage>0.16</coverage>
+					<groups>
+						<li>Shoulders</li>
+					</groups>
+					<parts>
+						<li>
+							<def>Grimm_Arm</def>
+							<customLabel>right arm</customLabel>
+							<coverage>0.77</coverage>
+							<groups>
+								<li>Arms</li>
+							</groups>
+							<parts>
+								<li>
+									<def>Grimm_Hand</def>
+									<customLabel>right hand</customLabel>
+									<coverage>0.14</coverage>
+									<height>Bottom</height>
+									<groups>
+										<li>Hands</li>
+										<li>RightHand</li>
+									</groups>
+								</li>
+							</parts>
+						</li>
+					</parts>
+				</li>
+				<li>
+					<def>Grimm_Leg</def>
+					<customLabel>left leg</customLabel>
+					<coverage>0.12</coverage>
+					<height>Bottom</height>
+					<groups>
+						<li>Legs</li>
+					</groups>
+					<parts>
+						<li>
+							<def>Grimm_Foot</def>
+							<customLabel>left foot</customLabel>
+							<coverage>0.1</coverage>
+							<groups>
+								<li>Feet</li>
+							</groups>
+						</li>
+					</parts>
+				</li>
+				<li>
+					<def>Grimm_Leg</def>
+					<customLabel>right leg</customLabel>
+					<coverage>0.12</coverage>
+					<height>Bottom</height>
+					<groups>
+						<li>Legs</li>
+					</groups>
+					<parts>
+						<li>
+							<def>Grimm_Foot</def>
+							<customLabel>right foot</customLabel>
+							<coverage>0.1</coverage>
+							<groups>
+								<li>Feet</li>
+							</groups>							
+						</li>
+					</parts>
+				</li>
+			</parts>
+		</corePart>
+	</BodyDef>
+
 </Defs>

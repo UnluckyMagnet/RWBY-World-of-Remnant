@@ -8,6 +8,12 @@ namespace RWBYRemnant
 {
     public class IncidentWorker_Nuckelavee : IncidentWorker
     {
+        protected override bool CanFireNowSub(IncidentParms parms)
+        {
+            if (GenTicks.TicksGame < GenDate.TicksPerDay * LoadedModManager.GetMod<RemnantMod>().GetSettings<RemnantModSettings>().earliestNuckelavee) return false;
+            return base.CanFireNowSub(parms);
+        }
+
         public override float BaseChanceThisGame
         {
             get
@@ -66,19 +72,11 @@ namespace RWBYRemnant
             }
             parms.spawnRotation = Rot4.FromAngleFlat((map.Center - parms.spawnCenter).AngleFlat);
             IntVec3 loc = CellFinder.RandomClosewalkCellNear(parms.spawnCenter, map, 8, null);
+            if (pawn is Pawn_Grimm pawn_Grimm) pawn_Grimm.SetNuckelaveeTimer(Rand.RangeInclusive(30000, 60000));
             GenSpawn.Spawn(pawn, loc, map, parms.spawnRotation, WipeMode.Vanish, false);
             string label = "LetterLabelNuckelavee".Translate();
             string text = "LetterTextNuckelavee".Translate();
             Find.LetterStack.ReceiveLetter(label, text, LetterDefOf.ThreatBig, pawn);
-
-            IncidentDef localDef = IncidentDefOf.RaidEnemy;
-            IncidentParms parms2 = StorytellerUtility.DefaultParmsNow(localDef.category, (Map)parms.target);
-            StorytellerComp storytellerComp = Find.Storyteller.storytellerComps.First((StorytellerComp x) => x is StorytellerComp_OnOffCycle || x is StorytellerComp_RandomMain);
-            parms2 = storytellerComp.GenerateParms(localDef.category, parms2.target);
-            parms2.faction = FactionUtility.DefaultFactionFrom(RWBYDefOf.Creatures_of_Grimm);
-            parms2.raidStrategy = RaidStrategyDefOf.ImmediateAttack;
-            parms2.points *= 0.6f;
-            localDef.Worker.TryExecute(parms2);
             return true;
         }
     }

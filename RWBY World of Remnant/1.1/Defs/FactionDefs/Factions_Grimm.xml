@@ -23,7 +23,7 @@
 		<autoFlee>false</autoFlee>
 		<canUseAvoidGrid>false</canUseAvoidGrid>
 		<techLevel>Animal</techLevel>
-		<earliestRaidDays>15</earliestRaidDays>
+		<earliestRaidDays>5</earliestRaidDays>
 		<permanentEnemy>true</permanentEnemy>
 		<maxPawnCostPerTotalPointsCurve>
 			<points>
@@ -71,7 +71,7 @@
 				</disallowedStrategies>
 				<options>
 					<Grimm_Lancer>10</Grimm_Lancer>
-					<Grimm_LancerQueen>3</Grimm_LancerQueen>
+					<Grimm_LancerQueen>2</Grimm_LancerQueen>
 				</options>
 			</li>
 		</pawnGroupMakers>

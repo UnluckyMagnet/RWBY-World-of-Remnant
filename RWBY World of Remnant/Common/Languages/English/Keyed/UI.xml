@@ -37,6 +37,7 @@
 	<FixTraitDisabledWorkTagsTooltip>Show disabled work tags in trait descriptions, will also affect traits from other mods. (Vanilla Rimworld doesn't show them)</FixTraitDisabledWorkTagsTooltip>
 	<QrowFriendlyFireLabel>Qrow Semblance friendly fire</QrowFriendlyFireLabel>
 	<QrowFriendlyFireTooltip>Decide if minor accidents like "harvest botched" etc. affect your colonists aswell.</QrowFriendlyFireTooltip>
+	<EarliestNuckelaveeLabel>Earliest Nuckelavee appearance possible after days: (default 30)</EarliestNuckelaveeLabel>
 
 	<!-- Aura Gizmo -->
 	<AuraGizmoLabel>{0}'s Aura</AuraGizmoLabel>

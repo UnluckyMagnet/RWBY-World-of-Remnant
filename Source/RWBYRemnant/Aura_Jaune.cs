@@ -59,7 +59,9 @@ namespace RWBYRemnant
 
         public override Color GetColor()
         {
-            return new Color(0.8f, 0.8f, 0.8f);
+            return color;
         }
+
+        public Color color = new Color(0.8f, 0.8f, 0.8f);
     }
 }

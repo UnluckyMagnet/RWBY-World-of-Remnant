@@ -24,6 +24,12 @@ namespace RWBYRemnant
             listingStandard.CheckboxLabeled("HideAuraWhenMultiselectLabel".Translate(), ref remnantModSettings.hideAuraWhenMultiselect, "HideAuraWhenMultiselectTooltip".Translate());
             listingStandard.CheckboxLabeled("QrowFriendlyFireLabel".Translate(), ref remnantModSettings.qrowFriendlyFire, "QrowFriendlyFireTooltip".Translate());
             listingStandard.CheckboxLabeled("FixTraitDisabledWorkTagsLabel".Translate(), ref remnantModSettings.fixTraitDisabledWorkTags, "FixTraitDisabledWorkTagsTooltip".Translate());
+
+            listingStandard.Label("EarliestNuckelaveeLabel".Translate());
+            listingStandard.Gap(listingStandard.verticalSpacing);
+            Rect rect1 = listingStandard.GetRect(22f);
+            remnantModSettings.earliestNuckelavee = Widgets.HorizontalSlider(rect1, remnantModSettings.earliestNuckelavee, 0f, 120f, false, (remnantModSettings.earliestNuckelavee).ToString("") + "", "0", "120", 1f);
+
             listingStandard.End();
         }
 

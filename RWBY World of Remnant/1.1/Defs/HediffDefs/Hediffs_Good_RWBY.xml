@@ -390,4 +390,17 @@
 		</stages>
 	</HediffDef>
 
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>RWBY_SilverEyes</defName>
+		<label>silver eye</label>
+		<labelNoun>a silver eye</labelNoun>
+		<defaultLabelColor>(0.75, 0.75, 0.75)</defaultLabelColor>
+		<description>Natural eyes with silver color. Exceptionally rare.</description>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.0</partEfficiency>
+			<betterThanNatural>false</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+
 </Defs>

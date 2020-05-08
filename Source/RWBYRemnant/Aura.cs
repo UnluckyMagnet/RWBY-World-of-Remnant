@@ -18,7 +18,7 @@ namespace RWBYRemnant
 
         public virtual void Tick()
         {            
-            if (!pawn.IsFighting() && Find.TickManager.TicksGame % GenTicks.SecondsToTicks(8) == 0) // every x seconds Aura can either heal or regenerate IF pawn is out of combat
+            if (!pawn.IsFighting() && pawn.IsHashIntervalTick(480)) // every 8 seconds Aura can either heal or regenerate IF pawn is out of combat
             {
                 List<Hediff_Injury> injuriesHealable = new List<Hediff_Injury>();
                 foreach (Hediff hediff_Injury in pawn.health.hediffSet.hediffs)
@@ -39,7 +39,7 @@ namespace RWBYRemnant
                 }                
             }
 
-            if (Find.TickManager.TicksGame % GenTicks.SecondsToTicks(1) == 0 && (pawn.health.hediffSet.HasHediff(RWBYDefOf.RWBY_AmplifiedAura) || pawn.health.hediffSet.hediffs.Any(h => SemblanceUtility.injectedDustCrystalHediffs.Contains(h.def)))) // amplified Aura heals faster
+            if (pawn.IsHashIntervalTick(60) && (pawn.health.hediffSet.HasHediff(RWBYDefOf.RWBY_AmplifiedAura) || pawn.health.hediffSet.hediffs.Any(h => SemblanceUtility.injectedDustCrystalHediffs.Contains(h.def)))) // amplified Aura heals faster
             {
                 int healAmount = 0;
                 if (pawn.health.hediffSet.HasHediff(RWBYDefOf.RWBY_AmplifiedAura))
@@ -67,7 +67,7 @@ namespace RWBYRemnant
                 }
             }
 
-            if (Find.TickManager.TicksGame % GenTicks.SecondsToTicks(0.5f) == 0 && pawn.health.hediffSet.hediffs.Any(h => SemblanceUtility.injectedDustCrystalHediffs.Contains(h.def))) // with Dust injected Aura regenerates faster
+            if (pawn.IsHashIntervalTick(30) && pawn.health.hediffSet.hediffs.Any(h => SemblanceUtility.injectedDustCrystalHediffs.Contains(h.def))) // with Dust injected Aura regenerates faster
             {
                 float energyToRegenerate = pawn.health.hediffSet.hediffs.FindAll(h => SemblanceUtility.injectedDustCrystalHediffs.Contains(h.def)).Sum(s => s.CurStageIndex + 1) / 100f;
                 if (currentEnergy < maxEnergy) currentEnergy += energyToRegenerate;
@@ -84,6 +84,7 @@ namespace RWBYRemnant
         public virtual bool TryAbsorbDamage(DamageInfo dinfo)
         {
             if (currentEnergy == 0f || dinfo.Def == DamageDefOf.SurgicalCut) return false;
+            if (dinfo.Def.defName == "PJ_ForceHealDamage") return false;
             if (!pawn.Drafted && !pawn.IsFighting() && Rand.Chance(0.05f))
             {
                 if (pawn.IsColonist)

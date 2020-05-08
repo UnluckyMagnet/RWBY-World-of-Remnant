@@ -10,8 +10,8 @@ namespace RWBYRemnant
     {
         public override bool TryAbsorbDamage(DamageInfo dinfo)
         {
+            if (dinfo.Def.defName == "PJ_ForceHealDamage") return base.TryAbsorbDamage(dinfo);
             if (dinfo.Instigator != null && dinfo.Instigator.def == RWBYDefOf.Blake_ShadowClone_Fire) return true;
-
             if ((pawn.Drafted || pawn.IsFighting()) && Rand.Chance(0.5f))
             {
                 Building edifice = pawn.Position.GetEdifice(pawn.Map);
@@ -21,7 +21,6 @@ namespace RWBYRemnant
                     return true;
                 }
             }
-
             return base.TryAbsorbDamage(dinfo);
         }
 
@@ -58,7 +57,7 @@ namespace RWBYRemnant
 
         public override Color GetColor()
         {
-            return new Color(0.8f, 0.2f, 1.0f);
+            return color;
         }
 
         public override void ExposeData()
@@ -74,5 +73,6 @@ namespace RWBYRemnant
         public float elementalShadowCloneDuration;
         public Color elementalShadowCloneColor;
         public int remainingUses;
+        public Color color = new Color(0.8f, 0.2f, 1.0f);
     }
 }

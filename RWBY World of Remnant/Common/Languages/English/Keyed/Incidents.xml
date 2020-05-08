@@ -40,11 +40,14 @@
 	<LetterTextPumpkinPetePodCrash>Thank you for purchasing 50 boxes of Pumpkin Pete's.</LetterTextPumpkinPetePodCrash>
 	
 	<!-- Grimm events -->
-	<LetterLabelNuckelavee>Nuckelavee</LetterLabelNuckelavee>
-	<LetterTextNuckelavee>Alot of negative emotions have attracted a Nuckelavee. It will not rest until everyone is dead.</LetterTextNuckelavee>
 	<LetterLabelGrimmWandersIn>Grimm wanders in</LetterLabelGrimmWandersIn>
 	<LetterTextGrimmWandersIn>A Grimm has wandered into your area. Kill it quickly before it attracts more Grimm.</LetterTextGrimmWandersIn>
-	
+	<MessageTextNuckelaveeTriggered>The Nuckelavee has found you.</MessageTextNuckelaveeTriggered>
+	<LetterLabelNuckelavee>Nuckelavee</LetterLabelNuckelavee>
+	<LetterTextNuckelavee>Alot of negative emotions have attracted a Nuckelavee, which now roams the area. It will regularly call for more Grimm.</LetterTextNuckelavee>
+	<LetterLabelApathy>Unknown presence</LetterLabelApathy>
+	<LetterTextApathy>An unknown presence has entered your home. Your colonists suddenly feel sleepy and unmotivated.</LetterTextApathy>
+
 	<!-- Qrow semblance effects -->
 	<TextMote_Crow_WeaponSlipped>Weapon slipped</TextMote_Crow_WeaponSlipped>
 	<TextMote_Crow_MissedRanged>Huh?</TextMote_Crow_MissedRanged>
@@ -55,6 +58,7 @@
 	
 	<!-- Aura Steal -->
 	<MessageFactionStoleAura>{0} stole {1}'s Aura</MessageFactionStoleAura>
+	<MessageTextLostSilverEyes>{PAWN_nameDef} lost {PAWN_possessive} silver eyes</MessageTextLostSilverEyes>
 	
 	<!-- Raven Portal -->
 	<MessageTextNoPortalMap>Could not create portal to {PAWN_nameDef}. Target is not on any map.</MessageTextNoPortalMap>

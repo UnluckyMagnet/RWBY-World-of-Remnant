@@ -19,7 +19,7 @@ namespace RWBYRemnant
         public override GizmoResult GizmoOnGUI(Vector2 topLeft, float maxWidth)
         {
             Rect overRect = new Rect(topLeft.x, topLeft.y, this.GetWidth(maxWidth), 75f);
-            Find.WindowStack.ImmediateWindow(354613518, overRect, WindowLayer.GameUI, delegate
+            Find.WindowStack.ImmediateWindow(354613518 + aura.pawn.thingIDNumber, overRect, WindowLayer.GameUI, delegate
             {
                 Rect rect = overRect.AtZero().ContractedBy(6f);
                 Rect rect2 = rect;
@@ -41,6 +41,8 @@ namespace RWBYRemnant
         public string label;
 
         public string labelColor;
+
+        public Aura aura;
 
         public float currentAbsorbedDamage;
         

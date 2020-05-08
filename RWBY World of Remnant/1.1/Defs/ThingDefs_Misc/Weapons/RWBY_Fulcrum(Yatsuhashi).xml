@@ -14,6 +14,7 @@
 		</graphicData>
 		<soundInteract>Draw_Gambol_Shroud_Katana</soundInteract>
 		<statBases>
+			<WorkToMake>30000</WorkToMake>
 			<MarketValue>800</MarketValue>
 			<Mass>8.0</Mass>
 		</statBases>

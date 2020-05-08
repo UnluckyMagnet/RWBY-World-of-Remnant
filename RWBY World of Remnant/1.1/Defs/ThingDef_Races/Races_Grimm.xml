@@ -319,7 +319,7 @@
 			<lifeExpectancy>500</lifeExpectancy>
 			<lifeStageAges>
 				<li>
-					<def>Grimm_FullGrown</def>
+					<def>Grimm_FullGrown_Flying</def>
 					<minAge>0</minAge>
 					<soundWounded>Pawn_Tortoise_Wounded</soundWounded>
 					<soundDeath>Pawn_Tortoise_Death</soundDeath>
@@ -394,7 +394,7 @@
 			<lifeExpectancy>500</lifeExpectancy>
 			<lifeStageAges>
 				<li>
-					<def>Grimm_FullGrown</def>
+					<def>Grimm_FullGrown_Flying</def>
 					<minAge>0</minAge>
 					<soundWounded>Pawn_Tortoise_Wounded</soundWounded>
 					<soundDeath>Pawn_Tortoise_Death</soundDeath>
@@ -414,7 +414,7 @@
 		<race>Grimm_Nevermore</race>
 		<ecoSystemWeight>0</ecoSystemWeight>
 		<canArriveManhunter>false</canArriveManhunter>
-		<combatPower>250</combatPower>
+		<combatPower>300</combatPower>
 		<defaultFactionType>Creatures_of_Grimm</defaultFactionType>
 		<lifeStages>
 			<li>
@@ -470,7 +470,7 @@
 			<lifeExpectancy>500</lifeExpectancy>
 			<lifeStageAges>
 				<li>
-					<def>Grimm_FullGrown</def>
+					<def>Grimm_FullGrown_Flying</def>
 					<minAge>0</minAge>
 					<soundWounded>Pawn_Spelopede_Pain</soundWounded>
 					<soundDeath>Pawn_Spelopede_Death</soundDeath>
@@ -507,7 +507,7 @@
 		</lifeStages>
 	</PawnKindDef>
 
-	<ThingDef ParentName="GrimmThingBaseSummoned">
+	<ThingDef ParentName="GrimmThingBase">
 		<defName>Grimm_LancerQueen</defName>
 		<label>lancer Queen</label>
 		<description>Lancers have a three-segmented black body with three sets of legs. They have a white armored mask and armor along their back. On the back of their abdomen, the armor is in four overlapping plates. They have jagged pincers, antenna, four red transparent wings and a stinger.</description>
@@ -546,7 +546,7 @@
 			<lifeExpectancy>500</lifeExpectancy>
 			<lifeStageAges>
 				<li>
-					<def>Grimm_FullGrown</def>
+					<def>Grimm_FullGrown_Flying</def>
 					<minAge>0</minAge>
 					<soundWounded>Pawn_Spelopede_Pain</soundWounded>
 					<soundDeath>Pawn_Spelopede_Death</soundDeath>
@@ -566,8 +566,8 @@
 		<race>Grimm_LancerQueen</race>
 		<ecoSystemWeight>0</ecoSystemWeight>
 		<canArriveManhunter>false</canArriveManhunter>
-		<combatPower>250</combatPower>
-		<!--defaultFactionType>Creatures_of_Grimm</defaultFactionType-->
+		<combatPower>300</combatPower>
+		<defaultFactionType>Creatures_of_Grimm</defaultFactionType>
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
@@ -660,7 +660,7 @@
 		<race>Grimm_DeathStalker</race>
 		<ecoSystemWeight>0</ecoSystemWeight>
 		<canArriveManhunter>false</canArriveManhunter>
-		<combatPower>300</combatPower>
+		<combatPower>250</combatPower>
 		<defaultFactionType>Creatures_of_Grimm</defaultFactionType>
 		<lifeStages>
 			<li>
@@ -773,6 +773,114 @@
 					<shadowData>
 						<volume>(0.4, 0.4, 0.4)</volume>
 						<offset>(0,0,-0.2)</offset>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+	</PawnKindDef>
+
+	<ThingDef ParentName="GrimmThingBase">
+		<defName>Grimm_Apathy</defName>
+		<label>apathy</label>
+		<description>The Apathy is humanoid in shape, somewhat similar to the Imp, but are very tall, with long arms that reach down as far as the ground and extremely long fingers. They have hideous faces, resembling skulls, some even lacking nostrils, and low-hanging jaws.</description>
+		<statBases>
+			<Mass>80</Mass>
+			<MoveSpeed>2.5</MoveSpeed>
+			<ArmorRating_Blunt>0.23</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.18</ArmorRating_Sharp>
+		</statBases>
+		<tools>
+			<li>
+				<label>right hand</label>
+				<capacities>
+					<li>Scratch</li>
+				</capacities>
+				<power>8.0</power>
+				<cooldownTime>1.8</cooldownTime>
+				<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+				<surpriseAttack>
+					<extraMeleeDamages>
+						<li>
+							<def>Stun</def>
+							<amount>12</amount>
+						</li>
+					</extraMeleeDamages>
+				</surpriseAttack>
+			</li>
+			<li>
+				<label>left hand</label>
+				<capacities>
+					<li>Scratch</li>
+				</capacities>
+				<power>8.0</power>
+				<cooldownTime>1.8</cooldownTime>
+				<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<surpriseAttack>
+					<extraMeleeDamages>
+						<li>
+							<def>Stun</def>
+							<amount>12</amount>
+						</li>
+					</extraMeleeDamages>
+				</surpriseAttack>
+			</li>
+		</tools>
+		<race>
+			<body>Grimm_Apathy</body>
+			<baseBodySize>2.0</baseBodySize>
+			<baseHealthScale>2.0</baseHealthScale>
+			<lifeExpectancy>500</lifeExpectancy>
+			<lifeStageAges>
+				<li>
+					<def>Grimm_FullGrown</def>
+					<minAge>0</minAge>
+					<soundWounded>Nuckelavee_Injured</soundWounded>
+					<soundDeath>Nuckelavee_Injured</soundDeath>
+					<soundAngry>Nuckelavee_Angry</soundAngry>
+				</li>
+				<li>
+					<def>Grimm_FullGrown</def>
+					<minAge>250</minAge>
+					<soundWounded>Nuckelavee_Injured</soundWounded>
+					<soundDeath>Nuckelavee_Injured</soundDeath>
+					<soundAngry>Nuckelavee_Angry</soundAngry>
+				</li>
+			</lifeStageAges>
+			<soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+		</race>
+	</ThingDef>
+
+	<PawnKindDef>
+		<defName>Grimm_Apathy</defName>
+		<label>apathy</label>
+		<race>Grimm_Apathy</race>
+		<ecoSystemWeight>0</ecoSystemWeight>
+		<canArriveManhunter>false</canArriveManhunter>
+		<combatPower>80</combatPower>
+		<defaultFactionType>Creatures_of_Grimm</defaultFactionType>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Grimm/Apathy/ApathyNormal</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2.0</drawSize>
+					<shadowData>
+						<volume>(0.3, 0.8, 0.4)</volume>
+						<offset>(0,0,-0.3)</offset>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Grimm/Apathy/ApathyHunchback</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2.0</drawSize>
+					<shadowData>
+						<volume>(0.3, 0.8, 0.4)</volume>
+						<offset>(0,0,-0.3)</offset>
 					</shadowData>
 				</bodyGraphicData>
 			</li>

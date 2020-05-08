@@ -5,7 +5,7 @@
 		<defName>Yang_ReturnDamage</defName>
 		<label>Return damage</label>
 		<uiIconPath>Things/UI/Ability_YangReturn</uiIconPath>
-		<description>Your next melee attacks will additionally do your anger level as damage. Will automatically activated if you're too angry.</description>
+		<description>Your next melee attacks will additionally do your anger level as damage. Will automatically get activated if you're too angry.</description>
 		<MainVerb Class="AbilityUser.VerbProperties_Ability">
 			<verbClass>RWBYRemnant.Verb_AbilityReturnDamage</verbClass>
 			<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>

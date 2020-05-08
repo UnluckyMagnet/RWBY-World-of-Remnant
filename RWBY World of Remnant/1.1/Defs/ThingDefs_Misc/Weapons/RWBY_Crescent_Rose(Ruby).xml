@@ -14,7 +14,7 @@
 			<damageDef>Bullet</damageDef>
 			<damageAmountBase>30</damageAmountBase>
 			<stoppingPower>1.7</stoppingPower>
-			<speed>100</speed>
+			<speed>80</speed>
 		</projectile>
 	</ThingDef>
 
@@ -87,9 +87,9 @@
 			<Mass>4.5</Mass>
 			<AccuracyTouch>0.60</AccuracyTouch>
 			<AccuracyShort>0.70</AccuracyShort>
-			<AccuracyMedium>0.75</AccuracyMedium>
-			<AccuracyLong>0.80</AccuracyLong>
-			<RangedWeapon_Cooldown>0.5</RangedWeapon_Cooldown>
+			<AccuracyMedium>0.77</AccuracyMedium>
+			<AccuracyLong>0.74</AccuracyLong>
+			<RangedWeapon_Cooldown>0.9</RangedWeapon_Cooldown>
 		</statBases>
 		<costList>
 			<Steel>200</Steel>
@@ -103,8 +103,8 @@
 				<verbClass>Verb_Shoot</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>Bullet_Crescent_Rose_Standard</defaultProjectile>				
-				<warmupTime>0.5</warmupTime>
-				<range>35</range>				
+				<warmupTime>0.7</warmupTime>
+				<range>31</range>				
 				<soundCast>Shot_SniperRifle</soundCast>
 				<soundCastTail>GunTail_Heavy</soundCastTail>
 				<muzzleFlashScale>9</muzzleFlashScale>

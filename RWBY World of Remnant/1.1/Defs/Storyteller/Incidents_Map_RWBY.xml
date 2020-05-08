@@ -31,19 +31,19 @@
 			<li>Map_PlayerHome</li>
 		</targetTags>
 		<workerClass>RWBYRemnant.IncidentWorker_UnlockSemblance</workerClass>
-		<baseChance>0.3</baseChance>
+		<baseChance>1</baseChance>
 		<minRefireDays>30</minRefireDays>
 	</IncidentDef>
 
 	<IncidentDef>
 		<defName>GrimmWandersIn</defName>
 		<label>Grimm wanders in</label>
+		<category>ThreatSmall</category>
 		<targetTags>
 			<li>Map_PlayerHome</li>
 		</targetTags>
 		<workerClass>RWBYRemnant.IncidentWorker_GrimmWandersIn</workerClass>
 		<baseChance>3</baseChance>
-		<category>ThreatSmall</category>
 	</IncidentDef>
 
 	<IncidentDef>
@@ -55,6 +55,18 @@
 		</targetTags>
 		<workerClass>RWBYRemnant.IncidentWorker_Nuckelavee</workerClass>
 		<baseChance>5.0</baseChance>
+		<minRefireDays>20</minRefireDays>
+	</IncidentDef>
+
+	<IncidentDef>
+		<defName>Apathy</defName>
+		<label>apathy</label>
+		<category>ThreatBig</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>RWBYRemnant.IncidentWorker_Apathy</workerClass>
+		<baseChance>3</baseChance>
 		<minRefireDays>20</minRefireDays>
 		<earliestDay>30</earliestDay>
 	</IncidentDef>

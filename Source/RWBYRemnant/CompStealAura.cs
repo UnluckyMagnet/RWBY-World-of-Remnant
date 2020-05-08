@@ -73,10 +73,8 @@ namespace RWBYRemnant
                     else if (stolenTraitDef == RWBYDefOf.Semblance_Weiss)
                     {
                         if (!compAbilityUserAura.AbilityData.AllPowers.Any(a => a.Def == RWBYDefOf.Weiss_TimeDilationGlyph_Summon)) compAbilityUserAura.AddPawnAbility(RWBYDefOf.Weiss_TimeDilationGlyph_Summon);
-                        if (!compAbilityUserAura.AbilityData.AllPowers.Any(a => a.Def == RWBYDefOf.Weiss_SummonBoar)) compAbilityUserAura.AddPawnAbility(RWBYDefOf.Weiss_SummonBoar);
                         if (!compAbilityUserAura.AbilityData.AllPowers.Any(a => a.Def == RWBYDefOf.Weiss_SummonArmaGigas)) compAbilityUserAura.AddPawnAbility(RWBYDefOf.Weiss_SummonArmaGigas);
                         if (!compAbilityUserAura.AbilityData.AllPowers.Any(a => a.Def == RWBYDefOf.Weiss_SummonArmaGigasSword)) compAbilityUserAura.AddPawnAbility(RWBYDefOf.Weiss_SummonArmaGigasSword);
-                        if (!compAbilityUserAura.AbilityData.AllPowers.Any(a => a.Def == RWBYDefOf.Weiss_SummonLancer)) compAbilityUserAura.AddPawnAbility(RWBYDefOf.Weiss_SummonLancer);
                     }
                     else if (stolenTraitDef == RWBYDefOf.Semblance_Jaune)
                     {

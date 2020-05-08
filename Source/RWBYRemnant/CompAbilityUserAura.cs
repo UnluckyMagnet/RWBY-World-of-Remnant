@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Verse;
 using AbilityUser;
-using UnityEngine;
 using System.Linq;
 
 namespace RWBYRemnant
@@ -32,7 +31,12 @@ namespace RWBYRemnant
 
         public override void CompTickRare()
         {
-            base.CompTickRare();
+            base.CompTickRare();            
+            if (!Pawn.health.hediffSet.HasHediff(RWBYDefOf.RWBY_SilverEyes) && AbilityData.AllPowers.Any(a => a.Def == RWBYDefOf.Ability_SilverEyes))
+            {
+                RemovePawnAbility(RWBYDefOf.Ability_SilverEyes);
+                Messages.Message("MessageTextLostSilverEyes".Translate().Formatted(Pawn.Named("PAWN")).AdjustedFor(Pawn, "PAWN").CapitalizeFirst(), Pawn, MessageTypeDefOf.NegativeEvent);
+            }
             if (Pawn.health.hediffSet.HasHediff(RWBYDefOf.RWBY_AuraStolen))
             {
                 IsInitialized = false;
@@ -85,6 +89,11 @@ namespace RWBYRemnant
 
         public override void PostInitialize()
         {
+            if (AbilityUser.health.hediffSet.HasHediff(RWBYDefOf.RWBY_SilverEyes)) // add silver eye ability if pawn has unlocked an Aura
+            {
+                if (!AbilityData.AllPowers.Any(p => p.Def == RWBYDefOf.Ability_SilverEyes)) AddPawnAbility(RWBYDefOf.Ability_SilverEyes);
+            }
+
             if (AbilityUser.story.traits.HasTrait(RWBYDefOf.Semblance_Ruby)) // Ruby
             {
                 aura = new Aura_Ruby
@@ -115,10 +124,8 @@ namespace RWBYRemnant
                     currentEnergy = 1f
                 };
                 if (!AbilityData.AllPowers.Any(p => p.Def == RWBYDefOf.Weiss_TimeDilationGlyph_Summon)) AddPawnAbility(RWBYDefOf.Weiss_TimeDilationGlyph_Summon);
-                if (!AbilityData.AllPowers.Any(p => p.Def == RWBYDefOf.Weiss_SummonBoar)) AddPawnAbility(RWBYDefOf.Weiss_SummonBoar);
                 if (!AbilityData.AllPowers.Any(p => p.Def == RWBYDefOf.Weiss_SummonArmaGigas)) AddPawnAbility(RWBYDefOf.Weiss_SummonArmaGigas);
                 if (!AbilityData.AllPowers.Any(p => p.Def == RWBYDefOf.Weiss_SummonArmaGigasSword)) AddPawnAbility(RWBYDefOf.Weiss_SummonArmaGigasSword);
-                if (!AbilityData.AllPowers.Any(p => p.Def == RWBYDefOf.Weiss_SummonLancer)) AddPawnAbility(RWBYDefOf.Weiss_SummonLancer);
             }
             else if (AbilityUser.story.traits.HasTrait(RWBYDefOf.Semblance_Blake)) // Blake
             {

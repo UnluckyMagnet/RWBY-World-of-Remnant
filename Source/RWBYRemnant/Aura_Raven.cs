@@ -19,7 +19,7 @@ namespace RWBYRemnant
 
         public override Color GetColor()
         {
-            return new Color(1.0f, 0f, 0f);
+            return color;
         }
 
         public bool RegisterBondedPawn(Pawn p)
@@ -101,5 +101,6 @@ namespace RWBYRemnant
 
         private HashSet<Pawn> bondedPawns = new HashSet<Pawn>();
         private int cooldownTicks = 0;
+        public Color color = new Color(1.0f, 0f, 0f);
     }
 }

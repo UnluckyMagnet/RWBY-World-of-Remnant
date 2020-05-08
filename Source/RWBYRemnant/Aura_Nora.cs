@@ -44,9 +44,10 @@ namespace RWBYRemnant
 
         public override Color GetColor()
         {
-            return new Color(1.0f, 0.6f, 1.0f);
+            return color;
         }
 
         private bool nextDamageIsLightning = false;
+        public Color color = new Color(1.0f, 0.6f, 1.0f);
     }
 }

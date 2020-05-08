@@ -14,7 +14,7 @@ namespace RWBYRemnant
         public override void Tick()
         {
             base.Tick();
-            if (pawn.Map != null && currentEnergy > 0f && Find.TickManager.TicksGame % GenTicks.SecondsToTicks(15) == 0)
+            if (pawn.Map != null && currentEnergy > 0f && pawn.IsHashIntervalTick(900))
             {
                 List<Pawn> pawns = pawn.Map.mapPawns.AllPawnsSpawned.FindAll(p => p.RaceProps.Humanlike && p.Position.DistanceTo(pawn.Position) < misfortuneRange && p != pawn);
                 if (!LoadedModManager.GetMod<RemnantMod>().GetSettings<RemnantModSettings>().qrowFriendlyFire) pawns.RemoveAll(p => p.IsColonistPlayerControlled);
@@ -109,9 +109,10 @@ namespace RWBYRemnant
 
         public override Color GetColor()
         {
-            return new Color(1.0f, 0f, 0f);
+            return color;
         }
 
         public float misfortuneRange = 10f;
+        public Color color = new Color(1.0f, 0f, 0f);
     }
 }

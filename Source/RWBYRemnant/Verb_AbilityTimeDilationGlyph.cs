@@ -30,7 +30,7 @@ namespace RWBYRemnant
                 for (int i = 0; i < this.TargetsAoE.Count; i++)
                 {
                     Thing timeDilationGlyph = ThingMaker.MakeThing(RWBYDefOf.Weiss_Glyph_TimeDilation);
-                    timeDilationGlyph.TryGetComp<CompTimeDilationGlyph>().SetData(GenTicks.SecondsToTicks(5f));
+                    timeDilationGlyph.TryGetComp<CompTimeDilationGlyph>().SetData(GenTicks.SecondsToTicks(10f));
                     GenSpawn.Spawn(timeDilationGlyph, TargetsAoE[i].Cell, caster.Map);
                     bool abilitySucceeded = true;
                     if (abilitySucceeded) flag = true;

@@ -19,9 +19,12 @@ namespace RWBYRemnant
         {
             base.CompPostTick(ref severityAdjustment);            
             bool isNearGlyph = false;
-            foreach (Thing thing in this.Pawn.Map.GetDirectlyHeldThings().ToList().FindAll(t => t.def == RWBYDefOf.Weiss_Glyph_TimeDilation))
+            if (this.Pawn.Map != null)
             {
-                if (Pawn.AdjacentTo8WayOrInside(thing)) isNearGlyph = true;
+                foreach (Thing thing in this.Pawn.Map.GetDirectlyHeldThings().ToList().FindAll(t => t.def == RWBYDefOf.Weiss_Glyph_TimeDilation))
+                {
+                    if (Pawn.AdjacentTo8WayOrInside(thing)) isNearGlyph = true;
+                }
             }
 
             if (!isNearGlyph)

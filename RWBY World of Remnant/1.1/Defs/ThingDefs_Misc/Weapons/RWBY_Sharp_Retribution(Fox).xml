@@ -52,7 +52,7 @@
 				<defaultProjectile>Bullet_SharpRetribution</defaultProjectile>
 				<warmupTime>0.5</warmupTime>
 				<range>28</range>
-				<burstShotCount>8</burstShotCount>
+				<burstShotCount>5</burstShotCount>
 				<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
 				<soundCast>Shot_StormFlower</soundCast>
 				<soundCastTail>GunTail_Light</soundCastTail>
@@ -71,7 +71,7 @@
 				<capacities>
 					<li>Cut</li>
 				</capacities>
-				<power>22</power>
+				<power>20</power>
 				<cooldownTime>0.9</cooldownTime>
 			</li>
 		</tools>

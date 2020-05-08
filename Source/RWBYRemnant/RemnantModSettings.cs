@@ -12,6 +12,7 @@ namespace RWBYRemnant
         public bool hideAuraWhenMultiselect = false;
         public bool qrowFriendlyFire = true;
         public bool fixTraitDisabledWorkTags = true;
+        public float earliestNuckelavee = 30f;
 
         public override void ExposeData()
         {
@@ -24,6 +25,7 @@ namespace RWBYRemnant
             Scribe_Values.Look<bool>(ref hideAuraWhenMultiselect, "hideAuraWhenMultiselect", false, false);
             Scribe_Values.Look<bool>(ref qrowFriendlyFire, "qrowFriendlyFire", true, false);
             Scribe_Values.Look<bool>(ref fixTraitDisabledWorkTags, "fixTraitDisabledWorkTags", true, false);
+            Scribe_Values.Look<float>(ref earliestNuckelavee, "earliestNuckelavee", 30f, false);
         }
     }
 }

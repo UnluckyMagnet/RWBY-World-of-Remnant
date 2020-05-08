@@ -34,6 +34,8 @@ namespace RWBYRemnant
         public static HediffDef RWBY_InjectedGravityCrystal;
         public static HediffDef RWBY_InjectedHardLightCrystal;
         public static HediffDef RWBY_AuraStolen;
+        public static HediffDef RWBY_ApathyTiredness;
+        public static HediffDef RWBY_SilverEyes;
 
         public static ThoughtDef RWBY_AuraStolen_Relation;
 
@@ -51,8 +53,13 @@ namespace RWBYRemnant
         public static PawnKindDef Grimm_Beowolf;
         public static PawnKindDef Grimm_Ursa;
         public static PawnKindDef Grimm_Griffon;
-        public static PawnKindDef Grimm_Nuckelavee;
+        public static PawnKindDef Grimm_Nevermore;
         public static PawnKindDef Grimm_Lancer;
+        public static PawnKindDef Grimm_LancerQueen;
+        public static PawnKindDef Grimm_DeathStalker;
+        public static PawnKindDef Grimm_Nuckelavee;
+        public static PawnKindDef Grimm_Apathy;
+        public static FleshTypeDef Grimm;
 
         #endregion
 
@@ -62,6 +69,10 @@ namespace RWBYRemnant
         public static TraitDef RWBY_Aura;
         public static SoundDef AuraFlicker;
         public static SoundDef AuraBreak;
+        public static SemblanceDef Ability_SilverEyes;
+        public static HediffDef RWBY_SilverEye_Exhaustion;
+        public static ThingDef RWBY_SilverEye_Mote;
+        public static ThingDef RWBY_SilverEyes_Projectile;
 
         // Ruby
         public static TraitDef Semblance_Ruby;
@@ -81,17 +92,31 @@ namespace RWBYRemnant
         // Weiss
         public static TraitDef Semblance_Weiss;
         public static SemblanceDef Weiss_SummonBoar;
+        public static SemblanceDef Weiss_SummonBeowolf;
+        public static SemblanceDef Weiss_SummonUrsa;
+        public static SemblanceDef Weiss_SummonGriffon;
+        public static SemblanceDef Weiss_SummonNevermore;
+        public static SemblanceDef Weiss_SummonLancer;
+        public static SemblanceDef Weiss_SummonLancerQueen;
+        public static SemblanceDef Weiss_SummonDeathStalker;
+        public static SemblanceDef Weiss_SummonNuckelavee;
+        public static SemblanceDef Weiss_SummonApathy;
         public static SemblanceDef Weiss_SummonArmaGigas;
         public static SemblanceDef Weiss_SummonArmaGigasSword;
-        public static SemblanceDef Weiss_SummonLancer;
-        public static ThingDef Weiss_Glyph_Summon;
         public static PawnKindDef Grimm_Boarbatusk_Summoned;
-        public static PawnKindDef Grimm_ArmaGigas_Summoned;
-        public static PawnKindDef Grimm_ArmaGigasSword_Summoned;
+        public static PawnKindDef Grimm_Beowolf_Summoned;
+        public static PawnKindDef Grimm_Ursa_Summoned;
+        public static PawnKindDef Grimm_Griffon_Summoned;
+        public static PawnKindDef Grimm_Nevermore_Summoned;
         public static PawnKindDef Grimm_Lancer_Summoned;
         public static PawnKindDef Grimm_LancerQueen_Summoned;
-        public static FleshTypeDef Grimm;
+        public static PawnKindDef Grimm_DeathStalker_Summoned;
+        public static PawnKindDef Grimm_Nuckelavee_Summoned;
+        public static PawnKindDef Grimm_Apathy_Summoned;
+        public static PawnKindDef Grimm_ArmaGigas_Summoned;
+        public static PawnKindDef Grimm_ArmaGigasSword_Summoned;
         public static SemblanceDef Weiss_TimeDilationGlyph_Summon;
+        public static ThingDef Weiss_Glyph_Summon;
         public static ThingDef Weiss_Glyph_TimeDilation;
         public static HediffDef RWBY_TimeDilation;
 

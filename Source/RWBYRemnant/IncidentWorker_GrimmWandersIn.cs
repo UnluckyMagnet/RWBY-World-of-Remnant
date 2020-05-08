@@ -8,17 +8,8 @@ namespace RWBYRemnant
     {
         protected override bool TryExecuteWorker(IncidentParms parms)
         {
-            List<PawnKindDef> pawnKindDefs = new List<PawnKindDef>
-            {
-                 RWBYDefOf.Grimm_Boarbatusk,
-                 RWBYDefOf.Grimm_Beowolf,
-                 RWBYDefOf.Grimm_Ursa,
-                 RWBYDefOf.Grimm_Griffon,
-                 RWBYDefOf.Grimm_Lancer
-            };
-
             Map map = (Map)parms.target;
-            Pawn pawn = PawnGenerator.GeneratePawn(pawnKindDefs.RandomElement(), FactionUtility.DefaultFactionFrom(RWBYDefOf.Creatures_of_Grimm));
+            Pawn pawn = PawnGenerator.GeneratePawn(GrimmUtility.GetRandomGrimmBalanced(), FactionUtility.DefaultFactionFrom(RWBYDefOf.Creatures_of_Grimm));
             if (!parms.spawnCenter.IsValid && !RCellFinder.TryFindRandomPawnEntryCell(out parms.spawnCenter, map, CellFinder.EdgeRoadChance_Hostile, false, null))
             {
                 return false;

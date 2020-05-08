@@ -99,9 +99,12 @@
     <Compile Include="CompGlyphSummon.cs" />
     <Compile Include="GizmoAdamAbsorbLevel.cs" />
     <Compile Include="GizmoYangAngerLevel.cs" />
+    <Compile Include="GrimmUtility.cs" />
     <Compile Include="Grimm_DeathWorker.cs" />
+    <Compile Include="HediffComp_ApathyTiredness.cs" />
     <Compile Include="HediffComp_FrozenWorker.cs" />
     <Compile Include="HediffComp_TimeDilation.cs" />
+    <Compile Include="IncidentWorker_Apathy.cs" />
     <Compile Include="IncidentWorker_GrimmWandersIn.cs" />
     <Compile Include="IncidentWorker_Nuckelavee.cs" />
     <Compile Include="IncidentWorker_UnlockSemblance.cs" />
@@ -117,6 +120,7 @@
     <Compile Include="Pawn_SummonedGrimm.cs" />
     <Compile Include="Projectile_ExplosiveWithMote.cs" />
     <Compile Include="Projectile_RubyCarry.cs" />
+    <Compile Include="Projectile_SilverEyes.cs" />
     <Compile Include="Projectile_RubyDash.cs" />
     <Compile Include="Projectile_WithMote.cs" />
     <Compile Include="SemblanceDef.cs" />
@@ -146,6 +150,15 @@
     <Compile Include="CompLightCopy.cs" />
     <Compile Include="Command_TargetWithRadius.cs" />
     <Compile Include="SemblanceUtility.cs" />
+    <Compile Include="Verb_AbilityUseSilverEyes.cs" />
+    <Compile Include="Verb_AbilitySummonBeowolf.cs" />
+    <Compile Include="Verb_AbilitySummonNuckelavee.cs" />
+    <Compile Include="Verb_AbilitySummonApathy.cs" />
+    <Compile Include="Verb_AbilitySummonDeathStalker.cs" />
+    <Compile Include="Verb_AbilitySummonGriffon.cs" />
+    <Compile Include="Verb_AbilitySummonNevermore.cs" />
+    <Compile Include="Verb_AbilitySummonLancerQueen.cs" />
+    <Compile Include="Verb_AbilitySummonUrsa.cs" />
     <Compile Include="Verb_AbilityUnleashDamage.cs" />
     <Compile Include="Verb_AbilityFormBond.cs" />
     <Compile Include="Verb_AbilityMaskEmotions.cs" />

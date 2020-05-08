@@ -6,7 +6,6 @@ using UnityEngine;
 using RimWorld.Planet;
 using System.Linq;
 using Verse.AI;
-using System;
 using System.Text;
 using Verse.Sound;
 
@@ -24,7 +23,7 @@ namespace RWBYRemnant
             harmony.Patch(AccessTools.Method(typeof(Pawn_HealthTracker), "PreApplyDamage"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("PreApplyDamage_PostFix")), null); // aura absorb
             harmony.Patch(AccessTools.Method(typeof(Pawn_HealthTracker), "NotifyPlayerOfKilled"), new HarmonyMethod(typeof(HarmonyPatch).GetMethod("PreNotifyPlayerOfKilled_PreFix")), null, null); // disables notification if summoned Grimm disappears
             harmony.Patch(AccessTools.Method(typeof(Pawn_HealthTracker), "AddHediff", new[] { typeof(Hediff), typeof(BodyPartRecord), typeof(DamageInfo), typeof(DamageWorker.DamageResult) }), new HarmonyMethod(typeof(HarmonyPatch).GetMethod("AddHediff_PreFix")), null, null);  // makes Nora immune to RimTasers Reloaded debuff and charges her
-            harmony.Patch(AccessTools.Method(typeof(PawnRenderer), "RenderPawnAt", new[] { typeof(Vector3) }), new HarmonyMethod(typeof(HarmonyPatch).GetMethod("RenderPawnAt_PreFix")), null, null); // makes Ruby invisible while dashing
+            harmony.Patch(AccessTools.Method(typeof(PawnRenderer), "RenderPawnAt", new[] { typeof(Vector3) }), new HarmonyMethod(typeof(HarmonyPatch).GetMethod("RenderPawnAt_PreFix")), null, null); // makes invisible: Ruby while dashing, Apathy while not triggered
             harmony.Patch(AccessTools.Method(typeof(DamageWorker_Flame), "ExplosionAffectCell"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("ExplosionAffectCell_PostFix")), null); // makes fire Dust spawn fire on explosion
             harmony.Patch(AccessTools.Method(typeof(JobDriver_Wait), "CheckForAutoAttack"), new HarmonyMethod(typeof(HarmonyPatch).GetMethod("CheckForAutoAttack_PreFix")), null, null); // fixes summoned Grimm bug of nullpointer if wandering
             harmony.Patch(AccessTools.Method(typeof(WeatherEvent_LightningStrike), "FireEvent"), new HarmonyMethod(typeof(HarmonyPatch).GetMethod("FireEvent_PreFix")), null, null); // changes lightning stike location onto Nora pawns
@@ -38,6 +37,8 @@ namespace RWBYRemnant
             harmony.Patch(AccessTools.Method(typeof(AttackTargetFinder), "BestAttackTarget"), new HarmonyMethod(typeof(HarmonyPatch).GetMethod("BestAttackTarget_PreFix")), null, null); // makes Grimm not need line of sight
             harmony.Patch(AccessTools.Method(typeof(Pawn_InteractionsTracker), "TryInteractWith"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("TryInteractWith_PostFix")), null); // unlock Semblance Social
             harmony.Patch(AccessTools.Method(typeof(Targeter), "ProcessInputEvents"), new HarmonyMethod(typeof(HarmonyPatch).GetMethod("ProcessInputEvents_Prefix")), null, null); // lets the weapon projectile ability aim properly
+            harmony.Patch(AccessTools.Method(typeof(RecordsUtility), "Notify_PawnKilled"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("Notify_PawnKilled_PostFix")), null); // add Weiss summon Grimm ability
+            harmony.Patch(AccessTools.Method(typeof(PawnGenerator), "GeneratePawn", new[] { typeof(PawnGenerationRequest) }), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("GeneratePawn_PostFix")), null); // adds silver eyes to a humanoid pawn
         }
 
         #region "unlock Semblances"
@@ -140,7 +141,7 @@ namespace RWBYRemnant
         {
             if (!__result) return;
             if (!(a is Pawn searcherPawn)) return;
-            if (searcherPawn.RaceProps.FleshType != RWBYDefOf.Grimm || searcherPawn.Faction.def != RWBYDefOf.Creatures_of_Grimm) return;
+            if (!GrimmUtility.IsGrimm(searcherPawn) || searcherPawn.Faction.def != RWBYDefOf.Creatures_of_Grimm) return;
             if (b is Pawn targetPawn && (targetPawn.health.hediffSet.HasHediff(RWBYDefOf.RWBY_MaskedEmotions) || targetPawn.Downed))
             {
                 __result = false;
@@ -158,14 +159,15 @@ namespace RWBYRemnant
         public static void BestAttackTarget_PreFix(IAttackTargetSearcher searcher, ref TargetScanFlags flags) // makes Grimm not need line of sight
         {
             if (!(searcher is Pawn searcherPawn)) return;
-            if (searcherPawn.RaceProps.FleshType != RWBYDefOf.Grimm || searcherPawn.Faction.def != RWBYDefOf.Creatures_of_Grimm) return;
+            if (searcherPawn.Faction == null) return;
+            if (!GrimmUtility.IsGrimm(searcherPawn) || searcherPawn.Faction.def != RWBYDefOf.Creatures_of_Grimm) return;
             flags = TargetScanFlags.None;
         }
 
         [HarmonyPrefix]
         public static bool CheckForAutoAttack_PreFix(JobDriver_Wait __instance) // fixes summoned Grimm bug of nullpointer if wandering
         {
-            if (__instance.pawn.RaceProps.FleshType == RWBYDefOf.Grimm)
+            if (GrimmUtility.IsGrimm(__instance.pawn))
             {
                 if (__instance.pawn.Downed)
                 {
@@ -236,6 +238,79 @@ namespace RWBYRemnant
 
         #region "Aura"
 
+        public static void GeneratePawn_PostFix(Pawn __result) // adds silver eyes to a humanoid pawn
+        {
+            if (__result.RaceProps.Humanlike)
+            {
+                if (SemblanceUtility.PyrrhaMagnetismCanAffect(__result)) return; // removes Androids from birth effects
+                if (__result.relations.RelatedPawns.Any(p => p.relations.Children.Contains(__result) && p.health.hediffSet.HasHediff(RWBYDefOf.RWBY_SilverEyes)) || __result.relations.Children.Any(c => c.health.hediffSet.HasHediff(RWBYDefOf.RWBY_SilverEyes)))
+                {
+                    if (Rand.Chance(0.5f)) // inherit with 50% chance
+                    {
+                        foreach (BodyPartRecord bodyPartRecord in __result.RaceProps.body.GetPartsWithDef(BodyPartDefOf.Eye))
+                        {
+                            __result.health.AddHediff(RWBYDefOf.RWBY_SilverEyes, bodyPartRecord);
+                        }
+                    }
+                }
+                else if (Rand.Chance(0.01f)) // natural with 1% chance
+                {
+                    foreach (BodyPartRecord bodyPartRecord in __result.RaceProps.body.GetPartsWithDef(BodyPartDefOf.Eye))
+                    {
+                        __result.health.AddHediff(RWBYDefOf.RWBY_SilverEyes, bodyPartRecord);
+                    }
+                }
+            }
+        }
+
+        [HarmonyPostfix]
+        public static void Notify_PawnKilled_PostFix(Pawn killed, Pawn killer) // add Weiss summon Grimm ability
+        {
+            if (killer.RaceProps.Humanlike && killer.story.traits.HasTrait(RWBYDefOf.Semblance_Weiss) && GrimmUtility.IsGrimm(killed) && killer.TryGetComp<CompAbilityUserAura>() is CompAbilityUserAura compAbilityUserAura && compAbilityUserAura.IsInitialized)
+            {
+                if (killed.RaceProps.AnyPawnKind == RWBYDefOf.Grimm_Boarbatusk)
+                {
+                    if (!compAbilityUserAura.AbilityData.AllPowers.Any(p => p.Def == RWBYDefOf.Weiss_SummonBoar)) compAbilityUserAura.AddPawnAbility(RWBYDefOf.Weiss_SummonBoar);
+                }
+                else if (killed.RaceProps.AnyPawnKind == RWBYDefOf.Grimm_Beowolf)
+                {
+                    if (!compAbilityUserAura.AbilityData.AllPowers.Any(p => p.Def == RWBYDefOf.Weiss_SummonBeowolf)) compAbilityUserAura.AddPawnAbility(RWBYDefOf.Weiss_SummonBeowolf);
+                }
+                else if (killed.RaceProps.AnyPawnKind == RWBYDefOf.Grimm_Ursa)
+                {
+                    if (!compAbilityUserAura.AbilityData.AllPowers.Any(p => p.Def == RWBYDefOf.Weiss_SummonUrsa)) compAbilityUserAura.AddPawnAbility(RWBYDefOf.Weiss_SummonUrsa);
+                }
+                else if (killed.RaceProps.AnyPawnKind == RWBYDefOf.Grimm_Griffon)
+                {
+                    if (!compAbilityUserAura.AbilityData.AllPowers.Any(p => p.Def == RWBYDefOf.Weiss_SummonGriffon)) compAbilityUserAura.AddPawnAbility(RWBYDefOf.Weiss_SummonGriffon);
+                }
+                else if (killed.RaceProps.AnyPawnKind == RWBYDefOf.Grimm_Nevermore)
+                {
+                    if (!compAbilityUserAura.AbilityData.AllPowers.Any(p => p.Def == RWBYDefOf.Weiss_SummonNevermore)) compAbilityUserAura.AddPawnAbility(RWBYDefOf.Weiss_SummonNevermore);
+                }
+                else if (killed.RaceProps.AnyPawnKind == RWBYDefOf.Grimm_Lancer)
+                {
+                    if (!compAbilityUserAura.AbilityData.AllPowers.Any(p => p.Def == RWBYDefOf.Weiss_SummonLancer)) compAbilityUserAura.AddPawnAbility(RWBYDefOf.Weiss_SummonLancer);
+                }
+                else if (killed.RaceProps.AnyPawnKind == RWBYDefOf.Grimm_LancerQueen)
+                {
+                    if (!compAbilityUserAura.AbilityData.AllPowers.Any(p => p.Def == RWBYDefOf.Weiss_SummonLancerQueen)) compAbilityUserAura.AddPawnAbility(RWBYDefOf.Weiss_SummonLancerQueen);
+                }
+                else if (killed.RaceProps.AnyPawnKind == RWBYDefOf.Grimm_DeathStalker)
+                {
+                    if (!compAbilityUserAura.AbilityData.AllPowers.Any(p => p.Def == RWBYDefOf.Weiss_SummonDeathStalker)) compAbilityUserAura.AddPawnAbility(RWBYDefOf.Weiss_SummonDeathStalker);
+                }
+                else if (killed.RaceProps.AnyPawnKind == RWBYDefOf.Grimm_Nuckelavee)
+                {
+                    if (!compAbilityUserAura.AbilityData.AllPowers.Any(p => p.Def == RWBYDefOf.Weiss_SummonNuckelavee)) compAbilityUserAura.AddPawnAbility(RWBYDefOf.Weiss_SummonNuckelavee);
+                }
+                else if (killed.RaceProps.AnyPawnKind == RWBYDefOf.Grimm_Apathy)
+                {
+                    if (!compAbilityUserAura.AbilityData.AllPowers.Any(p => p.Def == RWBYDefOf.Weiss_SummonApathy)) compAbilityUserAura.AddPawnAbility(RWBYDefOf.Weiss_SummonApathy);
+                }
+            }
+        }
+
         [HarmonyPrefix]
         public static void TryExecuteWorker_PreFix(ref IncidentParms parms)  // may increases raid size if Semblance Qrow is present
         {
@@ -282,12 +357,10 @@ namespace RWBYRemnant
         }
 
         [HarmonyPrefix]
-        public static bool RenderPawnAt_PreFix(PawnRenderer __instance, Pawn ___pawn, ref Vector3 drawLoc) // makes Ruby invisible while dashing
+        public static bool RenderPawnAt_PreFix(PawnRenderer __instance, Pawn ___pawn, ref Vector3 drawLoc) // makes invisible: Ruby while dashing, Apathy while not triggered
         {
-            if (___pawn.health.hediffSet.HasHediff(RWBYDefOf.RWBY_RubyDashForm))
-            {
-                return false;
-            }
+            if (___pawn.health.hediffSet.HasHediff(RWBYDefOf.RWBY_RubyDashForm)) return false;
+            if (___pawn.RaceProps.AnyPawnKind == RWBYDefOf.Grimm_Apathy && !___pawn.InMentalState) return false;
             return true;
         }
 
@@ -505,7 +578,7 @@ namespace RWBYRemnant
                 {
                     foreach (ThingWithComps thingWithComps in __instance.AllEquipmentListForReading)
                     {
-                        foreach (ThingComp thingComp in thingWithComps.AllComps.FindAll(c => c is CompWeaponTransform comp1 || c is CompWeaponProjectile comp2 || c is CompWeaponDrinkCoffee comp3 || c is CompTakePhoto comp4 || c is CompStealAura comp5))
+                        foreach (ThingComp thingComp in thingWithComps.AllComps.FindAll(c => c is CompWeaponTransform || c is CompWeaponProjectile || c is CompWeaponDrinkCoffee || c is CompTakePhoto || c is CompStealAura))
                         {
                             newOutput.AddRange(thingComp.CompGetGizmosExtra());
                         }
@@ -524,7 +597,7 @@ namespace RWBYRemnant
                     {
                         if (thing is ThingWithComps thingWithComps)
                         {
-                            foreach (ThingComp thingComp in thingWithComps.AllComps.FindAll(c => c is CompWeaponProjectile comp1 || c is CompInjectDustCrystal comp2))
+                            foreach (ThingComp thingComp in thingWithComps.AllComps.FindAll(c => c is CompWeaponProjectile || c is CompInjectDustCrystal))
                             {
                                 newOutput.AddRange(thingComp.CompGetGizmosExtra());
                             }
