@@ -33,7 +33,7 @@ namespace RWBYRemnant
                     bool abilitySucceeded = true;
                     foreach (Pawn targetPawn in CasterPawn.Map.mapPawns.AllPawnsSpawned)
                     {
-                        if (GrimmUtility.IsGrimm(targetPawn) && CasterPawn.Position.DistanceTo(targetPawn.Position) <= this.verbProps.range)
+                        if (targetPawn is Pawn_Grimm && CasterPawn.Position.DistanceTo(targetPawn.Position) <= this.verbProps.range)
                         {
                             if (TryFindShootLineFromTo(CasterPawn.Position, targetPawn, out ShootLine shootLine))
                             {

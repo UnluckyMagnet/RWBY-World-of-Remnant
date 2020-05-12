@@ -158,7 +158,7 @@ namespace RWBYRemnant
             triggeredAggro = true;
             if (this.RaceProps.AnyPawnKind == RWBYDefOf.Grimm_Apathy && this.Map != null)
             {
-                List<Pawn> pawns = this.Map.mapPawns.AllPawnsSpawned.FindAll(p => p is Pawn_Grimm pawn_Grimm && !p.InMentalState);
+                List<Pawn> pawns = this.Map.mapPawns.AllPawnsSpawned.FindAll(p => p is Pawn_Grimm && !p.InMentalState);
                 foreach (Pawn_Grimm pawn in pawns)
                 {
                     pawn.TriggerAggro();

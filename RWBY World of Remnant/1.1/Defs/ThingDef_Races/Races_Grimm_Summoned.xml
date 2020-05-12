@@ -856,7 +856,7 @@
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Grimm/Apathy/ApathyNormal_Summon</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
-					<drawSize>2.0</drawSize>
+					<drawSize>1.7</drawSize>
 					<shadowData>
 						<volume>(0.3, 0.8, 0.4)</volume>
 						<offset>(0,0,-0.3)</offset>
@@ -867,7 +867,7 @@
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Grimm/Apathy/ApathyHunchback_Summon</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
-					<drawSize>2.0</drawSize>
+					<drawSize>1.7</drawSize>
 					<shadowData>
 						<volume>(0.3, 0.8, 0.4)</volume>
 						<offset>(0,0,-0.3)</offset>
