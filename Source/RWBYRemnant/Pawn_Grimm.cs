@@ -119,6 +119,11 @@ namespace RWBYRemnant
         public override void TickRare()
         {
             base.TickRare();
+            if (Map != null && Map.mapPawns.AllPawnsSpawned.Any(p => p.RaceProps.Humanlike && !p.health.hediffSet.HasHediff(RWBYDefOf.RWBY_MaskedEmotions) && p.Position.DistanceTo(this.Position) < 20))
+            {
+                TriggerAggro();
+            }
+            if (this.CurJob == null) return;
             if (this.CurJob.targetA.Thing is Pawn pawnA && pawnA.health.hediffSet.HasHediff(RWBYDefOf.RWBY_MaskedEmotions))
             {
                 jobs.EndCurrentJob(JobCondition.InterruptForced, true);
@@ -130,10 +135,6 @@ namespace RWBYRemnant
             if (this.CurJob.targetC.Thing is Pawn pawnC && pawnC.health.hediffSet.HasHediff(RWBYDefOf.RWBY_MaskedEmotions))
             {
                 jobs.EndCurrentJob(JobCondition.InterruptForced, true);
-            }
-            if (Map != null && Map.mapPawns.AllPawnsSpawned.Any(p => p.RaceProps.Humanlike && !p.health.hediffSet.HasHediff(RWBYDefOf.RWBY_MaskedEmotions) && p.Position.DistanceTo(this.Position) < 20))
-            {
-                TriggerAggro();
             }
         }
 

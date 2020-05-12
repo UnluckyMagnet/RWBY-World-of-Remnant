@@ -35,8 +35,7 @@ namespace RWBYRemnant
                     {
                         if (GrimmUtility.IsGrimm(targetPawn) && CasterPawn.Position.DistanceTo(targetPawn.Position) <= this.verbProps.range)
                         {
-                            ShootLine shootLine;
-                            if (TryFindShootLineFromTo(CasterPawn.Position, targetPawn, out shootLine))
+                            if (TryFindShootLineFromTo(CasterPawn.Position, targetPawn, out ShootLine shootLine))
                             {
                                 Projectile projectile = (Projectile)GenSpawn.Spawn(RWBYDefOf.RWBY_SilverEyes_Projectile, CasterPawn.Position, CasterPawn.Map);
                                 projectile.Launch(CasterPawn, targetPawn, targetPawn, ProjectileHitFlags.IntendedTarget);
