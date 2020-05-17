@@ -4,7 +4,7 @@
   <!-- Grimm Glove, non craftable -->
 
   <RWBY_Grimm_Glove.label>戮獸手套</RWBY_Grimm_Glove.label>
-  <RWBY_Grimm_Glove.description>A special glove used to summon a Grimm Beetle and steal the power of Aura users. Not much is known about the glove but, it has a connection to the leader of the Grimm. Stealing an Aura is an act of evil and has severe consequences, which can damage the relationship between pawns and even other factions. \n\nThe stolen Aura's power will be absorbed into the glove and can be consumed later on. If the consuming person doesn't have an Aura, the person will obtain the stolen Aura's full potential. Otherwise this will increase the Aura's strenght and certain abilities from the stolen Aura (which are not Aura specific) become available. Consuming the stored Aura's power will destroy the glove.</RWBY_Grimm_Glove.description>
+  <RWBY_Grimm_Glove.description>一種特殊的手套，能召喚戮獸甲蟲並竊取Aura使用者的力量。關於這隻手套知之甚少，但它與戮獸之主有關連。竊取Aura是犯罪行為並且帶來嚴重後果，可能會破壞派系與殖民者之間的關係。\n\n被盜的Aura將儲存於手套日後消耗掉。如果使用者本身沒有Aura特性，這人將會獲得原宿主所有的能力。 Otherwise this will increase the Aura's strenght and certain abilities from the stolen Aura (which are not Aura specific) become available.消耗儲存的Aura會破壞手套。</RWBY_Grimm_Glove.description>
   <RWBY_Grimm_Glove.tools.0.label>手</RWBY_Grimm_Glove.tools.0.label>
 
 

@@ -28,5 +28,26 @@
   <RWBY_AuraStolen.label>aura被盜</RWBY_AuraStolen.label>
   <RWBY_AuraStolen.description>被盜的aura永遠無法自行恢復。</RWBY_AuraStolen.description>
 
+  <RWBY_ApathyTiredness.label>削弱意志</RWBY_ApathyTiredness.label>
+  <RWBY_ApathyTiredness.description>殖民者正在慢慢失去自己的意志力。</RWBY_ApathyTiredness.description>
+  <RWBY_ApathyTiredness.stages.0.label>沒有動力</RWBY_ApathyTiredness.stages.0.label>
+  <RWBY_ApathyTiredness.stages.1.label>悶</RWBY_ApathyTiredness.stages.1.label>
+  <RWBY_ApathyTiredness.stages.2.label>懊惱</RWBY_ApathyTiredness.stages.2.label>
+  <RWBY_ApathyTiredness.stages.3.label>疲倦</RWBY_ApathyTiredness.stages.3.label>
+  <RWBY_ApathyTiredness.stages.4.label>打哈欠</RWBY_ApathyTiredness.stages.4.label>
+  <RWBY_ApathyTiredness.stages.5.label>困倦</RWBY_ApathyTiredness.stages.5.label>
+  <RWBY_ApathyTiredness.stages.6.label>入睡</RWBY_ApathyTiredness.stages.6.label>
+  <RWBY_ApathyTiredness.stages.7.label>深睡</RWBY_ApathyTiredness.stages.7.label>
+  <RWBY_ApathyTiredness.stages.8.label>昏睡</RWBY_ApathyTiredness.stages.8.label>
+  <RWBY_ApathyTiredness.stages.9.label>僵死</RWBY_ApathyTiredness.stages.9.label>
+
+  <RWBY_SilverEye_Exhaustion.label>銀眼</RWBY_SilverEye_Exhaustion.label>
+  <RWBY_SilverEye_Exhaustion.description>使用角色的眼睛能力時會造成疲憊。</RWBY_SilverEye_Exhaustion.description>
+  <RWBY_SilverEye_Exhaustion.stages.0.label>weakened</RWBY_SilverEye_Exhaustion.stages.0.label>
+  <RWBY_SilverEye_Exhaustion.stages.1.label>weakened</RWBY_SilverEye_Exhaustion.stages.1.label>
+  <RWBY_SilverEye_Exhaustion.stages.2.label>weakened</RWBY_SilverEye_Exhaustion.stages.2.label>
+  <RWBY_SilverEye_Exhaustion.stages.3.label>weakened</RWBY_SilverEye_Exhaustion.stages.3.label>
+  <RWBY_SilverEye_Exhaustion.stages.4.label>exhausted</RWBY_SilverEye_Exhaustion.stages.4.label>
+
 
 </LanguageData>

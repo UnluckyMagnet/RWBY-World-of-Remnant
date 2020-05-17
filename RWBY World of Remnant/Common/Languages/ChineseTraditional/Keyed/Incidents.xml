@@ -40,10 +40,13 @@
   <LetterTextPumpkinPetePodCrash>感謝您購買50盒南瓜皮克的麥片。</LetterTextPumpkinPetePodCrash>
 
   <!-- Grimm events -->
-  <LetterLabelNuckelavee>半人馬</LetterLabelNuckelavee>
-  <LetterTextNuckelavee>大量的負面情緒吸引了半人馬，直到無人生還才會離去</LetterTextNuckelavee>
   <LetterLabelGrimmWandersIn>遊蕩戮獸</LetterLabelGrimmWandersIn>
   <LetterTextGrimmWandersIn>一隻戮獸晃進你的視野中，在它吸引更多同伴前快點殺了它。</LetterTextGrimmWandersIn>
+  <MessageTextNuckelaveeTriggered>半人馬找到你的殖民地。</MessageTextNuckelaveeTriggered>
+  <LetterLabelNuckelavee>半人馬</LetterLabelNuckelavee>
+  <LetterTextNuckelavee>大量的負面情緒吸引了半人馬，直到無人生還才會離去</LetterTextNuckelavee>
+  <LetterLabelApathy>未知存在</LetterLabelApathy>
+  <LetterTextApathy>未知的存在已經進入你的家。您的殖民者突然感到困倦和動力不足。</LetterTextApathy>
 
   <!-- Qrow semblance effects -->
   <TextMote_Crow_WeaponSlipped>武器脫手</TextMote_Crow_WeaponSlipped>
@@ -55,6 +58,7 @@
 
   <!-- Aura Steal -->
   <MessageFactionStoleAura>{0}掠奪了{1}的Aura</MessageFactionStoleAura>
+  <MessageTextLostSilverEyes>{PAWN_nameDef}失去了{PAWN_possessive}銀眼</MessageTextLostSilverEyes>
 
   <!-- Raven Portal -->
   <MessageTextNoPortalMap>無法開啟通往{PAWN_nameDef}的傳送門。目標不在任何地圖上。</MessageTextNoPortalMap>
