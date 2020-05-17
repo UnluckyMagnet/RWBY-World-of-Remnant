@@ -2,7 +2,7 @@
 <LanguageData>
 
   <Yang_ReturnDamage.label>傷害反擊</Yang_ReturnDamage.label>
-  <Yang_ReturnDamage.description>Your next melee attacks will additionally do your anger level as damage. Will automatically activated if you're too angry.</Yang_ReturnDamage.description>
+  <Yang_ReturnDamage.description>您的下一次近戰攻擊會額外增加您的怒氣傷害。如果您太生氣會自動激活。</Yang_ReturnDamage.description>
 
 
 </LanguageData>

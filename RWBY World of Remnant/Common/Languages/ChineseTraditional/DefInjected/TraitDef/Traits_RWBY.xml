@@ -44,7 +44,7 @@
   <Semblance_Velvet.degreeDatas.0.description>{PAWN_nameDef}'s Semblance is the ability to mimic the exact moves that other people have learned and used in combat to a degree. However, {PAWN_possessive} Semblance does not allow {PAWN_objective} to mimic the Semblances and capabilities of others and perform moves that are a direct result of another person's Semblance.</Semblance_Velvet.degreeDatas.0.description>
 
   <Semblance_Adam.degreeDatas.0.label>Semblance Adam</Semblance_Adam.degreeDatas.0.label>
-  <Semblance_Adam.degreeDatas.0.description>With {PAWN_possessive} Semblance, Moonslice, {PAWN_nameDef} is able to absorb or block the energy from an enemy attack with {PAWN_possessive} melee weapon and re-emit it again in powerful red energy strikes.</Semblance_Adam.degreeDatas.0.description>
+  <Semblance_Adam.degreeDatas.0.description>{PAWN_possessive}的外像力是月牙衝擊，能夠用{PAWN_possessive}近戰武器吸收或破解一位敵方的攻擊的能量，再以強力的紅色衝擊反射回去。</Semblance_Adam.degreeDatas.0.description>
 
 
 </LanguageData>

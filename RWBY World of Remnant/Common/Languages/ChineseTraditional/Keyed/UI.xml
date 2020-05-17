@@ -5,7 +5,7 @@
   <TransformLabel>切換</TransformLabel>
   <LightCopyLabel>複製{0}</LightCopyLabel>
   <LightCopyDescription>Create a light copy from the photo of: {0}。不再使用的照片副本將消失。</LightCopyDescription>
-<LightCopyPhotoClearLabel>刪除照片</LightCopyPhotoClearLabel>
+  <LightCopyPhotoClearLabel>刪除照片</LightCopyPhotoClearLabel>
   <LightCopyPhotoClearDescription>刪除當前所有保存的照片</LightCopyPhotoClearDescription>
   <LightCopyPhotoClearDisabled>沒有照片</LightCopyPhotoClearDisabled>
   <InjectDustLabel>注入{0}</InjectDustLabel>
@@ -37,6 +37,7 @@
   <FixTraitDisabledWorkTagsTooltip>在特性描述中顯示禁用的工作標籤，也會影響其他模組的特徵。（原系統沒有顯示它們）</FixTraitDisabledWorkTagsTooltip>
   <QrowFriendlyFireLabel>Qrow Semblance 影響</QrowFriendlyFireLabel>
   <QrowFriendlyFireTooltip>確定是否發生諸如“收割不當”等小事故。也會影響您的殖民者。</QrowFriendlyFireTooltip>
+  <EarliestNuckelaveeLabel>半人馬事件的最快出現天數: (默認 30)</EarliestNuckelaveeLabel>
 
   <!-- Aura Gizmo -->
   <AuraGizmoLabel>{0}的Aura</AuraGizmoLabel>
