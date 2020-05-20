@@ -26,7 +26,7 @@ namespace RWBYRemnant
 
             if (apathyOnMap)
             {
-                if (this.Pawn.IsHashIntervalTick(30000)) severityAdjustment += (0.1f * (1 / this.Pawn.needs.mood.CurInstantLevelPercentage));
+                if (this.Pawn.IsHashIntervalTick(30000)) severityAdjustment += (0.1f * (1f - this.Pawn.needs.mood.CurInstantLevelPercentage));
             }
             else
             {

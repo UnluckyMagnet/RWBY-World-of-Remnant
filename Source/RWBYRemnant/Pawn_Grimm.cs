@@ -89,7 +89,7 @@ namespace RWBYRemnant
                 GenSpawn.Spawn(pawn, loc, this.Map, this.Rotation, WipeMode.Vanish, false);
             }
 
-            if (this.Map != null && this.IsHashIntervalTick(60000) && this.RaceProps.AnyPawnKind == RWBYDefOf.Grimm_Apathy && !this.InMentalState && this.Map.mapPawns.AllPawnsSpawned.FindAll(p => p.RaceProps.AnyPawnKind == RWBYDefOf.Grimm_Apathy).Count() < this.Map.mapPawns.ColonistCount * 10) // Apathy spawn more Apathy
+            if (this.Map != null && this.IsHashIntervalTick(30000) && this.RaceProps.AnyPawnKind == RWBYDefOf.Grimm_Apathy && !this.InMentalState && this.Map.mapPawns.AllPawnsSpawned.FindAll(p => p.RaceProps.AnyPawnKind == RWBYDefOf.Grimm_Apathy).Count() < this.Map.mapPawns.ColonistCount * 10) // Apathy spawn more Apathy
             {
                 Pawn pawn = PawnGenerator.GeneratePawn(RWBYDefOf.Grimm_Apathy, FactionUtility.DefaultFactionFrom(RWBYDefOf.Creatures_of_Grimm));
                 IntVec3 loc = CellFinder.RandomClosewalkCellNear(this.Position, this.Map, 8, null);
