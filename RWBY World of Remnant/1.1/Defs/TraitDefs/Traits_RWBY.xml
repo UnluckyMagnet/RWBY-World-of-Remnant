@@ -431,7 +431,7 @@
 		<degreeDatas>
 			<li>
 				<label>Semblance Raven</label>
-				<description>{PAWN_nameDef}'s allows {PAWN_objective} to create portals to instantly travel to people {PAWN_pronoun} has bonded with, without occupying the space between and can cover vast distance through them.</description>
+				<description>{PAWN_nameDef}'s Semblance allows {PAWN_objective} to create portals to instantly travel to people {PAWN_pronoun} has bonded with, without occupying the space between and can cover vast distance through them.</description>
 				<statOffsets>
 					<MeleeHitChance>8</MeleeHitChance>
 					<NegotiationAbility>0.2</NegotiationAbility>
