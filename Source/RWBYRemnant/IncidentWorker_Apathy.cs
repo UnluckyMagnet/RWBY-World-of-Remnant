@@ -1,4 +1,5 @@
 ﻿using RimWorld;
+using System.Collections.Generic;
 using Verse;
 
 namespace RWBYRemnant
@@ -25,7 +26,17 @@ namespace RWBYRemnant
             }
             string label = "LetterLabelApathy".Translate();
             string text = "LetterTextApathy".Translate();
-            Find.LetterStack.ReceiveLetter(label, text, LetterDefOf.ThreatSmall);
+            List<Pawn> pawns = map.mapPawns.AllPawnsSpawned.FindAll(p => p.Faction == Faction.OfPlayer && p.RaceProps.Humanlike);
+            if (pawns.Count > 0)
+            {
+                Pawn knowingPawn = pawns.RandomElement();
+                text = "LetterTextApathyKnowing".Translate().Formatted(knowingPawn.Named("PAWN")).AdjustedFor(knowingPawn, "PAWN").CapitalizeFirst();
+                Find.LetterStack.ReceiveLetter(label, text, LetterDefOf.ThreatSmall, knowingPawn);
+            }
+            else
+            {
+                Find.LetterStack.ReceiveLetter(label, text, LetterDefOf.ThreatSmall);
+            }
             return true;
         }
     }

@@ -8,6 +8,8 @@ namespace RWBYRemnant
     {
         public static IEnumerable<ThingDef> NeedsAmmunition(Pawn pawn)
         {
+            if (pawn.Dead) yield break;
+            if (pawn.NonHumanlikeOrWildMan()) yield break;
             foreach (AbilitySemblance abilitySemblance in pawn.TryGetComp<CompAbilityUserAura>().AbilityData.AllPowers)
             {
                 if (abilitySemblance.SemblanceDef.usesAmmunition != null) yield return abilitySemblance.SemblanceDef.usesAmmunition;

@@ -47,6 +47,7 @@
 	<LetterTextNuckelavee>Alot of negative emotions have attracted a Nuckelavee, which now roams the area. It will regularly call for more Grimm.</LetterTextNuckelavee>
 	<LetterLabelApathy>Unknown presence</LetterLabelApathy>
 	<LetterTextApathy>An unknown presence has entered your home. Your colonists suddenly feel sleepy and unmotivated.</LetterTextApathy>
+	<LetterTextApathyKnowing>An unknown presence has entered your home. Your colonists suddenly feel sleepy and unmotivated.\n\n{PAWN_nameDef} has experienced this before and thinks that maybe an Apathy Grimm is causing this.</LetterTextApathyKnowing>
 
 	<!-- Qrow semblance effects -->
 	<TextMote_Crow_WeaponSlipped>Weapon slipped</TextMote_Crow_WeaponSlipped>
