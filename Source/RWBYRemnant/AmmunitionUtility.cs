@@ -10,9 +10,12 @@ namespace RWBYRemnant
         {
             if (pawn.Dead) yield break;
             if (pawn.NonHumanlikeOrWildMan()) yield break;
-            foreach (AbilitySemblance abilitySemblance in pawn.TryGetComp<CompAbilityUserAura>().AbilityData.AllPowers)
+            if (pawn.TryGetComp<CompAbilityUserAura>() != null && pawn.TryGetComp<CompAbilityUserAura>().AbilityData != null)
             {
-                if (abilitySemblance.SemblanceDef.usesAmmunition != null) yield return abilitySemblance.SemblanceDef.usesAmmunition;
+                foreach (AbilitySemblance abilitySemblance in pawn.TryGetComp<CompAbilityUserAura>().AbilityData.AllPowers)
+                {
+                    if (abilitySemblance.SemblanceDef.usesAmmunition != null) yield return abilitySemblance.SemblanceDef.usesAmmunition;
+                }
             }
             if (pawn.story != null && pawn.story.traits.HasTrait(RWBYDefOf.Semblance_Hazel))
             {
