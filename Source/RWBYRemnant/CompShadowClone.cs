@@ -160,7 +160,7 @@ namespace RWBYRemnant
             if (shadowClone == null) parent.Destroy();
             if (useColor && ticksToLive % 5 == 0) MoteMaker.ThrowDustPuffThick(parent.DrawPos, shadowClone.Map, 2, shadowCloneColor);
             ticksToLive--;
-            if (ticksToLive < 1)
+            if (ticksToLive < 1 || parent.Map != shadowClone.Map)
             {
                 parent.Destroy();
             }
@@ -169,7 +169,8 @@ namespace RWBYRemnant
         public override void PostDraw()
         {
             base.PostDraw();
-            shadowClone.Drawer.renderer.GetType().GetMethod("RenderPawnInternal", BindingFlags.NonPublic | BindingFlags.Instance, null, new[] { typeof(Vector3), typeof(float), typeof(bool), typeof(Rot4), typeof(Rot4), typeof(RotDrawMode), typeof(bool), typeof(bool) }, null).Invoke(shadowClone.Drawer.renderer, new object[] { parent.DrawPos, 0f, true, shadowCloneAngle, shadowCloneAngle, RotDrawMode.Fresh, false, false });
+            if (parent.Map != shadowClone.Map) return;
+            shadowClone.Drawer.renderer.GetType().GetMethod("RenderPawnInternal", BindingFlags.NonPublic | BindingFlags.Instance, null, new[] { typeof(Vector3), typeof(float), typeof(bool), typeof(Rot4), typeof(Rot4), typeof(RotDrawMode), typeof(bool), typeof(bool), typeof(bool) }, null).Invoke(shadowClone.Drawer.renderer, new object[] { parent.DrawPos, 0f, true, shadowCloneAngle, shadowCloneAngle, RotDrawMode.Fresh, false, false, false });
         }
 
         public override void PostExposeData()

@@ -19,6 +19,7 @@
 	<DisabledNotEnoughAura>{0} has not enough Aura to use this ability</DisabledNotEnoughAura>
 	<DisabledNoDamageAbosrbed>{0} has no absorbed damage</DisabledNoDamageAbosrbed>
 	<DisabledNoMeleeWeapon>{0} has no melee weapon equipped</DisabledNoMeleeWeapon>
+	<DisabledNoDustPowderAmmunition>{0} needed to use this ability</DisabledNoDustPowderAmmunition>
 
 	<!-- Mod Options -->
 	<AuraEveryoneLabel>Every pawn has an Aura</AuraEveryoneLabel>
