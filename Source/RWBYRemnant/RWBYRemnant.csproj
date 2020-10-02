@@ -39,7 +39,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="AbilityUser">
-      <HintPath>D:\Steam\steamapps\workshop\content\294100\932008009\Assemblies\AbilityUser.dll</HintPath>
+      <HintPath>D:\Steam\steamapps\workshop\content\294100\2195729899\1.2\Assemblies\AbilityUser.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
@@ -127,8 +127,6 @@
     <Compile Include="AbilitySemblance.cs" />
     <Compile Include="Aura.cs" />
     <Compile Include="CompAbilityUserAura.cs" />
-    <Compile Include="DamageWorker_Ice.cs" />
-    <Compile Include="DamageWorker_Lightning.cs" />
     <Compile Include="DefOfs.cs" />
     <Compile Include="GizmoAuraStatus.cs" />
     <Compile Include="HarmonyPatch.cs" />

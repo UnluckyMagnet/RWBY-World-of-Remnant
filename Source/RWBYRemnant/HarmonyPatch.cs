@@ -314,7 +314,7 @@ namespace RWBYRemnant
         [HarmonyPrefix]
         public static void TryExecuteWorker_PreFix(ref IncidentParms parms)  // may increases raid size if Semblance Qrow is present
         {
-            if (((Map)parms.target).PlayerPawnsForStoryteller.ToList().Any(p => p.RaceProps.Humanlike && p.story.traits.HasTrait(RWBYDefOf.Semblance_Qrow)) && Rand.Chance(0.5f))
+            if (parms.target is Map map && map.PlayerPawnsForStoryteller.ToList().Any(p => p.RaceProps.Humanlike && p.story.traits.HasTrait(RWBYDefOf.Semblance_Qrow)) && Rand.Chance(0.5f))
             {
                 Messages.Message("MessageTextQrowRaid".Translate(), ((Map)parms.target).PlayerPawnsForStoryteller.ToList().Find(p => p.RaceProps.Humanlike && p.story.traits.HasTrait(RWBYDefOf.Semblance_Qrow)), MessageTypeDefOf.NegativeEvent);
                 parms.points *= 1.2f;

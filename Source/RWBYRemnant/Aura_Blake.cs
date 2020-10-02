@@ -38,7 +38,7 @@ namespace RWBYRemnant
             }
             if (cloneToUse == RWBYDefOf.Blake_ShadowClone_Ice && dinfo.Instigator is Pawn attackerPawn && dinfo.Weapon != null && !dinfo.Weapon.IsRangedWeapon) // add stun(freeze) to melee attacker
             {
-                attackerPawn.stances.stunner.StunFor(GenTicks.SecondsToTicks(4.5f), pawn);
+                attackerPawn.stances.stunner.StunFor_NewTmp(GenTicks.SecondsToTicks(4.5f), pawn);
             }
             Thing thing = ThingMaker.MakeThing(cloneToUse);
             thing.TryGetComp<CompShadowClone>().SetData(pawn, GenTicks.SecondsToTicks(cloneDuration), color);

@@ -29,7 +29,7 @@ namespace RWBYRemnant
                 dinfo1.SetBodyRegion(BodyPartHeight.Undefined, BodyPartDepth.Outside);
                 Vector3 direction1 = (targetPawn.Position - CasterPawn.Position).ToVector3();
                 dinfo1.SetAngle(direction1);
-                targetPawn.stances.stunner.StunFor(GenTicks.SecondsToTicks(5f), CasterPawn);
+                targetPawn.stances.stunner.StunFor_NewTmp(GenTicks.SecondsToTicks(5f), CasterPawn);
                 targetPawn.TakeDamage(dinfo1);
             }
             this.Destroy(DestroyMode.Vanish);
