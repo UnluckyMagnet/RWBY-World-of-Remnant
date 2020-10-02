@@ -59,7 +59,7 @@
 			</li>
 			<li>
 				<label>painful</label>
-				<minSeverity>0.15</minSeverity>
+				<minSeverity>0.20</minSeverity>
 				<painOffset>0.3</painOffset>
 				<capMods>
 					<li>
@@ -74,7 +74,7 @@
 			</li>
 			<li>
 				<label>shocked</label>
-				<minSeverity>0.25</minSeverity>
+				<minSeverity>0.30</minSeverity>
 				<painOffset>0.4</painOffset>
 				<capMods>
 					<li>
@@ -97,7 +97,7 @@
 		<initialSeverity>0.10</initialSeverity>
 		<defaultLabelColor>(51, 102, 255)</defaultLabelColor>
 		<hediffClass>HediffWithComps</hediffClass>
-		<maxSeverity>0.3</maxSeverity>
+		<maxSeverity>0.35</maxSeverity>
 		<isBad>true</isBad>
 		<comps>
 			<li Class="HediffCompProperties_SeverityPerDay">
@@ -126,7 +126,7 @@
 			</li>
 			<li>
 				<label>cold</label>
-				<minSeverity>0.15</minSeverity>
+				<minSeverity>0.20</minSeverity>
 				<capMods>
 					<li>
 						<capacity>Moving</capacity>
@@ -144,7 +144,7 @@
 			</li>
 			<li>
 				<label>frozen</label>
-				<minSeverity>0.25</minSeverity>
+				<minSeverity>0.30</minSeverity>
 				<capMods>
 					<li>
 						<capacity>BloodPumping</capacity>

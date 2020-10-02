@@ -30,7 +30,7 @@
 	<DamageDef Name="Bomb_Ice">
 		<defName>Bomb_Ice</defName>
 		<label>bomb ice</label>
-		<workerClass>RWBYRemnant.DamageWorker_Ice</workerClass>
+		<workerClass>DamageWorker_AddInjury</workerClass>
 		<externalViolence>true</externalViolence>
 		<isExplosive>true</isExplosive>
 		<deathMessage>{0} has died in an Ice Dust explosion.</deathMessage>
@@ -51,12 +51,18 @@
 		<explosionColorEdge>(0.6, 0.5, 0.4)</explosionColorEdge>
 		<soundExplosion>Explosion_Bomb</soundExplosion>
 		<combatLogRules>Damage_Bomb</combatLogRules>
+		<additionalHediffs>
+			<li>
+				<hediff>RWBY_Ice_Damage</hediff>
+				<severityPerDamageDealt>0.008</severityPerDamageDealt>
+			</li>
+		</additionalHediffs>
 	</DamageDef>
 
 	<DamageDef Name="Bomb_Lightning">
 		<defName>Bomb_Lightning</defName>
 		<label>bomb lightning</label>
-		<workerClass>RWBYRemnant.DamageWorker_Lightning</workerClass>
+		<workerClass>DamageWorker_AddInjury</workerClass>
 		<externalViolence>true</externalViolence>
 		<isExplosive>true</isExplosive>
 		<deathMessage>{0} has died in a Lightning Dust explosion.</deathMessage>
@@ -77,6 +83,12 @@
 		<explosionColorEdge>(0.6, 0.5, 0.4)</explosionColorEdge>
 		<soundExplosion>Explosion_EMP</soundExplosion>
 		<combatLogRules>Damage_EMP</combatLogRules>
+		<additionalHediffs>
+			<li>
+				<hediff>RWBY_Lightning_Damage</hediff>
+				<severityPerDamageDealt>0.008</severityPerDamageDealt>
+			</li>
+		</additionalHediffs>
 	</DamageDef>
 
 	<DamageDef Name="Bomb_Gravity">

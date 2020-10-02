@@ -39,40 +39,58 @@
 	<DamageDef>
 		<defName>RWBY_Ice_Stab</defName>
 		<label>frostbite</label>
-		<workerClass>RWBYRemnant.DamageWorker_Ice</workerClass>
+		<workerClass>DamageWorker_Stab</workerClass>
 		<externalViolence>false</externalViolence>
 		<deathMessage>{0} has been frozen to death.</deathMessage>
 		<hediff>Frostbite</hediff>
 		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
 		<canUseDeflectMetalEffect>false</canUseDeflectMetalEffect>
+		<additionalHediffs>
+			<li>
+				<hediff>RWBY_Ice_Damage</hediff>
+				<severityPerDamageDealt>0.008</severityPerDamageDealt>
+			</li>
+		</additionalHediffs>
 	</DamageDef>
 
 	<DamageDef>
 		<defName>RWBY_Ice_Slash</defName>
 		<label>frostbite</label>
-		<workerClass>RWBYRemnant.DamageWorker_Ice</workerClass>
+		<workerClass>DamageWorker_Cut</workerClass>
 		<externalViolence>false</externalViolence>
 		<deathMessage>{0} has been frozen to death.</deathMessage>
 		<hediff>Frostbite</hediff>
 		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
 		<canUseDeflectMetalEffect>false</canUseDeflectMetalEffect>
+		<additionalHediffs>
+			<li>
+				<hediff>RWBY_Ice_Damage</hediff>
+				<severityPerDamageDealt>0.008</severityPerDamageDealt>
+			</li>
+		</additionalHediffs>
 	</DamageDef>
 
 	<DamageDef>
 		<defName>RWBY_Ice_Blunt</defName>
 		<label>frostbite</label>
-		<workerClass>RWBYRemnant.DamageWorker_Ice</workerClass>
+		<workerClass>DamageWorker_Blunt</workerClass>
 		<externalViolence>false</externalViolence>
 		<deathMessage>{0} has been frozen to death.</deathMessage>
 		<hediff>Frostbite</hediff>
 		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
 		<canUseDeflectMetalEffect>false</canUseDeflectMetalEffect>
+		<additionalHediffs>
+			<li>
+				<hediff>RWBY_Ice_Damage</hediff>
+				<severityPerDamageDealt>0.008</severityPerDamageDealt>
+			</li>
+		</additionalHediffs>
 	</DamageDef>
 
 	<DamageDef>
 		<defName>RWBY_Ice_Bullet</defName>
 		<label>bullet</label>
-		<workerClass>RWBYRemnant.DamageWorker_Ice</workerClass>
+		<workerClass>DamageWorker_AddInjury</workerClass>
 		<externalViolence>true</externalViolence>
 		<deathMessage>{0} has been frozen to death.</deathMessage>
 		<hediff>Frostbite</hediff>
@@ -82,6 +100,12 @@
 		<overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
 		<isRanged>true</isRanged>
 		<makesAnimalsFlee>true</makesAnimalsFlee>
+		<additionalHediffs>
+			<li>
+				<hediff>RWBY_Ice_Damage</hediff>
+				<severityPerDamageDealt>0.008</severityPerDamageDealt>
+			</li>
+		</additionalHediffs>
 	</DamageDef>
 
 	<!-- lightning damage adds a shock hediff increasing pain and bloodpumping (heartbeat rate) -->
@@ -89,23 +113,35 @@
 	<DamageDef ParentName="Flame">
 		<defName>RWBY_Lightning_Slash</defName>
 		<label>lightning</label>
-		<workerClass>RWBYRemnant.DamageWorker_Lightning</workerClass>
+		<workerClass>DamageWorker_Cut</workerClass>
 		<deathMessage>{0} has been shocked to death.</deathMessage>
 		<hediff>RWBY_Shock</hediff>
+		<additionalHediffs>
+			<li>
+				<hediff>RWBY_Lightning_Damage</hediff>
+				<severityPerDamageDealt>0.008</severityPerDamageDealt>
+			</li>
+		</additionalHediffs>
 	</DamageDef>
 
 	<DamageDef ParentName="Flame">
 		<defName>RWBY_Lightning_Blunt</defName>
 		<label>lightning</label>
-		<workerClass>RWBYRemnant.DamageWorker_Lightning</workerClass>
+		<workerClass>DamageWorker_Blunt</workerClass>
 		<deathMessage>{0} has been shocked to death.</deathMessage>
 		<hediff>RWBY_Shock</hediff>
+		<additionalHediffs>
+			<li>
+				<hediff>RWBY_Lightning_Damage</hediff>
+				<severityPerDamageDealt>0.008</severityPerDamageDealt>
+			</li>
+		</additionalHediffs>
 	</DamageDef>
 
 	<DamageDef>
 		<defName>RWBY_Lightning_Bullet</defName>
 		<label>bullet</label>
-		<workerClass>RWBYRemnant.DamageWorker_Lightning</workerClass>
+		<workerClass>DamageWorker_AddInjury</workerClass>
 		<externalViolence>true</externalViolence>
 		<deathMessage>{0} has been shocked to death.</deathMessage>
 		<hediff>RWBY_Shock</hediff>
@@ -115,6 +151,12 @@
 		<overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
 		<isRanged>true</isRanged>
 		<makesAnimalsFlee>true</makesAnimalsFlee>
+		<additionalHediffs>
+			<li>
+				<hediff>RWBY_Lightning_Damage</hediff>
+				<severityPerDamageDealt>0.008</severityPerDamageDealt>
+			</li>
+		</additionalHediffs>
 	</DamageDef>
 
 	<!-- Grimm sting toxic stab -->
@@ -166,6 +208,12 @@
 		<explosionColorEdge>(0.6, 0.5, 0.4)</explosionColorEdge>
 		<soundExplosion>Explosion_Bomb</soundExplosion>
 		<combatLogRules>Damage_Bomb</combatLogRules>
+		<additionalHediffs>
+			<li>
+				<hediff>RWBY_Lightning_Damage</hediff>
+				<severityPerDamageDealt>0.008</severityPerDamageDealt>
+			</li>
+		</additionalHediffs>
 	</DamageDef>
 
 	<!-- base game bomb with little damage for Ember Celica -->
