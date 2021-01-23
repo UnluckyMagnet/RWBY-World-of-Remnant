@@ -19,7 +19,8 @@ namespace RWBYRemnant
         public override IEnumerable<Thing> PotentialWorkThingsGlobal(Pawn pawn)
         {
             List<ThingDef> thingDefs = AmmunitionUtility.NeedsAmmunition(pawn).ToList();
-            return pawn.Map.GetDirectlyHeldThings().ToList().FindAll(t => !t.IsForbidden(pawn) && thingDefs.Contains(t.def) && (!pawn.inventory.GetDirectlyHeldThings().Any(p => p.def == t.def) || pawn.inventory.GetDirectlyHeldThings().Any(p => p.def == t.def && p.stackCount < 5)));
+            if (thingDefs.Count() == 0) return new List<Thing>();
+            return pawn.Map.GetDirectlyHeldThings().Where(t => !t.IsForbidden(pawn) && thingDefs.Contains(t.def) && (!pawn.inventory.GetDirectlyHeldThings().Any(p => p.def == t.def) || pawn.inventory.GetDirectlyHeldThings().Any(p => p.def == t.def && p.stackCount < 5)));
         }
 
         public override bool ShouldSkip(Pawn pawn, bool forced = false)
@@ -27,8 +28,9 @@ namespace RWBYRemnant
             if (!LoadedModManager.GetMod<RemnantMod>().GetSettings<RemnantModSettings>().autoCollectAmmunition) return true;
             if (pawn.NonHumanlikeOrWildMan()) return true;
             List<ThingDef> thingDefs = AmmunitionUtility.NeedsAmmunition(pawn).ToList();
+            thingDefs.RemoveAll(t => pawn.inventory.GetDirectlyHeldThings().Any(d => d.def == t && d.stackCount >= 5));
             if (thingDefs.Count() == 0) return true;
-            if (pawn.Map.GetDirectlyHeldThings().ToList().FindAll(t => !t.IsForbidden(pawn) && thingDefs.Contains(t.def)).Count() == 0) return true;
+            if (pawn.Map.GetDirectlyHeldThings().Where(t => !t.IsForbidden(pawn) && thingDefs.Contains(t.def)).Count() == 0) return true;
             foreach (ThingDef thingDef in thingDefs)
             {
                 if ((!pawn.inventory.GetDirectlyHeldThings().Any(t => t.def == thingDef) || pawn.inventory.GetDirectlyHeldThings().Any(t => t.def == thingDef && t.stackCount < 5)) && pawn.Map.GetDirectlyHeldThings().Any(t => t.def == thingDef)) return false;
