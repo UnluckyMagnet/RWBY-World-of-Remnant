@@ -1,6 +1,8 @@
 ﻿using RimWorld;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using UnityEngine;
 using Verse;
 using Verse.Sound;
@@ -57,6 +59,20 @@ namespace RWBYRemnant
                 {
                     weaponToCreateSecondary.AllComps.Remove(compInfusedNew2);
                     weaponToCreateSecondary.AllComps.Add(compInfusedOld);
+                }
+            }
+
+            if (LoadedModManager.RunningMods.Any(m => m.Name == "PsiTech")) // compatibility with PsiTech weapon infusion, if the Mod is not running nothing happens here, if PsiTech changes any names this will break
+            {
+                Type typeExtensionMethods = Type.GetType("PsiTech.Utility.ExtensionMethods, PsiTech");
+                MethodInfo methodInfo = typeExtensionMethods.GetMethod("PsiEquipmentTracker", new Type[] { typeof(Thing) });
+                object objectPsiTechEquipmentTracker = methodInfo.Invoke(parent, new object[] { parent });
+                Type typePsiTechEquipmentTracker = Type.GetType("PsiTech.Misc.PsiTechEquipmentTracker, PsiTech");
+                FieldInfo fieldInfo = typePsiTechEquipmentTracker.GetField("IsPsychic");
+                if (typePsiTechEquipmentTracker.GetField("IsPsychic").GetValue(objectPsiTechEquipmentTracker) is bool IsPsychic && IsPsychic)
+                {
+                    objectPsiTechEquipmentTracker = methodInfo.Invoke(weaponToCreate, new object[] { weaponToCreate });
+                    typePsiTechEquipmentTracker.GetField("IsPsychic").SetValue(objectPsiTechEquipmentTracker, true);
                 }
             }
 
