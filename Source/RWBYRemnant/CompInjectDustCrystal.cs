@@ -53,7 +53,7 @@ namespace RWBYRemnant
         {
             if (GetPawn() == null) yield break;
             if (!GetPawn().IsColonist) yield break;
-            if (GetPawn().TryGetComp<CompAbilityUserAura>() == null || !GetPawn().TryGetComp<CompAbilityUserAura>().IsInitialized) yield break;
+            if (GetPawn().TryGetComp<CompAbilityUserAura>() == null || !GetPawn().TryGetComp<CompAbilityUserAura>().Initialized) yield break;
 
             yield return new Command_Action
             {

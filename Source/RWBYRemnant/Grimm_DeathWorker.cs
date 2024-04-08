@@ -9,6 +9,7 @@ namespace RWBYRemnant
         public override void PawnDied(Corpse corpse)
         {
             Color color = new Color();
+
             if (corpse.InnerPawn.Faction == Faction.OfPlayer)
             {
                 color = new Color(1, 1, 1); // White Smoke
@@ -25,13 +26,14 @@ namespace RWBYRemnant
             }
             for (int i = 0; i < 5; i++)
             {
-                MoteThrown moteThrown = (MoteThrown)ThingMaker.MakeThing(ThingDefOf.Mote_Smoke, null);
-                moteThrown.Scale = Rand.Range(2.5f, 4.5f);
-                moteThrown.rotationRate = Rand.Range(-30f, 30f);
-                moteThrown.exactPosition = corpse.Position.ToVector3();
-                moteThrown.instanceColor = color;
-                moteThrown.SetVelocity((float)Rand.Range(0, 360), 0.2f);
-                GenSpawn.Spawn(moteThrown, corpse.Position, corpse.Map, WipeMode.Vanish);
+                // ThingDefOf.Mote_Smoke changed FleckDefOf.Smoke
+                FleckCreationData dataStatic = FleckMaker.GetDataStatic(corpse.Position.ToVector3(), corpse.Map, FleckDefOf.Smoke);
+                dataStatic.scale = Rand.Range(2.5f, 4.5f);
+                dataStatic.rotationRate = Rand.Range(-30f, 30f);
+                dataStatic.instanceColor = color;
+                dataStatic.velocityAngle = Rand.Range(0, 360);
+                dataStatic.velocitySpeed = 0.2f;
+                corpse.Map.flecks.CreateFleck(dataStatic);
             }
             corpse.Destroy();
         }

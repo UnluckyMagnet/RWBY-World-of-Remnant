@@ -1,12 +1,12 @@
-﻿using Verse;
-using HarmonyLib;
+﻿using HarmonyLib;
 using RimWorld;
-using System.Collections.Generic;
-using UnityEngine;
 using RimWorld.Planet;
+using System.Collections.Generic;
 using System.Linq;
-using Verse.AI;
 using System.Text;
+using UnityEngine;
+using Verse;
+using Verse.AI;
 using Verse.Sound;
 
 namespace RWBYRemnant
@@ -17,13 +17,14 @@ namespace RWBYRemnant
         static HarmonyPatch()
         {
             var harmony = new Harmony("rimworld.carnysenpai.rwbyremnant");
+
             harmony.Patch(AccessTools.Method(typeof(Pawn_EquipmentTracker), "GetGizmos"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("GetGizmos_PostFix")), null); // adds abilities to pawns
             harmony.Patch(AccessTools.Method(typeof(GenDrop), "TryDropSpawn"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("TryDropSpawn_PostFix")), null); // lets light copies disappear on drop
             harmony.Patch(AccessTools.Method(typeof(Verb_MeleeAttackDamage), "DamageInfosToApply"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("DamageInfosToApply_PostFix")), null); // strenghtens certain pawns melee attacks
             harmony.Patch(AccessTools.Method(typeof(Pawn_HealthTracker), "PreApplyDamage"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("PreApplyDamage_PostFix")), null); // aura absorb
             harmony.Patch(AccessTools.Method(typeof(Pawn_HealthTracker), "NotifyPlayerOfKilled"), new HarmonyMethod(typeof(HarmonyPatch).GetMethod("PreNotifyPlayerOfKilled_PreFix")), null, null); // disables notification if summoned Grimm disappears
             harmony.Patch(AccessTools.Method(typeof(Pawn_HealthTracker), "AddHediff", new[] { typeof(Hediff), typeof(BodyPartRecord), typeof(DamageInfo), typeof(DamageWorker.DamageResult) }), new HarmonyMethod(typeof(HarmonyPatch).GetMethod("AddHediff_PreFix")), null, null);  // makes Nora immune to RimTasers Reloaded debuff and charges her
-            harmony.Patch(AccessTools.Method(typeof(PawnRenderer), "RenderPawnAt", new[] { typeof(Vector3) }), new HarmonyMethod(typeof(HarmonyPatch).GetMethod("RenderPawnAt_PreFix")), null, null); // makes invisible: Ruby while dashing, Apathy while not triggered
+            harmony.Patch(AccessTools.Method(typeof(PawnRenderer), "RenderPawnAt", new[] { typeof(Vector3), typeof(Rot4?), typeof(bool) }), new HarmonyMethod(typeof(HarmonyPatch).GetMethod("RenderPawnAt_PreFix")), null, null); // makes invisible: Ruby while dashing, Apathy while not triggered
             harmony.Patch(AccessTools.Method(typeof(DamageWorker_Flame), "ExplosionAffectCell"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("ExplosionAffectCell_PostFix")), null); // makes fire Dust spawn fire on explosion
             harmony.Patch(AccessTools.Method(typeof(JobDriver_Wait), "CheckForAutoAttack"), new HarmonyMethod(typeof(HarmonyPatch).GetMethod("CheckForAutoAttack_PreFix")), null, null); // fixes summoned Grimm bug of nullpointer if wandering
             harmony.Patch(AccessTools.Method(typeof(WeatherEvent_LightningStrike), "FireEvent"), new HarmonyMethod(typeof(HarmonyPatch).GetMethod("FireEvent_PreFix")), null, null); // changes lightning stike location onto Nora pawns
@@ -49,17 +50,17 @@ namespace RWBYRemnant
             if (!LoadedModManager.GetMod<RemnantMod>().GetSettings<RemnantModSettings>().semblanceUnlockable) return;
             if (billDoer.GetComp<CompAbilityUserAura>() is CompAbilityUserAura compAbilityUserAura && billDoer.story != null && billDoer.story.traits.HasTrait(RWBYDefOf.RWBY_Aura))
             {
-                for (int i = 0; i < products.Count; i++)
+                foreach (var product in products)
                 {
-                    if (products[i].def.IsNutritionGivingIngestible && products[i].def.ingestible.preferability >= FoodPreferability.MealAwful)
+                    if (product.def.IsNutritionGivingIngestible && product.def.ingestible.preferability >= FoodPreferability.MealAwful)
                     {
                         // do nothing
                     }
-                    else if (products[i].def.HasComp(typeof(CompArt)) && products[i].TryGetComp<CompArt>() is CompArt compArt && compArt.Active)
+                    else if (product.def.HasComp(typeof(CompArt)) && product.TryGetComp<CompArt>() is CompArt compArt && compArt.Active)
                     {
                         if (Rand.Chance(0.05f)) compAbilityUserAura.TryUnlockSemblanceWith(SkillDefOf.Artistic);
                     }
-                    else if (!products[i].def.HasComp(typeof(CompArt)))
+                    else if (!product.def.HasComp(typeof(CompArt)))
                     {
                         if (Rand.Chance(0.005f)) compAbilityUserAura.TryUnlockSemblanceWith(SkillDefOf.Crafting);
                     }
@@ -187,11 +188,11 @@ namespace RWBYRemnant
                         if (c.InBounds(__instance.pawn.Map))
                         {
                             List<Thing> thingList = c.GetThingList(__instance.pawn.Map);
-                            for (int j = 0; j < thingList.Count; j++)
+                            foreach (var thing in thingList)
                             {
                                 if (flag)
                                 {
-                                    Pawn pawn = thingList[j] as Pawn;
+                                    Pawn pawn = thing as Pawn;
                                     if (pawn != null && !pawn.Downed && __instance.pawn.HostileTo(pawn))
                                     {
                                         __instance.pawn.meleeVerbs.TryMeleeAttack(pawn, null, false);
@@ -208,7 +209,7 @@ namespace RWBYRemnant
                         if (currentEffectiveVerb != null && !currentEffectiveVerb.verbProps.IsMeleeAttack)
                         {
                             TargetScanFlags targetScanFlags = TargetScanFlags.NeedLOSToPawns | TargetScanFlags.NeedLOSToNonPawns | TargetScanFlags.NeedThreat;
-                            if (currentEffectiveVerb.IsIncendiary())
+                            if (currentEffectiveVerb.IsIncendiary_Ranged())
                             {
                                 targetScanFlags |= TargetScanFlags.NeedNonBurning;
                             }
@@ -266,7 +267,7 @@ namespace RWBYRemnant
         [HarmonyPostfix]
         public static void Notify_PawnKilled_PostFix(Pawn killed, Pawn killer) // add Weiss summon Grimm ability
         {
-            if (killer.RaceProps.Humanlike && killer.story.traits.HasTrait(RWBYDefOf.Semblance_Weiss) && GrimmUtility.IsGrimm(killed) && killer.TryGetComp<CompAbilityUserAura>() is CompAbilityUserAura compAbilityUserAura && compAbilityUserAura.IsInitialized)
+            if (killer.RaceProps.Humanlike && killer.story.traits.HasTrait(RWBYDefOf.Semblance_Weiss) && GrimmUtility.IsGrimm(killed) && killer.TryGetComp<CompAbilityUserAura>() is CompAbilityUserAura compAbilityUserAura && compAbilityUserAura.Initialized)
             {
                 if (killed.RaceProps.AnyPawnKind == RWBYDefOf.Grimm_Boarbatusk)
                 {
@@ -324,10 +325,9 @@ namespace RWBYRemnant
         [HarmonyPrefix]
         public static bool AddHediff_PreFix(Hediff hediff, Pawn ___pawn)  // makes Nora immune to RimTasers Reloaded debuff and charges her
         {
-            if (hediff.def.defName.Equals("Tazed") && ___pawn.story != null && ___pawn.story.traits.HasTrait(RWBYDefOf.Semblance_Nora) && ___pawn.TryGetComp<CompAbilityUserAura>() != null && ___pawn.TryGetComp<CompAbilityUserAura>().IsInitialized)
+            if (hediff.def.defName.Equals("Tazed") && ___pawn.story != null && ___pawn.story.traits.HasTrait(RWBYDefOf.Semblance_Nora) && ___pawn.TryGetComp<CompAbilityUserAura>() != null && ___pawn.TryGetComp<CompAbilityUserAura>().Initialized)
             {
-                Hediff hediffCharged = new Hediff();
-                hediffCharged = HediffMaker.MakeHediff(RWBYDefOf.RWBY_LightningBuff, ___pawn);
+                var hediffCharged = HediffMaker.MakeHediff(RWBYDefOf.RWBY_LightningBuff, ___pawn);
                 ___pawn.health.AddHediff(hediffCharged);
                 return false;
             }
@@ -357,7 +357,7 @@ namespace RWBYRemnant
         }
 
         [HarmonyPrefix]
-        public static bool RenderPawnAt_PreFix(PawnRenderer __instance, Pawn ___pawn, ref Vector3 drawLoc) // makes invisible: Ruby while dashing, Apathy while not triggered
+        public static bool RenderPawnAt_PreFix(PawnRenderer __instance, Pawn ___pawn, ref Vector3 drawLoc, ref Rot4? rotOverride, ref bool neverAimWeapon) // makes invisible: Ruby while dashing, Apathy while not triggered
         {
             if (___pawn.health.hediffSet.HasHediff(RWBYDefOf.RWBY_RubyDashForm)) return false;
             if (___pawn.RaceProps.AnyPawnKind == RWBYDefOf.Grimm_Apathy && !___pawn.InMentalState) return false;
@@ -372,7 +372,7 @@ namespace RWBYRemnant
                 return;
             }
             if (___pawn.CurJobDef == RWBYDefOf.RWBY_StealAura) ___pawn.jobs.EndCurrentJob(JobCondition.InterruptForced); // makes the Aura steal interruptable
-            if (!absorbed && ___pawn.TryGetComp<CompAbilityUserAura>() != null && ___pawn.TryGetComp<CompAbilityUserAura>().IsInitialized)
+            if (!absorbed && ___pawn.TryGetComp<CompAbilityUserAura>() != null && ___pawn.TryGetComp<CompAbilityUserAura>().Initialized)
             {
                 if (___pawn.GetComp<CompAbilityUserAura>().aura.TryAbsorbDamage(dinfo))
                 {
@@ -560,7 +560,7 @@ namespace RWBYRemnant
         {
             if (thing != null && thing.GetType().Equals(typeof(ThingWithComps)) && ((ThingWithComps)thing).TryGetComp<CompLightCopy>() != null)
             {
-                thing.Destroy(DestroyMode.Vanish);
+                thing.Destroy();
             }
         }
 
@@ -626,7 +626,7 @@ namespace RWBYRemnant
                 {
                     if (workTag != 0) stringBuilder.AppendLine("    " + workTag.LabelTranslated().CapitalizeFirst() + " " + "disabled");
                 }
-                __result = __result + stringBuilder.ToString();
+                __result += stringBuilder.ToString();
             }
         }
 

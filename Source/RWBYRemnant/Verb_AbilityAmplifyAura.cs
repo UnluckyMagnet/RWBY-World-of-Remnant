@@ -30,7 +30,7 @@ namespace RWBYRemnant
                 for (int i = 0; i < this.TargetsAoE.Count; i++)
                 {
                     bool abilitySucceeded = true;
-                    if (TargetsAoE[i].Thing != null && TargetsAoE[i].Thing is Pawn targetPawn && targetPawn.TryGetComp<CompAbilityUserAura>() != null && targetPawn.TryGetComp<CompAbilityUserAura>().IsInitialized)
+                    if (TargetsAoE[i].Thing != null && TargetsAoE[i].Thing is Pawn targetPawn && targetPawn.TryGetComp<CompAbilityUserAura>() != null && targetPawn.TryGetComp<CompAbilityUserAura>().Initialized)
                     {
                         Hediff hediffAmplifiedAura = new Hediff();
                         hediffAmplifiedAura = HediffMaker.MakeHediff(RWBYDefOf.RWBY_AmplifiedAura, targetPawn);

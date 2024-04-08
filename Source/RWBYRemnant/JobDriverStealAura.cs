@@ -52,9 +52,8 @@ namespace RWBYRemnant
                         Hediff hediffAuraStolen = new Hediff();
                         hediffAuraStolen = HediffMaker.MakeHediff(RWBYDefOf.RWBY_AuraStolen, targetPawn);
                         targetPawn.health.AddHediff(hediffAuraStolen);
-
                         RWBYDefOf.AuraBreak.PlayOneShot(new TargetInfo(targetPawn.Position, targetPawn.Map, false));
-                        if (stealAura.actor.Faction != targetPawn.Faction) stealAura.actor.Faction.TryAffectGoodwillWith(targetPawn.Faction, -15, true, true, "MessageFactionStoleAura".Translate(stealAura.actor.LabelShort, targetPawn.LabelShort), stealAura.actor);
+                        if (stealAura.actor.Faction != targetPawn.Faction) stealAura.actor.Faction.TryAffectGoodwillWith(targetPawn.Faction, -15, true, true, /* "MessageFactionStoleAura".Translate(stealAura.actor.LabelShort, targetPawn.LabelShort),*/ lookTarget: stealAura.actor);
                         Thought_Memory thought_Memory = (Thought_Memory)ThoughtMaker.MakeThought(RWBYDefOf.RWBY_AuraStolen_Relation);
                         targetPawn.needs.mood.thoughts.memories.TryGainMemory(thought_Memory, stealAura.actor);
                         glove.TryGetComp<CompStealAura>().stolenTraitDef = targetPawn.story.traits.allTraits.FindAll(t => t.def == RWBYDefOf.RWBY_Aura || SemblanceUtility.semblanceList.Contains(t.def)).RandomElement().def;

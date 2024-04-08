@@ -1,5 +1,6 @@
 ﻿using RimWorld;
 using Verse;
+using Verse.Noise;
 
 namespace RWBYRemnant
 {
@@ -24,23 +25,26 @@ namespace RWBYRemnant
             {
                 return;
             }
-            MoteThrown moteThrown = (MoteThrown)ThingMaker.MakeThing(ThingDefOf.Mote_Smoke, null);
-            moteThrown.Scale = Rand.Range(1.5f, 2.5f) * 1;
-            moteThrown.rotationRate = Rand.Range(-30f, 30f);
-            moteThrown.exactPosition = Position.ToVector3();
-            moteThrown.SetVelocity((float)Rand.Range(30, 40), Rand.Range(0.5f, 0.7f));
-            GenSpawn.Spawn(moteThrown, Position, Map, WipeMode.Vanish);
+            // ThingDefOf.Mote_Smoke changed FleckDefOf.Smoke
+            FleckCreationData dataStatic = FleckMaker.GetDataStatic(Position.ToVector3(), Map, FleckDefOf.Smoke);
+            dataStatic.scale = Rand.Range(1.5f, 2.5f) * 1;
+            dataStatic.rotationRate = Rand.Range(-30f, 30f);
+            dataStatic.velocityAngle = Rand.Range(30, 40);
+            dataStatic.velocitySpeed = Rand.Range(0.5f, 0.7f);
+            Map.flecks.CreateFleck(dataStatic);
         }
 
-        protected override void Impact(Thing hitThing)
+        // add method argument
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             SnowUtility.AddSnowRadial(Position, Map, 2f, 1f);
-            MoteThrown moteThrown = (MoteThrown)ThingMaker.MakeThing(ThingDefOf.Mote_Smoke, null);
-            moteThrown.Scale = Rand.Range(1.5f, 2.5f) * 2;
-            moteThrown.rotationRate = Rand.Range(-30f, 30f);
-            moteThrown.exactPosition = Position.ToVector3();
-            moteThrown.SetVelocity((float)Rand.Range(30, 40), Rand.Range(0.5f, 0.7f));
-            GenSpawn.Spawn(moteThrown, Position, Map, WipeMode.Vanish);
+            // ThingDefOf.Mote_Smoke changed FleckDefOf.Smoke
+            FleckCreationData dataStatic = FleckMaker.GetDataStatic(Position.ToVector3(), Map, FleckDefOf.Smoke);
+            dataStatic.scale = Rand.Range(1.5f, 2.5f) * 1;
+            dataStatic.rotationRate = Rand.Range(-30f, 30f);
+            dataStatic.velocityAngle = Rand.Range(30, 40);
+            dataStatic.velocitySpeed = Rand.Range(0.5f, 0.7f);
+            Map.flecks.CreateFleck(dataStatic);
             base.Impact(hitThing);
         }
     }

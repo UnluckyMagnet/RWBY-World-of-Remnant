@@ -6,7 +6,7 @@ namespace RWBYRemnant
 {
     public class ThingDef_SilverEyes : ThingDef
     {
-        
+
     }
 
     public class Projectile_SilverEyes : Bullet
@@ -19,7 +19,8 @@ namespace RWBYRemnant
             }
         }
 
-        protected override void Impact(Thing hitThing)
+        // add method argument
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             if (hitThing is Pawn targetPawn && launcher is Pawn CasterPawn)
             {
@@ -29,10 +30,10 @@ namespace RWBYRemnant
                 dinfo1.SetBodyRegion(BodyPartHeight.Undefined, BodyPartDepth.Outside);
                 Vector3 direction1 = (targetPawn.Position - CasterPawn.Position).ToVector3();
                 dinfo1.SetAngle(direction1);
-                targetPawn.stances.stunner.StunFor_NewTmp(GenTicks.SecondsToTicks(5f), CasterPawn);
+                targetPawn.stances.stunner.StunFor(GenTicks.SecondsToTicks(5f), CasterPawn);
                 targetPawn.TakeDamage(dinfo1);
             }
             this.Destroy(DestroyMode.Vanish);
-        }       
+        }
     }
 }

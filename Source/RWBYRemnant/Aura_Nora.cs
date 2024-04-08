@@ -1,8 +1,6 @@
-﻿using System.Collections.Generic;
-using Verse;
-using RimWorld;
+﻿using RimWorld;
 using UnityEngine;
-using Verse.Sound;
+using Verse;
 
 namespace RWBYRemnant
 {

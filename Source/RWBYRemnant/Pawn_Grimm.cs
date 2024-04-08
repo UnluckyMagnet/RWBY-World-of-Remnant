@@ -33,7 +33,7 @@ namespace RWBYRemnant
             base.Tick();
             if (Downed)
             {
-                if (lastTakenDamageFrom is Pawn killer && killer.RaceProps.Humanlike && killer.story.traits.HasTrait(RWBYDefOf.Semblance_Weiss) && killer.TryGetComp<CompAbilityUserAura>() is CompAbilityUserAura compAbilityUserAura && compAbilityUserAura.IsInitialized)
+                if (lastTakenDamageFrom is Pawn killer && killer.RaceProps.Humanlike && killer.story.traits.HasTrait(RWBYDefOf.Semblance_Weiss) && killer.TryGetComp<CompAbilityUserAura>() is CompAbilityUserAura compAbilityUserAura && compAbilityUserAura.Initialized)
                 {
                     if (this.RaceProps.AnyPawnKind == RWBYDefOf.Grimm_Boarbatusk)
                     {

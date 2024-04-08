@@ -8,15 +8,16 @@ namespace RWBYRemnant
     {
         public GizmoAuraStatus()
         {
-            this.order = -100f;
+            this.Order = -100f; // fix variable name is changed
         }
         
         public override float GetWidth(float maxWidth)
         {
             return 140f;
         }
-        
-        public override GizmoResult GizmoOnGUI(Vector2 topLeft, float maxWidth)
+
+        // add method argument
+        public override GizmoResult GizmoOnGUI(Vector2 topLeft, float maxWidth, GizmoRenderParms parms)
         {
             Rect overRect = new Rect(topLeft.x, topLeft.y, this.GetWidth(maxWidth), 75f);
             Find.WindowStack.ImmediateWindow(354613516 + aura.pawn.thingIDNumber, overRect, WindowLayer.GameUI, delegate

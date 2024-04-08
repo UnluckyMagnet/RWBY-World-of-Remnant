@@ -9,13 +9,7 @@ namespace RWBYRemnant
 {
     public class Verb_UseAbilitySemblanceBase : Verb_UseAbility
     {
-        public CompAbilityUserAura AbilityUserCompAura
-        {
-            get
-            {
-                return base.CasterPawn.TryGetComp<CompAbilityUserAura>();
-            }
-        }
+        public CompAbilityUserAura AbilityUserCompAura => base.CasterPawn.TryGetComp<CompAbilityUserAura>();
 
         public override void PostCastShot(bool inResult, out bool outResult)
         {
@@ -33,7 +27,6 @@ namespace RWBYRemnant
         protected override bool TryCastShot()
         {
             bool flag = false;
-            this.TargetsAoE.Clear();
             this.UpdateTargets();
             int shotsPerBurst = this.ShotsPerBurst;
             bool flag2 = this.UseAbilityProps.AbilityTargetCategory != AbilityTargetCategory.TargetAoE && this.TargetsAoE.Count > 1;
@@ -120,7 +113,7 @@ namespace RWBYRemnant
                     {
                         projectileHitFlags2 |= ProjectileHitFlags.NonTargetPawns;
                     }
-                    projectile.Launch(caster, drawPos, shootLine.Dest, this.currentTarget, projectileHitFlags2, null, targetCoverDef);
+                    projectile.Launch(caster, drawPos, shootLine.Dest, this.currentTarget, projectileHitFlags2, true, null, targetCoverDef);
                     return true;
                 }
                 if (this.currentTarget.Thing != null && this.currentTarget.Thing.def.category == ThingCategory.Pawn && !Rand.Chance(shotReport.PassCoverChance) && !((VerbProperties_Ability)verbProps).AlwaysHits)
@@ -130,12 +123,12 @@ namespace RWBYRemnant
                     {
                         projectileHitFlags3 |= ProjectileHitFlags.NonTargetPawns;
                     }
-                    projectile.Launch(caster, drawPos, randomCoverToMissInto, this.currentTarget, projectileHitFlags3, null, targetCoverDef);
+                    projectile.Launch(caster, drawPos, randomCoverToMissInto, this.currentTarget, projectileHitFlags3, true, null, targetCoverDef);
                     return true;
                 }
                 // miss chance end
 
-                projectile.Launch(caster, launchTarget, launchTarget, projectileHitFlags, null);
+                projectile.Launch(caster, launchTarget, launchTarget, projectileHitFlags, true, null);
                 result = new bool?(true);
             }
             return result;

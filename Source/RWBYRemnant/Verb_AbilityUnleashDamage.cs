@@ -34,7 +34,7 @@ namespace RWBYRemnant
                     if (TargetsAoE[i].Thing != null && TargetsAoE[i].Thing is Pawn targetPawn)
                     {
                         float damageToDeal = ((Aura_Adam)CasterPawn.TryGetComp<CompAbilityUserAura>().aura).absorbedDamage;
-                        if (targetPawn.TryGetComp<CompAbilityUserAura>() is CompAbilityUserAura compAbilityUserAura && targetPawn.TryGetComp<CompAbilityUserAura>().IsInitialized && compAbilityUserAura.aura.currentEnergy > 0f)
+                        if (targetPawn.TryGetComp<CompAbilityUserAura>() is CompAbilityUserAura compAbilityUserAura && targetPawn.TryGetComp<CompAbilityUserAura>().Initialized && compAbilityUserAura.aura.currentEnergy > 0f)
                         {
                             float damageToDealToAura = 0f;
                             if (compAbilityUserAura.aura.currentEnergy > damageToDeal)

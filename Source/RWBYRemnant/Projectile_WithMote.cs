@@ -21,11 +21,13 @@ namespace RWBYRemnant
 
         public override void Tick()
         {
-            MoteMaker.ThrowDustPuffThick(Position.ToVector3(), Map, 2, Def.color);
+            // method changed
+            FleckMaker.ThrowDustPuffThick(Position.ToVector3(), Map, 2, Def.color);
             base.Tick();
         }
 
-        protected override void Impact(Thing hitThing)
+        // add method argument
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             base.Impact(hitThing);
         }

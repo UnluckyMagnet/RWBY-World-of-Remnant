@@ -19,7 +19,7 @@ namespace RWBYRemnant
         {
             base.CompPostTick(ref severityAdjustment);
 
-            if (parent.CurStageIndex == 2) parent.pawn.stances.stunner.StunFor_NewTmp(GenTicks.SecondsToTicks(1f), null);
+            if (parent.CurStageIndex == 2) parent.pawn.stances.stunner.StunFor(GenTicks.SecondsToTicks(1f), null);
         }
     }
 }

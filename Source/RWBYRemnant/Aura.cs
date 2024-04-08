@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using Verse;
-using RimWorld;
-using UnityEngine;
-using Verse.Sound;
+﻿using RimWorld;
+using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
+using Verse;
+using Verse.Sound;
 
 namespace RWBYRemnant
 {
@@ -17,7 +17,7 @@ namespace RWBYRemnant
         }
 
         public virtual void Tick()
-        {            
+        {
             if (!pawn.IsFighting() && pawn.IsHashIntervalTick(480)) // every 8 seconds Aura can either heal or regenerate IF pawn is out of combat
             {
                 List<Hediff_Injury> injuriesHealable = new List<Hediff_Injury>();
@@ -36,7 +36,7 @@ namespace RWBYRemnant
                 {
                     // injured pawns won´t regenerate aura if aura is empty, regenerates only out of combat and last taken damage is 30 seconds away
                     if (currentEnergy < maxEnergy && Find.TickManager.TicksGame - lastAbsorbDamageTick > GenTicks.SecondsToTicks(30f)) currentEnergy += 0.01f;
-                }                
+                }
             }
 
             if (pawn.IsHashIntervalTick(60) && (pawn.health.hediffSet.HasHediff(RWBYDefOf.RWBY_AmplifiedAura) || pawn.health.hediffSet.hediffs.Any(h => SemblanceUtility.injectedDustCrystalHediffs.Contains(h.def)))) // amplified Aura heals faster
@@ -78,7 +78,6 @@ namespace RWBYRemnant
 
         public virtual void TickRare()
         {
-
         }
 
         public virtual bool TryAbsorbDamage(DamageInfo dinfo)
@@ -101,26 +100,29 @@ namespace RWBYRemnant
                 this.impactAngleVect = Vector3Utility.HorizontalVectorFromAngle(dinfo.Angle);
                 Vector3 loc = pawn.TrueCenter() + impactAngleVect.RotatedBy(180f) * 0.5f;
                 float num = Mathf.Min(10f, 2f + dinfo.Amount / 10f);
-                MoteMaker.MakeStaticMote(loc, pawn.Map, ThingDefOf.Mote_ExplosionFlash, num);
+                // method changed
+                FleckMaker.Static(loc, pawn.Map, FleckDefOf.ExplosionFlash, num);
                 int num2 = (int)num;
                 for (int i = 0; i < num2; i++)
                 {
-                    MoteMaker.ThrowDustPuff(loc, pawn.Map, Rand.Range(0.8f, 1.2f));
+                    // method changed
+                    FleckMaker.ThrowDustPuff(loc, pawn.Map, Rand.Range(0.8f, 1.2f));
                 }
                 lastAbsorbDamageTick = Find.TickManager.TicksGame;
             }
             else // break
             {
                 RWBYDefOf.AuraBreak.PlayOneShot(new TargetInfo(pawn.Position, pawn.Map, false));
-                MoteMaker.MakeStaticMote(pawn.TrueCenter(), pawn.Map, ThingDefOf.Mote_ExplosionFlash, 12f);
+                // method changed
+                FleckMaker.Static(pawn.TrueCenter(), pawn.Map, FleckDefOf.ExplosionFlash, 12f);
                 for (int i = 0; i < 6; i++)
                 {
                     Vector3 loc = pawn.TrueCenter() + Vector3Utility.HorizontalVectorFromAngle((float)Rand.Range(0, 360)) * Rand.Range(0.3f, 0.6f);
-                    MoteMaker.ThrowDustPuff(loc, pawn.Map, Rand.Range(0.8f, 1.2f));
+                    // method changed
+                    FleckMaker.ThrowDustPuff(loc, pawn.Map, Rand.Range(0.8f, 1.2f));
                 }
                 currentEnergy = 0f;
             }
-
             return true;
         }
 
@@ -147,7 +149,7 @@ namespace RWBYRemnant
 
         public virtual Color GetColor()
         {
-            return pawn.story.hairColor;
+            return pawn.story.HairColor;
         }
 
         public virtual string GetLabelColor()

@@ -18,8 +18,9 @@ namespace RWBYRemnant
                 return def as ThingDef_CameraBullet;
             }
         }
-        
-        protected override void Impact(Thing hitThing)
+
+        // add method argument
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             Destroy(DestroyMode.Vanish);
             if (intendedTarget.Thing == null) return;

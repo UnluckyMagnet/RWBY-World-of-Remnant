@@ -13,12 +13,12 @@ namespace RWBYRemnant
         public AbilitySemblance(CompAbilityUser abilityUser) : base(abilityUser)
         {
             
-            this.abilityUser = (abilityUser as CompAbilityUserAura);
+            this.AbilityUser = (abilityUser as CompAbilityUserAura);
         }
 
         public AbilitySemblance(AbilityData abilityData) : base(abilityData)
         {
-            this.abilityUser = (abilityData.Pawn.AllComps.FirstOrDefault((ThingComp x) => x.GetType() == abilityData.AbilityClass) as CompAbilityUserAura);
+            this.AbilityUser = (abilityData.Pawn.AllComps.FirstOrDefault((ThingComp x) => x.GetType() == abilityData.AbilityClass) as CompAbilityUserAura);
         }
 
         public AbilitySemblance(Pawn user, SemblanceDef pdef) : base(user, pdef)

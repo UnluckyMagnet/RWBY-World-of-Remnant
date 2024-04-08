@@ -42,9 +42,9 @@ namespace RWBYRemnant
             }
             Vector3 drawPos = this.caster.DrawPos;
             Projectile projectile2 = (Projectile)GenSpawn.Spawn(projectile, shootLine.Source, this.caster.Map, WipeMode.Vanish);
-            if (this.verbProps.forcedMissRadius > 0.5f)
+            if (this.verbProps.ForcedMissRadius > 0.5f)
             {
-                float num = VerbUtility.CalculateAdjustedForcedMiss(this.verbProps.forcedMissRadius, this.currentTarget.Cell - this.caster.Position);
+                float num = VerbUtility.CalculateAdjustedForcedMiss(this.verbProps.ForcedMissRadius, this.currentTarget.Cell - this.caster.Position);
                 if (num > 0.5f)
                 {
                     int max = GenRadial.NumCellsInRadius(num);
@@ -63,7 +63,7 @@ namespace RWBYRemnant
                         {
                             projectileHitFlags &= ~ProjectileHitFlags.NonTargetPawns;
                         }
-                        projectile2.Launch(launcher, drawPos, c, this.currentTarget, projectileHitFlags, equipment, null);
+                        projectile2.Launch(launcher, drawPos, c, this.currentTarget, projectileHitFlags, false, equipment, null);
                         return true;
                     }
                 }
@@ -82,7 +82,7 @@ namespace RWBYRemnant
                     projectileHitFlags2 |= ProjectileHitFlags.NonTargetPawns;
                 }
                 if (!TryConsumeAmmunition()) return false;
-                projectile2.Launch(launcher, drawPos, shootLine.Dest, this.currentTarget, projectileHitFlags2, equipment, targetCoverDef);
+                projectile2.Launch(launcher, drawPos, shootLine.Dest, this.currentTarget, projectileHitFlags2, false, equipment, targetCoverDef);
                 return true;
             }
             if (this.currentTarget.Thing != null && this.currentTarget.Thing.def.category == ThingCategory.Pawn && !Rand.Chance(shotReport.PassCoverChance) && !cannotMiss)
@@ -95,7 +95,7 @@ namespace RWBYRemnant
                     projectileHitFlags3 |= ProjectileHitFlags.NonTargetPawns;
                 }
                 if (!TryConsumeAmmunition()) return false;
-                projectile2.Launch(launcher, drawPos, randomCoverToMissInto, this.currentTarget, projectileHitFlags3, equipment, targetCoverDef);
+                projectile2.Launch(launcher, drawPos, randomCoverToMissInto, this.currentTarget, projectileHitFlags3, false, equipment, targetCoverDef);
                 return true;
             }
             ProjectileHitFlags projectileHitFlags4 = ProjectileHitFlags.IntendedTarget;
@@ -111,13 +111,13 @@ namespace RWBYRemnant
             if (this.currentTarget.Thing != null)
             {
                 if (!TryConsumeAmmunition()) return false;
-                projectile2.Launch(launcher, drawPos, this.currentTarget, this.currentTarget, projectileHitFlags4, equipment, targetCoverDef);
+                projectile2.Launch(launcher, drawPos, this.currentTarget, this.currentTarget, projectileHitFlags4, false, equipment, targetCoverDef);
                 this.ThrowDebugText("Hit\nDest", this.currentTarget.Cell);
             }
             else
             {
                 if (!TryConsumeAmmunition()) return false;
-                projectile2.Launch(launcher, drawPos, shootLine.Dest, this.currentTarget, projectileHitFlags4, equipment, targetCoverDef);
+                projectile2.Launch(launcher, drawPos, shootLine.Dest, this.currentTarget, projectileHitFlags4, false, equipment, targetCoverDef);
                 this.ThrowDebugText("Hit\nDest", shootLine.Dest);
             }
 

@@ -51,7 +51,8 @@ namespace RWBYRemnant
                     carriedPawn.Notify_Teleported(true, false);
                 }
             }
-            MoteMaker.ThrowDustPuffThick(Position.ToVector3(), Map, 2, Def.color);
+            // method changed
+            FleckMaker.ThrowDustPuffThick(Position.ToVector3(), Map, 2, Def.color);
             if (Find.TickManager.TicksGame % 2 == 0)
             {
                 if (!Position.ShouldSpawnMotesAt(Map))
@@ -68,7 +69,8 @@ namespace RWBYRemnant
             base.Tick();
         }
 
-        protected override void Impact(Thing hitThing)
+        // add method argument
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             if (launcher is Pawn launcherPawn && launcherPawn != null)
             {

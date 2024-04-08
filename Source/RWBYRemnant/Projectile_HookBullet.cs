@@ -21,7 +21,8 @@ namespace RWBYRemnant
             }
         }
 
-        protected override void Impact(Thing hitThing)
+        // add method argument
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             if (Def != null && hitThing != null && hitThing is Pawn hitPawn)
             {

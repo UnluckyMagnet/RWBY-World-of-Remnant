@@ -60,7 +60,7 @@ namespace RWBYRemnant
             if (hediff != null) GetPawn.health.RemoveHediff(hediff);
             if (stolenTraitDef != null && GetPawn.TryGetComp<CompAbilityUserAura>() is CompAbilityUserAura compAbilityUserAura)
             {
-                if (compAbilityUserAura.IsInitialized && GetPawn.story.traits.allTraits.Any(t => SemblanceUtility.semblanceList.Contains(t.def))) // if pawn has Semblance
+                if (compAbilityUserAura.Initialized && GetPawn.story.traits.allTraits.Any(t => SemblanceUtility.semblanceList.Contains(t.def))) // if pawn has Semblance
                 {
                     compAbilityUserAura.aura.maxEnergy += 0.5f;
                     // Aura specific: Yang, Blake, Raven, Adam
@@ -141,14 +141,14 @@ namespace RWBYRemnant
                     defaultDesc = Props.AbilityDescSteal,
                     icon = IconAbilitySteal,
                     targetingParams = targetingParameters,
-                    action = delegate (Thing target)
+                    action = delegate (LocalTargetInfo target)
                     {
                         IEnumerable<Pawn> enumerable = Find.Selector.SelectedObjects.Where(delegate (object x)
                         {
                             Pawn pawn3 = x as Pawn;
                             return pawn3 != null && pawn3.IsColonistPlayerControlled && pawn3.Drafted;
                         }).Cast<Pawn>();
-                        DoEffectOn(target);
+                        DoEffectOn(target.Pawn);
                     },
                     disabled = disabled,
                     disabledReason = disabledReason

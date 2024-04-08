@@ -4,6 +4,8 @@ using System.Linq;
 using UnityEngine;
 using Verse;
 using Verse.Sound;
+using System.Reflection;
+using System;
 
 namespace RWBYRemnant
 {
@@ -34,7 +36,6 @@ namespace RWBYRemnant
                 return resolvedTexture;
             }
         }
-
         public void CreateVerb()
         {
             verb_ShootWeaponAbility = new Verb_ShootWeaponAbility
@@ -56,7 +57,7 @@ namespace RWBYRemnant
                     burstShotCount = Props.BurstShotCount,
                     ticksBetweenBurstShots = Props.TicksBetweenBurstShots,
                     muzzleFlashScale = 0,
-                    forcedMissRadius = 0f,
+                    //forcedMissRadius = 0f,
                 },
                 cannotMiss = Props.cannotMiss,
                 ammunition = Props.usesAmmunition

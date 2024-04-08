@@ -8,15 +8,16 @@ namespace RWBYRemnant
     {
         public GizmoYangAngerLevel()
         {
-            this.order = -99f;
+            this.Order = -99f; // fix variable name is changed
         }
-        
+
         public override float GetWidth(float maxWidth)
         {
             return 140f;
         }
-        
-        public override GizmoResult GizmoOnGUI(Vector2 topLeft, float maxWidth)
+
+        // add method argument
+        public override GizmoResult GizmoOnGUI(Vector2 topLeft, float maxWidth, GizmoRenderParms parms)
         {
             Rect overRect = new Rect(topLeft.x, topLeft.y, this.GetWidth(maxWidth), 75f);
             Find.WindowStack.ImmediateWindow(354613517 + aura.pawn.thingIDNumber, overRect, WindowLayer.GameUI, delegate
@@ -45,9 +46,9 @@ namespace RWBYRemnant
         public Aura aura;
 
         public float currentAbsorbedDamage;
-        
+
         public Texture2D FullShieldBarTex;
-        
+
         private static readonly Texture2D EmptyShieldBarTex = SolidColorMaterials.NewSolidColorTexture(Color.clear);
     }
 }

@@ -158,7 +158,7 @@ namespace RWBYRemnant
         public override void CompTick()
         {
             if (shadowClone == null) parent.Destroy();
-            if (useColor && ticksToLive % 5 == 0) MoteMaker.ThrowDustPuffThick(parent.DrawPos, shadowClone.Map, 2, shadowCloneColor);
+            if (useColor && ticksToLive % 5 == 0) FleckMaker.ThrowDustPuffThick(parent.DrawPos, shadowClone.Map, 2, shadowCloneColor);
             ticksToLive--;
             if (ticksToLive < 1 || parent.Map != shadowClone.Map)
             {

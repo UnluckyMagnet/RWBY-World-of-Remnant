@@ -38,10 +38,10 @@ namespace RWBYRemnant
                         GetPawn.equipment.Primary.Destroy(); // destroy light copy
                     }
                     else
-                    { 
+                    {
                         return; // primary is no camera or light copy
                     }
-                }      
+                }
                 else
                 {
                     MakeBox(); // primary is camera
@@ -62,7 +62,7 @@ namespace RWBYRemnant
             {
                 weaponToCreate.TryGetComp<CompQuality>().SetQuality(parent.TryGetComp<CompQuality>().Quality, ArtGenerationContext.Colony);
             }
-            weaponToCreate.HitPoints = 1;            
+            weaponToCreate.HitPoints = 1;
             if (weaponToCreate.TryGetComp<CompColorable>() == null)
             {
                 CompColorable compColorable = new CompColorable
@@ -76,12 +76,12 @@ namespace RWBYRemnant
                 compColorable.Initialize(compProps);
                 weaponToCreate.AllComps.Add(compColorable);
             }
-            weaponToCreate.TryGetComp<CompColorable>().Color = Props.LightCopyColor;
+            weaponToCreate.TryGetComp<CompColorable>().SetColor(Props.LightCopyColor);
 
             // remove certain special abilities from light copy
             weaponToCreate.AllComps.RemoveAll(x => x.GetType().Name.Equals("CompWeaponTransform")); // checking for string because "monster hunter rimworld" mod also has transformable weapons
             weaponToCreate.AllComps.RemoveAll(x => x.GetType().Equals(typeof(CompTakePhoto)));
-            
+
             CompLightCopy rWBYLightCopyDestroyAbility = new CompLightCopy
             {
                 parent = weaponToCreate
