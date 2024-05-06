@@ -9,7 +9,13 @@ namespace RWBYRemnant
 {
     public class Verb_UseAbilitySemblanceBase : Verb_UseAbility
     {
-        public CompAbilityUserAura AbilityUserCompAura => base.CasterPawn.TryGetComp<CompAbilityUserAura>();
+        public CompAbilityUserAura AbilityUserCompAura
+        {
+            get
+            {
+                return base.CasterPawn.TryGetComp<CompAbilityUserAura>();
+            }
+        }
 
         public override void PostCastShot(bool inResult, out bool outResult)
         {

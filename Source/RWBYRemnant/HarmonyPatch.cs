@@ -1,12 +1,12 @@
-﻿using HarmonyLib;
+﻿using Verse;
+using HarmonyLib;
 using RimWorld;
-using RimWorld.Planet;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using UnityEngine;
-using Verse;
+using RimWorld.Planet;
+using System.Linq;
 using Verse.AI;
+using System.Text;
 using Verse.Sound;
 
 namespace RWBYRemnant
@@ -50,17 +50,17 @@ namespace RWBYRemnant
             if (!LoadedModManager.GetMod<RemnantMod>().GetSettings<RemnantModSettings>().semblanceUnlockable) return;
             if (billDoer.GetComp<CompAbilityUserAura>() is CompAbilityUserAura compAbilityUserAura && billDoer.story != null && billDoer.story.traits.HasTrait(RWBYDefOf.RWBY_Aura))
             {
-                foreach (var product in products)
+                for (int i = 0; i < products.Count; i++)
                 {
-                    if (product.def.IsNutritionGivingIngestible && product.def.ingestible.preferability >= FoodPreferability.MealAwful)
+                    if (products[i].def.IsNutritionGivingIngestible && products[i].def.ingestible.preferability >= FoodPreferability.MealAwful)
                     {
                         // do nothing
                     }
-                    else if (product.def.HasComp(typeof(CompArt)) && product.TryGetComp<CompArt>() is CompArt compArt && compArt.Active)
+                    else if (products[i].def.HasComp(typeof(CompArt)) && products[i].TryGetComp<CompArt>() is CompArt compArt && compArt.Active)
                     {
                         if (Rand.Chance(0.05f)) compAbilityUserAura.TryUnlockSemblanceWith(SkillDefOf.Artistic);
                     }
-                    else if (!product.def.HasComp(typeof(CompArt)))
+                    else if (!products[i].def.HasComp(typeof(CompArt)))
                     {
                         if (Rand.Chance(0.005f)) compAbilityUserAura.TryUnlockSemblanceWith(SkillDefOf.Crafting);
                     }
@@ -188,11 +188,11 @@ namespace RWBYRemnant
                         if (c.InBounds(__instance.pawn.Map))
                         {
                             List<Thing> thingList = c.GetThingList(__instance.pawn.Map);
-                            foreach (var thing in thingList)
+                            for (int j = 0; j < thingList.Count; j++)
                             {
                                 if (flag)
                                 {
-                                    Pawn pawn = thing as Pawn;
+                                    Pawn pawn = thingList[j] as Pawn;
                                     if (pawn != null && !pawn.Downed && __instance.pawn.HostileTo(pawn))
                                     {
                                         __instance.pawn.meleeVerbs.TryMeleeAttack(pawn, null, false);
@@ -325,9 +325,10 @@ namespace RWBYRemnant
         [HarmonyPrefix]
         public static bool AddHediff_PreFix(Hediff hediff, Pawn ___pawn)  // makes Nora immune to RimTasers Reloaded debuff and charges her
         {
-            if (hediff.def.defName.Equals("Tazed") && ___pawn.story != null && ___pawn.story.traits.HasTrait(RWBYDefOf.Semblance_Nora) && ___pawn.TryGetComp<CompAbilityUserAura>() != null && ___pawn.TryGetComp<CompAbilityUserAura>().Initialized)
+            if (hediff.def.defName.Equals("Tazed") && ___pawn.story != null && ___pawn.story.traits.HasTrait(RWBYDefOf.Semblance_Nora) && ___pawn.TryGetComp<CompAbilityUserAura>() != null && ___pawn.TryGetComp<CompAbilityUserAura>().IsInitialized)
             {
-                var hediffCharged = HediffMaker.MakeHediff(RWBYDefOf.RWBY_LightningBuff, ___pawn);
+                Hediff hediffCharged = new Hediff();
+                hediffCharged = HediffMaker.MakeHediff(RWBYDefOf.RWBY_LightningBuff, ___pawn);
                 ___pawn.health.AddHediff(hediffCharged);
                 return false;
             }
@@ -560,7 +561,7 @@ namespace RWBYRemnant
         {
             if (thing != null && thing.GetType().Equals(typeof(ThingWithComps)) && ((ThingWithComps)thing).TryGetComp<CompLightCopy>() != null)
             {
-                thing.Destroy();
+                thing.Destroy(DestroyMode.Vanish);
             }
         }
 
@@ -626,7 +627,7 @@ namespace RWBYRemnant
                 {
                     if (workTag != 0) stringBuilder.AppendLine("    " + workTag.LabelTranslated().CapitalizeFirst() + " " + "disabled");
                 }
-                __result += stringBuilder.ToString();
+                __result = __result + stringBuilder.ToString();
             }
         }
 

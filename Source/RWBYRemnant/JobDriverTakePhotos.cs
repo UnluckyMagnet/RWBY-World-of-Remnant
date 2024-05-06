@@ -67,7 +67,6 @@ namespace RWBYRemnant
                         burstShotCount = 1,
                         ticksBetweenBurstShots = 1,
                         muzzleFlashScale = 0,
-                        //forcedMissRadius = 0f,
                     },
                     cannotMiss = true,
                     ammunition = null
